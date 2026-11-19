@@ -59,7 +59,8 @@ section. See docs/HOMEPAGE_HERO.md.
 
 Earlier Phase 01 checkboxes remain the original initial acceptance list.
 Automated lint/typecheck/build checks passed in GitHub Actions for Phases
-01–04, but visual QA, Alro licensing and a committed npm lockfile are still open.
+01–04; visual QA and Alro licensing remain open. The verified npm lockfile
+was committed after Phase 15.
 
 
 ## Phase 06 — Gallery status
@@ -167,3 +168,13 @@ This phase is NOT a public launch: authentic project artwork, licensed Alro,
 owner-approved contact, owner-controlled domain, manual device/accessibility
 and performance QA, and explicit owner publication authorization are pending.
 See docs/LAUNCH_AUDIT.md for the source-backed release decision.
+
+
+## Post-Phase 15 dependency reliability
+
+GitHub Actions created and committed the verified npm package lockfile as
+commit `09c4ee0`, after passing `npm ci`, lint, typecheck, asset checks,
+and build. The normal quality workflow now uses `npm ci` for reproducible
+installations. Browser tests and Vercel deployment continue to run as
+separate CI and deployment checks. Public release remains blocked pending
+authentic content, approved assets, fonts, domain, contact and manual QA.

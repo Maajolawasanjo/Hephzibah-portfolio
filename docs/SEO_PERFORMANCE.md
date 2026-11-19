@@ -87,7 +87,7 @@ no case-study sitemap URLs, and do not request made-up portfolio assets.
 widths, focus and mobile navigation, keyboard behavior, reduced motion,
 and contact publishing controls. CI runs:
 
-    npm install --no-audit --no-fund
+    npm ci --no-audit --no-fund
     npm run lint
     npm run typecheck
     npm run check:assets
@@ -95,8 +95,8 @@ and contact publishing controls. CI runs:
     npx playwright install --with-deps chromium
     npm run test:browser
 
-The npm lockfile is still pending. Generate and commit one from a
-network-enabled verified npm install, then switch to npm ci.
+The committed lockfile was generated and verified by GitHub Actions;
+normal CI now installs with npm ci to preserve the exact dependency tree.
 
 ### Outstanding quality gates
 
@@ -110,7 +110,7 @@ network-enabled verified npm install, then switch to npm ci.
 - [ ] Owner-approved social preview imagery and trademark/favicon assets.
 - [ ] Confirm production domain ownership and final publication authorization.
 - [ ] Verify indexing rules and sitemap again on the live production deployment.
-- [ ] Commit package-lock.json and migrate CI to npm ci.
+- [x] Commit a verified package-lock.json and migrate CI to npm ci.
 
 This phase is complete at the source/automated-test level only after CI
 passes. Actual launch readiness depends on these external approvals and

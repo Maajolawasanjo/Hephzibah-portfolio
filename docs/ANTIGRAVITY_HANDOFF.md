@@ -25,7 +25,7 @@ project or turn off Vercel Authentication to simplify testing.
 
 ## Commands
 
-    npm install
+    npm ci
     npm run lint
     npm run typecheck
     npm run check:assets
@@ -38,9 +38,8 @@ For the final release sign-off:
 
     npm run audit:release -- --strict
 
-Generate and commit package-lock.json after a network-enabled verified
-npm installation, then use npm ci in GitHub Actions. Do not insert a
-guessed lockfile.
+The verified package-lock.json is now committed and npm ci is required
+in GitHub Actions. Keep package.json and the lockfile synchronized.
 
 ## Outstanding
 

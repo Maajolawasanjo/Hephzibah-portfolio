@@ -29,7 +29,7 @@ See **[the consolidated deployment and launch audit](docs/LAUNCH_AUDIT.md)**.
 
 Use Node.js **22**, also configured for the Vercel project:
 
-    npm install
+    npm ci
     npm run lint
     npm run typecheck
     npm run check:assets
@@ -44,9 +44,9 @@ manual QA sign-off, run:
 
     npm run audit:release -- --strict
 
-The npm lockfile is still pending: this working environment cannot resolve
-the npm registry to generate a trustworthy lockfile. After verified
-generation, commit it and move CI from npm install to npm ci.
+The lockfile was generated, tested with `npm ci`, and committed by a
+one-time GitHub Actions workflow. GitHub CI now installs reproducibly using
+`npm ci`; update and verify the lockfile whenever dependencies change.
 
 ## Design language
 

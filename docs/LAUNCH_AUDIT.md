@@ -96,11 +96,7 @@ unfinished work.
    measure LCP, INP, CLS / Core Web Vitals and related regression budgets.
 8. **Brand assets:** approved favicon, portrait if desired, and accurate
    Open Graph/social sharing image.
-9. **Reproducible dependency tree:** generate and commit package-lock.json
-   from a connected npm environment, verify npm ci, then change CI to npm ci.
-   This workspace cannot resolve the npm registry, so no unverified lockfile
-   was committed.
-10. **Explicit release authorization:** content approval, manual QA sign-off
+9. **Explicit release authorization:** content approval, manual QA sign-off
     and separate production launch approval must be recorded.
 
 Optional testimonials, named software and More Work must stay hidden if
@@ -133,7 +129,7 @@ Do not commit a personal or unapproved public contact email.
    writing and licensed font files; add actual cases and run asset checks.
 2. Review the entire site with the owner and record editorial approval.
 3. Configure the confirmed public inbox and test the prepared inquiry email.
-4. Generate/commit npm lockfile, switch CI to npm ci, confirm green tests.
+4. Verify each subsequent dependency update with the tracked lockfile and npm ci.
 5. Complete manual accessibility/responsive/browser and image/performance QA.
 6. Verify custom domain ownership, HTTPS and explicit Vercel protection.
 7. Configure build-time environment flags only when all approvals are true.
@@ -163,5 +159,19 @@ The release preflight initially counted eight blockers because npm install
 created a **local untracked package-lock.json** in CI. This was a false
 positive. Phase 15 now checks the Git-tracked lockfile instead, so the
 missing committed lockfile is correctly reported as a ninth release blocker.
-The corrected audit must pass CI again before this phase is considered
-verified. None of these blockers authorizes a public launch.
+The corrected audit was subsequently rerun. None of these blockers
+authorizes a public launch.
+
+
+## Post-audit reproducible dependency update
+
+GitHub Actions generated `package-lock.json` against the npm registry,
+validated `npm ci`, and ran lint, TypeScript, asset checks and the
+production build on that exact dependency tree. The verified lockfile was
+committed to `main` as `09c4ee0`.
+
+The normal quality workflow now uses `npm ci` rather than `npm install`,
+and the one-time bootstrap workflow was removed. This closes the
+previously unresolved reproducible-installation requirement; approved
+project work, licensing, public contact, custom domain, manual testing
+and explicit launch authorization remain outstanding.

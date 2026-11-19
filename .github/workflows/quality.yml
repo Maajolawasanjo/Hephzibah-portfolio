@@ -13,8 +13,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      # Migrate to npm ci after a verified package-lock.json is committed.
-      - run: npm install --no-audit --no-fund
+      # Reproducible install from verified committed lockfile.
+      - run: npm ci --no-audit --no-fund
       - run: npm run lint
       - run: npm run typecheck
       - run: npm run check:assets
