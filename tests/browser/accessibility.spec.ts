@@ -56,7 +56,7 @@ test("mobile disclosure supports natural Tab, Escape, and focus exit", async ({ 
     "aria-expanded",
     "true"
   );
-  await expect(nav.getByRole("link", { name: "Work" })).toBeFocused();
+  await expect(nav.getByRole("link", { name: "Work", exact: true })).toBeFocused();
 
   await page.keyboard.press("Escape");
   await expect(open).toBeFocused();
