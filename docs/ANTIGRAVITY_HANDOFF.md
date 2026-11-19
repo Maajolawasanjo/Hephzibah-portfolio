@@ -1,43 +1,45 @@
-# Antigravity Handoff — Phase 12
+# Antigravity Handoff — Phase 13
 
 Repository: https://github.com/Maajolawasanjo/Hephzibah-portfolio
 
-Phases 01–11 have been implemented, with automated lint/typecheck/build
-passing for each corrected milestone. Work and case studies remain
-unpopulated until approved client assets are supplied. The Phase 11 contact
-composer is disabled until a public inbox is expressly approved.
+## Progress
 
-Phase 12 introduces light editorial motion and microinteractions without
-adding a third-party motion dependency. Read docs/MOTION.md first.
+Phases 01–12 were committed and passed GitHub automated lint/typecheck/build.
+Phase 13 improves accessibility and responsive behavior in the shared header,
+motion system, typography, anchored sections and inquiry form.
 
-## Implementation decisions
+Read docs/ACCESSIBILITY_AUDIT.md and docs/DESIGN_SYSTEM.md before edits.
 
-- `src/components/motion/motion-observer.tsx` is route-aware, progressive,
-  visible-by-default and removes pending states if reduced motion becomes
-  active.
-- CSS hero entrances, menu opening, desktop nav underline, button/card
-  hover and form focus polish live in `src/app/globals.css`.
-- Explicit `data-reveal` markup marks only relevant text/content groups.
-- Never introduce blocking intro animations, parallax or scrolling hijacks.
-- Do not hide content without JavaScript or on reduced-motion devices.
+### Important interaction contract
 
-## Approved design
+The expanded mobile menu is a disclosure, NOT a modal dialog:
+it does **not** trap Tab. Escape returns focus to the toggle,
+and Tab beyond the menu moves to subsequent page controls.
+The controlled nav retains a stable ID even when hidden.
 
-Modern Editorial Minimalism, Burgundy #66001F, Cream #FEFCEF.
-Alro by Artyway display is still awaiting licensed website font files;
-DM Sans is the temporary fallback. No system/browser dark theme.
+Phase 13 also introduces Playwright Chromium smoke tests in the
+GitHub Actions quality workflow. Test actual rendered homepage widths,
+landmarks, in-page destinations, mobile disclosure and reduced motion.
 
-No fabricated projects, metrics, clients, portrait, testimonials, tools,
-social/contact channels or case studies.
+## Visual rules
 
-## Verification
+- Modern Editorial Minimalism.
+- Burgundy #66001F and Cream #FEFCEF.
+- DM Sans body and temporary display fallback.
+- Alro by Artyway pending licensed webfont assets.
+- No OS/browser auto dark override.
+- No invented work, reviews, contact channels or achievements.
 
-1. Confirm Phase 12 GitHub Actions lint, TypeScript and production build.
-2. Check reduced motion, disabled JS and unsupported observer fallbacks.
-3. Test 320px/375px/mobile, tablet, desktop and text zoom in real browsers.
-4. Inspect sticky header/menu focus, click-away and Escape behavior.
-5. Check for unintentional hidden content after hash/route navigation.
-6. Resolve approved project assets, public inbox, licensed Alro and lockfile
-   before launch.
+## Still pending
 
-Next: Phase 13 — Responsive Design & Accessibility Audit.
+- Real browser visual QA beyond automated smoke tests.
+- Safari/Firefox and screen-reader testing.
+- Approved real client artwork, case studies, testimonials and optional tools.
+- Approved public contact email and corresponding mailto flow.
+- Licensed Alro font.
+- package-lock.json generation and npm ci migration.
+
+## Next
+
+Phase 14 — SEO, Performance & Quality Assurance. Do not enable indexing
+or publish fake previews until the owner's real content is ready.

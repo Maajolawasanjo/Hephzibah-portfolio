@@ -54,7 +54,7 @@ export function About() {
                 className="relative flex min-h-[19rem] flex-col justify-between overflow-hidden bg-brand-burgundy p-7 text-brand-cream sm:min-h-[26rem] sm:p-10 md:aspect-[4/5] md:min-h-0"
               >
                 <span className="type-label">A creative perspective</span>
-                <span className="font-display text-[clamp(4.5rem,10vw,9rem)] font-bold leading-[0.83] tracking-[-0.08em]">
+                <span className="decorative-type block max-w-full font-display font-bold">
                   Think.
                   <span className="block">Create.</span>
                 </span>

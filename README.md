@@ -1,54 +1,54 @@
 # Hephie Creatives — Portfolio
 
-Portfolio for Hephzibah Uzorndu, founder of **Hephie Creatives** and a
+Portfolio for Hephzibah Uzorndu, founder of Hephie Creatives,
 Brand Identity Designer & Visual Storyteller based in Lagos, Nigeria.
 
-## Milestone — Phase 12: Animation & Microinteractions
+## Phase 13 — Responsive Design & Accessibility Audit
 
-Next.js App Router, React, TypeScript and Tailwind CSS v4.
+Next.js App Router, React, TypeScript, Tailwind CSS v4.
 
-The codebase includes the typography-led hero, real service descriptions,
-About biography, process, creative toolkit, mentorship, approval-gated
-Selected Work and case-study architecture, Contact section, and
-progressively enhanced editorial motion.
+The repository implements an editorial homepage, supporting sections,
+approval-gated real work/case studies, and a draft-only contact experience.
+Phase 13 adds accessibility and responsive fixes plus automated Chromium
+browser tests through Playwright.
 
-Phase 12 adds understated hero entrances, selective scroll reveals,
-navigation underline and menu transitions, responsive button/project-card
-hover feedback and inquiry form focus polish. No animation library was
-introduced; content is visible without JavaScript, and reduced-motion
-preferences are respected. See docs/MOTION.md.
+### Running checks
 
-## Brand direction
-
-Modern Editorial Minimalism, Burgundy #66001F, Cream #FEFCEF.
-Alro by Artyway is the approved display font but licensed webfont files
-are not yet supplied; DM Sans is the temporary fallback.
-
-## Local development
-
-Node.js 22 recommended.
+Node.js 22:
 
     npm install
-    npm run dev
     npm run lint
     npm run typecheck
     npm run build
+    npx playwright install chromium
+    npm run test:browser
 
-The npm lockfile is still uncommitted; generate it in an npm-enabled
-environment, then migrate CI to `npm ci` after validation.
+The quality workflow runs all commands, installing Chromium and publishing
+failure artifacts. The repository still needs a verified npm lockfile; it
+currently uses npm install in CI rather than npm ci.
 
-## Outstanding launch dependencies
+See docs/ACCESSIBILITY_AUDIT.md for the exact fixes, browser-test scope
+and outstanding manual review requirements.
 
-- Hephzibah's approval and original artwork for real work/case studies.
-- Owner-approved first-person copy, services and optional testimonials.
-- An explicitly approved public inquiry email for contact activation.
-- Licensed Alro webfont files.
-- Actual desktop/mobile/keyboard/reduced-motion browser QA.
-- SEO, performance, deployment and final launch review.
+## Approved design
 
-Public search indexing remains disabled until launch approval.
+Modern Editorial Minimalism with expressive typography.
+Burgundy #66001F, Cream #FEFCEF, DM Sans supporting body type.
+Alro by Artyway is the approved display font; licensed files are still
+required before it can be embedded.
 
-## Documents
+## Not launch-ready yet
+
+- Owner-approved 6–8 real portfolio projects, associated images and case studies.
+- Owner approval of biography, services, process and mentorship copy.
+- Confirmed public inquiry email to enable the contact composer.
+- Authentic optional testimonials and additional work.
+- Full browser/mobile/screen-reader and licensed-font QA.
+- SEO, performance, deployment and domain verification.
+
+Public search indexing remains disabled until approved launch.
+
+## Documentation
 
 - docs/DESIGN_SYSTEM.md
 - docs/COMPONENTS.md
@@ -61,5 +61,6 @@ Public search indexing remains disabled until launch approval.
 - docs/SUPPORTING_SECTIONS.md
 - docs/CONTACT.md
 - docs/MOTION.md
+- docs/ACCESSIBILITY_AUDIT.md
 - docs/IMPLEMENTATION.md
 - docs/ANTIGRAVITY_HANDOFF.md

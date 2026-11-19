@@ -1,24 +1,27 @@
-# Global Navigation — Updated in Phase 11
+# Global Navigation — Phase 13 accessibility revision
 
-The shared global layout owns exactly one header, main landmark and footer.
+Main header/footer links currently target real homepage sections only:
+Work (/#selected-work), Services (/#services), About (/#about),
+and Contact (/#contact). The brand wordmark returns to /.
 
-| Navigation label | Destination | Existing content |
-| --- | --- | --- |
-| Work | /#selected-work | Approved-only gallery and honest empty state |
-| Services | /#services | Four service areas |
-| About | /#about | Hephzibah biography |
-| Contact | /#contact | Conversion section with email approval gate |
+The header has desktop navigation at the lg breakpoint and a
+mobile disclosure menu below lg. The disclosure is **not a modal**.
+It must not trap the keyboard user's Tab key.
 
-The brand wordmark routes to /, so Home is not duplicated as a menu item.
-The primary header CTA switches to Start a project (/#contact) only when
-a valid, explicitly approved public email has been configured; otherwise
-it remains Explore work (/#selected-work).
+## Mobile disclosure behavior
 
-The Contact link is valid even in the unconfigured state, because the
-section transparently explains that the public inquiry channel is pending.
-The contact form and direct email link are withheld until approval.
+- Native button: aria-expanded and aria-controls refer to a persistent
+  navigation element, hidden while closed.
+- On open, focus moves to the first menu link.
+- Tab/Shift+Tab move naturally; leaving the header closes the menu.
+- Escape closes the menu and returns focus to the toggle.
+- Clicking outside or activating any link closes the menu.
+- Resizing to the desktop breakpoint closes an open mobile menu.
+- Long menus scroll within the available viewport height.
+- No links to unfinished or unpublished sections are introduced.
 
-Mobile menu: focus moves inside on open, Escape restores focus, outside
-click closes it, and resize to desktop closes the disclosure.
-The skip link leads to #main-content. Actual browser/zoom/screen reader
-QA is still required before launch.
+A focus-visible skip link bypasses the header and leads to the main landmark.
+Anchor targets have scroll margin to avoid being obscured by the sticky
+header. Automatic hover animations are not required for navigation.
+Respect prefers-reduced-motion. Testing requirements and limitations
+are documented in docs/ACCESSIBILITY_AUDIT.md.

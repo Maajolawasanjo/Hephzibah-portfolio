@@ -247,3 +247,28 @@
     transform: translate3d(0, -3px, 0);
   }
 }
+
+
+/* Phase 13: anchored sections must clear the sticky global header. */
+:where(main [id]) {
+  scroll-margin-block-start: clamp(5.5rem, 10vh, 8rem);
+}
+
+/* More comfortable target sizes and reliable responsive text wrapping. */
+:where(button, a, input, select, textarea):focus-visible {
+  outline-width: 3px;
+  outline-style: solid;
+  outline-offset: 3px;
+}
+
+:where(h1, h2, h3, h4) {
+  overflow-wrap: anywhere;
+}
+
+/* Avoid zoom-related layout clipping of deliberately decorative lettering. */
+.decorative-type {
+  font-size: clamp(2.25rem, 5.5vw, 6.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.07em;
+  overflow-wrap: anywhere;
+}

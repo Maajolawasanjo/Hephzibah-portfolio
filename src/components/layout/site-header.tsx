@@ -26,34 +26,22 @@ export function SiteHeader({ contactReady }: { contactReady: boolean }) {
   useEffect(() => {
     if (!isOpen) return;
 
-    // Keep keyboard users inside the expanded mobile navigation.
+    // This is a disclosure menu, not a modal: Tab must be able to leave.
     menuRef.current?.querySelector<HTMLAnchorElement>("a[href]")?.focus();
 
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        event.preventDefault();
+      if (event.key !== "Escape") return;
+      event.preventDefault();
+      setIsOpen(false);
+      toggleRef.current?.focus();
+    };
+
+    const onFocusIn = (event: FocusEvent) => {
+      if (
+        event.target instanceof Node &&
+        !headerRef.current?.contains(event.target)
+      ) {
         setIsOpen(false);
-        toggleRef.current?.focus();
-        return;
-      }
-
-      if (event.key !== "Tab") return;
-      const focusable = Array.from(
-        headerRef.current?.querySelectorAll<HTMLElement>(
-          "a[href], button:not([disabled])"
-        ) ?? []
-      ).filter((element) => element.getClientRects().length > 0);
-
-      const first = focusable[0];
-      const last = focusable[focusable.length - 1];
-
-      if (!first || !last) return;
-      if (event.shiftKey && document.activeElement === first) {
-        event.preventDefault();
-        last.focus();
-      } else if (!event.shiftKey && document.activeElement === last) {
-        event.preventDefault();
-        first.focus();
       }
     };
 
@@ -68,10 +56,12 @@ export function SiteHeader({ contactReady }: { contactReady: boolean }) {
 
     document.addEventListener("keydown", onKeyDown);
     document.addEventListener("pointerdown", onPointerDown);
+    document.addEventListener("focusin", onFocusIn);
 
     return () => {
       document.removeEventListener("keydown", onKeyDown);
       document.removeEventListener("pointerdown", onPointerDown);
+      document.removeEventListener("focusin", onFocusIn);
     };
   }, [isOpen]);
 
@@ -91,7 +81,7 @@ export function SiteHeader({ contactReady }: { contactReady: boolean }) {
             <span className="block font-display text-[clamp(1.1rem,2vw,1.4rem)] font-bold leading-none tracking-[-0.045em]">
               {site.brand}
             </span>
-            <span className="mt-1.5 block text-[0.625rem] font-medium uppercase tracking-[0.13em]">
+            <span className="mt-1.5 block text-xs font-medium uppercase tracking-[0.13em]">
               {site.name}
             </span>
           </Link>
@@ -104,7 +94,7 @@ export function SiteHeader({ contactReady }: { contactReady: boolean }) {
               <Link
                 key={item.href}
                 href={item.href}
-                className="rounded-[var(--radius-control)] text-sm font-medium motion-nav-link pb-1 transition-opacity duration-[var(--motion-fast)] motion-reduce:transition-none"
+                className="motion-nav-link inline-flex min-h-11 items-center rounded-[var(--radius-control)] text-sm font-medium transition-opacity duration-[var(--motion-fast)] motion-reduce:transition-none"
               >
                 {item.label}
               </Link>
@@ -131,13 +121,17 @@ export function SiteHeader({ contactReady }: { contactReady: boolean }) {
           </button>
         </div>
 
-        {isOpen && (
-          <nav
-            ref={menuRef}
-            id={menuId}
-            aria-label="Mobile navigation"
-            className="motion-menu-enter border-t border-rule pb-5 pt-3 lg:hidden"
-          >
+        <nav
+          ref={menuRef}
+          id={menuId}
+          hidden={!isOpen}
+          aria-label="Mobile navigation"
+          className={
+            isOpen
+              ? "motion-menu-enter max-h-[calc(100dvh-5rem)] overflow-y-auto border-t border-rule pb-5 pt-3 lg:hidden"
+              : "hidden"
+          }
+        >
             <ul className="flex flex-col">
               {siteNavigation.map((item, index) => (
                 <li key={item.href}>
@@ -164,8 +158,7 @@ export function SiteHeader({ contactReady }: { contactReady: boolean }) {
                 {contactReady ? "Start a project" : "Explore work"} <span aria-hidden="true">↗</span>
               </Button>
             </div>
-          </nav>
-        )}
+        </nav>
       </Container>
     </header>
   );

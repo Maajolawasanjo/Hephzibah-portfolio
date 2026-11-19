@@ -16,7 +16,7 @@ export function Hero() {
     >
       <Container>
         <div className="flex flex-wrap items-center justify-between gap-x-8 gap-y-2 border-b border-rule py-5">
-          <Text variant="label" className="text-[0.6875rem]">
+          <Text variant="label" className="text-xs">
             Independent creative practice
           </Text>
           <Text variant="small" muted>
@@ -72,17 +72,17 @@ export function Hero() {
               className="relative flex min-h-[18rem] flex-col justify-between overflow-hidden bg-brand-burgundy p-6 text-brand-cream sm:min-h-[22rem] sm:p-8 lg:aspect-[3/5] lg:min-h-0"
             >
               <div className="flex items-start justify-between gap-3">
-                <span className="text-[0.65rem] font-semibold uppercase tracking-[0.18em]">
+                <span className="text-xs font-semibold uppercase tracking-[0.18em]">
                   Design / 001
                 </span>
                 <span className="text-sm">✳</span>
               </div>
               <div className="relative -ml-2 select-none">
-                <span className="block font-display text-[clamp(6.5rem,13vw,13rem)] font-bold leading-[0.8] tracking-[-0.12em]">
+                <span className="decorative-type block max-w-full font-display font-bold">
                   Aa.
                 </span>
               </div>
-              <span className="max-w-[17ch] text-[0.65rem] font-semibold uppercase leading-relaxed tracking-[0.17em]">
+              <span className="max-w-[17ch] text-xs font-semibold uppercase leading-relaxed tracking-[0.17em]">
                 Distinctive identities. Thoughtful stories.
               </span>
             </div>

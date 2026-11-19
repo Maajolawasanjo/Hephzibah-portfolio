@@ -49,7 +49,8 @@ have not been verified by this assistant. Do not mark the phase complete until t
 | 10 Supporting Sections | Components implemented; CI and optional materials pending |
 | 11 Contact & Conversion | Contact UI and draft composer implemented; public email approval pending |
 | 12 Animation & Microinteractions | Implemented, CI pending |
-| 13–15 | Not yet implemented |
+| 13 Responsive & Accessibility Audit | Remediation and Chromium tests authored; CI pending |
+| 14–15 | Not yet implemented |
 
 Phase 05 introduces only the responsive hero, a concise index of confirmed
 services to support existing navigation, and an honest selected-work holding
@@ -122,5 +123,16 @@ Hero entrance, selected intersection-triggered reveals, desktop nav underline,
 mobile-menu entrance, button/project hover and inquiry-field focus feedback
 were implemented without adding an animation package. The observer preserves
 server-rendered content when JavaScript or observers are unavailable and
-respects reduced motion. Read docs/MOTION.md. CI and real-browser motion QA
-must be confirmed separately.
+respects reduced motion. Read docs/MOTION.md. Phase 12 CI passed; real-browser motion QA remains open.
+
+
+## Phase 13 — Accessibility & Responsive Quality
+
+Code-level review identified a nonmodal mobile-menu focus trap, missing
+persistent aria-controls target, tiny labels, decorative text overflow risk,
+focusable elements potentially hidden by scroll reveal and sticky-header
+anchor overlap. The corresponding fixes have been staged. Playwright now
+adds a real Chromium browser smoke suite to the normal CI workflow,
+including viewport-width, navigation, keyboard and reduced-motion checks.
+See docs/ACCESSIBILITY_AUDIT.md. Extensive manual screen-reader and
+cross-browser QA remains outstanding. CI is pending for this phase.

@@ -22,7 +22,7 @@ export function Mentorship() {
               aria-hidden="true"
               className="mt-10 flex aspect-[4/3] items-end overflow-hidden bg-brand-burgundy p-7 text-brand-cream sm:p-9"
             >
-              <span className="font-display text-[clamp(4.25rem,9vw,9rem)] font-bold leading-[0.87] tracking-[-0.075em]">
+              <span className="decorative-type block max-w-full font-display font-bold">
                 Learn.
                 <span className="block">Create.</span>
               </span>

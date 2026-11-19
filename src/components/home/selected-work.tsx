@@ -15,7 +15,7 @@ function AwaitingWork() {
         className="flex min-h-[19rem] flex-col justify-between overflow-hidden bg-brand-burgundy p-6 text-brand-cream sm:min-h-[25rem] sm:p-10 lg:col-span-7"
       >
         <span className="type-label">Hephie Creatives / Work</span>
-        <div className="self-start font-display text-[clamp(4.5rem,11vw,10rem)] font-bold leading-none tracking-[-0.09em]">
+        <div className="decorative-type self-start block max-w-full font-display font-bold">
           Work<span className="align-top text-[0.32em]">.</span>
         </div>
         <span className="type-label max-w-[24ch]">

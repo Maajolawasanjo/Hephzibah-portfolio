@@ -13,8 +13,21 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      # Replace with npm ci after the lockfile is committed.
+      # Migrate to npm ci after a verified package-lock.json is committed.
       - run: npm install --no-audit --no-fund
       - run: npm run lint
       - run: npm run typecheck
       - run: npm run build
+      - name: Install Chromium for browser accessibility audit
+        run: npx playwright install --with-deps chromium
+      - name: Responsive and accessibility browser smoke tests
+        run: npm run test:browser
+      - name: Save browser evidence on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-test-artifacts
+          path: |
+            playwright-report/
+            test-results/
+          if-no-files-found: ignore

@@ -38,9 +38,17 @@ export function MotionObserver() {
     );
 
     const viewportHeight = window.innerHeight;
+    const anchor = window.location.hash
+      ? document.getElementById(decodeURIComponent(window.location.hash.slice(1)))
+      : null;
     for (const element of elements) {
       const rect = element.getBoundingClientRect();
-      if (rect.top <= viewportHeight * 0.9 || rect.bottom <= 0) {
+      if (
+        rect.top <= viewportHeight * 0.9 ||
+        rect.bottom <= 0 ||
+        (anchor !== null &&
+          (anchor === element || anchor.contains(element) || element.contains(anchor)))
+      ) {
         element.dataset.revealState = "visible";
       } else {
         element.dataset.revealState = "pending";
@@ -56,10 +64,23 @@ export function MotionObserver() {
       });
     };
 
+    // A keyboard user can reach a link inside a yet-unrevealed section.
+    // Reveal that section immediately rather than focusing an invisible link.
+    const onFocusIn = (event: FocusEvent) => {
+      const target = event.target;
+      if (!(target instanceof Element)) return;
+      const element = target.closest<HTMLElement>("[data-reveal]");
+      if (!element) return;
+      element.dataset.revealState = "visible";
+      observer.unobserve(element);
+    };
+
+    document.addEventListener("focusin", onFocusIn);
     media.addEventListener("change", onPreferenceChange);
 
     return () => {
       observer.disconnect();
+      document.removeEventListener("focusin", onFocusIn);
       media.removeEventListener("change", onPreferenceChange);
       // Always restore content when navigating away or unmounting.
       elements.forEach((element) => {

@@ -34,7 +34,7 @@ export function Contact() {
               level={2}
               size="xl"
               id="contact-heading"
-              className="max-w-[13ch] break-words"
+              className="max-w-[14ch] break-words"
             >
               Let’s make something memorable.
             </Heading>
