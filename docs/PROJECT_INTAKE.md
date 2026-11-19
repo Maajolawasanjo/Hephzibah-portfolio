@@ -117,3 +117,40 @@ client projects). The tests cover slug validation, no-overwrite behavior,
 unapproved draft rejection, structured content completeness and invalid
 image references. They do not certify that someone genuinely owns the
 work or has granted publication permission.
+
+
+## Review the project visually before approval
+
+A local-only HTML preview shows the actual submitted project description,
+narrative sections, artwork and approval checklist. You can generate it
+even when the draft is incomplete:
+
+```bash
+npm run intake:preview -- actual-project-slug
+```
+
+Open `private-intake/actual-project-slug/review.html` **locally on the
+owner's computer**. The preview follows the burgundy-and-cream editorial
+visual language and includes a conspicuous private-review watermark.
+
+The HTML is a static file in the gitignored intake directory. It does
+not run Next.js, start a server, upload images, publish routes or enable
+indexing. It escapes submitted strings, refuses unsafe image filenames,
+and only displays existing local artwork. Missing fields and image
+references are shown as review findings rather than invented content.
+
+- Treat the HTML file as **confidential**, just like the underlying
+  artwork and JSON. Do not send it via public GitHub issues or host it
+  as a website. Gitignore is not encryption.
+- The permission checklist shows values as entered by the operator;
+  it does **not** establish that legal permission really exists.
+- If the artist supplies updated copy or images, rerun the preview
+  command; `review.html` is regenerated without changing project.json.
+- `npm run intake:check -- actual-project-slug` remains mandatory
+  before a separate approved publishing change.
+- An HTML preview can help review structure, but it does **not**
+  replace a real deployed browser/device QA after final integration.
+
+The Node.js preview generator has regression tests for HTML escaping,
+malicious artwork paths, incomplete drafts, local-image references, and
+regenerating updated reviews. Run `npm run test:intake` to verify them.

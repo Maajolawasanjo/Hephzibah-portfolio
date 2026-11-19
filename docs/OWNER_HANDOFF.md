@@ -95,3 +95,15 @@ Use a genuinely access-controlled channel when exchanging private client
 assets. The intake does not publish anything automatically.
 
 See docs/PROJECT_INTAKE.md.
+
+
+## Private visual review
+
+After a real draft has been entered in `private-intake/`, run
+`npm run intake:preview -- actual-project-slug`. This generates a
+local `review.html` with the genuine supplied copy, existing artwork,
+the current permission flags and an automated list of missing details.
+Open it locally with Hephzibah, verify the story and imagery, and record
+the necessary approvals securely. It is **not a public case study**
+or evidence of publication rights merely because the preview renders.
+See docs/PROJECT_INTAKE.md.

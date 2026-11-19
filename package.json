@@ -15,7 +15,8 @@
     "check:content": "node scripts/check-content.mjs",
     "intake:project": "node scripts/intake-project.mjs",
     "intake:check": "node scripts/validate-intake.mjs",
-    "test:intake": "node --test tests/unit/*.test.mjs"
+    "test:intake": "node --test tests/unit/*.test.mjs",
+    "intake:preview": "node scripts/preview-intake.mjs"
   },
   "dependencies": {
     "next": "^16.4.6",

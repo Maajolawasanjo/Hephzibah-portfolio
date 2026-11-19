@@ -93,3 +93,17 @@ intake with `npm run intake:project -- actual-project-slug`. Fill the
 private JSON draft, add approved original artwork locally, and check it
 with `npm run intake:check -- actual-project-slug`. This does not publish
 a case study or change the website. See [Project intake](docs/PROJECT_INTAKE.md).
+
+
+### Private visual review before publication
+
+To inspect a real project draft without making it public:
+
+```bash
+npm run intake:preview -- actual-project-slug
+```
+
+This generates a static, private `review.html` inside the gitignored
+intake folder, using only the owner's entered copy and local artwork.
+Missing content is identified; approval flags are not set automatically.
+Read docs/PROJECT_INTAKE.md for secure-handling guidance.
