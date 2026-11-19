@@ -1,45 +1,47 @@
-# Antigravity Handoff — Phase 13
+# Antigravity Handoff — Phase 14
 
 Repository: https://github.com/Maajolawasanjo/Hephzibah-portfolio
 
-## Progress
+Phase 14 adds controlled search metadata, indexing rules, conditional
+sitemaps, verified identity JSON-LD, image-loading refinements,
+a preventative image size budget, and Chromium SEO smoke tests.
 
-Phases 01–12 were committed and passed GitHub automated lint/typecheck/build.
-Phase 13 improves accessibility and responsive behavior in the shared header,
-motion system, typography, anchored sections and inquiry form.
+Read docs/SEO_PERFORMANCE.md, docs/CASE_STUDIES.md,
+docs/ACCESSIBILITY_AUDIT.md and docs/IMPLEMENTATION.md.
 
-Read docs/ACCESSIBILITY_AUDIT.md and docs/DESIGN_SYSTEM.md before edits.
+## Important publication controls
 
-### Important interaction contract
+The site is NOT approved for public indexing, and the custom domain has
+not been verified. Search robots currently disallow crawling; page
+metadata is noindex. Sitemap has no URLs, and canonical/JSON-LD are
+withheld until strict owner and content approval gates pass.
 
-The expanded mobile menu is a disclosure, NOT a modal dialog:
-it does **not** trap Tab. Escape returns focus to the toggle,
-and Tab beyond the menu moves to subsequent page controls.
-The controlled nav retains a stable ID even when hidden.
+Activation requires explicit SITE_CONTENT_APPROVED and SITE_LAUNCH_APPROVED,
+an approved HTTPS NEXT_PUBLIC_SITE_URL, at least one verified project,
+and a verified public inquiry email. A preview environment cannot index.
 
-Phase 13 also introduces Playwright Chromium smoke tests in the
-GitHub Actions quality workflow. Test actual rendered homepage widths,
-landmarks, in-page destinations, mobile disclosure and reduced motion.
+Do not invent client results, testimonials, images, portraits, social
+profiles, contact emails, official logos or project descriptions.
 
-## Visual rules
+## Design and performance
 
-- Modern Editorial Minimalism.
-- Burgundy #66001F and Cream #FEFCEF.
-- DM Sans body and temporary display fallback.
-- Alro by Artyway pending licensed webfont assets.
-- No OS/browser auto dark override.
-- No invented work, reviews, contact channels or achievements.
+Modern Editorial Minimalism, Burgundy #66001F, Cream #FEFCEF.
+Alro display is still awaiting licensed webfont files.
+Body font DM Sans; avoid unnecessary JS and animation dependencies.
+Only preload a genuine above-the-fold case-study cover image.
+Keep approved project art at or below the documented size budget.
 
-## Still pending
+## Before Phase 15
 
-- Real browser visual QA beyond automated smoke tests.
-- Safari/Firefox and screen-reader testing.
-- Approved real client artwork, case studies, testimonials and optional tools.
-- Approved public contact email and corresponding mailto flow.
-- Licensed Alro font.
-- package-lock.json generation and npm ci migration.
+1. Confirm GitHub Actions on Phase 14 passes lint, typecheck, assets,
+   production build and all Chromium browser smoke tests.
+2. Review actual browser visual performance and Core Web Vitals, not
+   just CSS/source-level promises.
+3. Obtain owner approval of real work, services copy, display font,
+   public email, logo/preview assets and final production domain.
+4. Confirm explicit permission for public launch and search indexing.
+5. Prepare Vercel production deployment and real browser release audit.
+6. Generate/commit npm package-lock.json and migrate CI to npm ci.
 
-## Next
-
-Phase 14 — SEO, Performance & Quality Assurance. Do not enable indexing
-or publish fake previews until the owner's real content is ready.
+Next: Phase 15 — Deployment & Final Audit. Never mark it complete merely
+because a Vercel deployment exists or the build passes.

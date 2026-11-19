@@ -50,7 +50,8 @@ have not been verified by this assistant. Do not mark the phase complete until t
 | 11 Contact & Conversion | Contact UI and draft composer implemented; public email approval pending |
 | 12 Animation & Microinteractions | Implemented, CI pending |
 | 13 Responsive & Accessibility Audit | Remediation and Chromium tests authored; CI pending |
-| 14–15 | Not yet implemented |
+| 14 SEO, Performance & QA | SEO safeguards and tests authored; CI pending |
+| 15 Deployment & Final Audit | Not yet implemented |
 
 Phase 05 introduces only the responsive hero, a concise index of confirmed
 services to support existing navigation, and an honest selected-work holding
@@ -134,5 +135,18 @@ focusable elements potentially hidden by scroll reveal and sticky-header
 anchor overlap. The corresponding fixes have been staged. Playwright now
 adds a real Chromium browser smoke suite to the normal CI workflow,
 including viewport-width, navigation, keyboard and reduced-motion checks.
-See docs/ACCESSIBILITY_AUDIT.md. Extensive manual screen-reader and
-cross-browser QA remains outstanding. CI is pending for this phase.
+See docs/ACCESSIBILITY_AUDIT.md. Phase 13 lint, typecheck, build and 11
+Chromium smoke tests passed on follow-up commit 8a13720. Extensive manual
+screen-reader and cross-browser QA remains outstanding.
+
+
+## Phase 14 — SEO, Performance & Quality Assurance
+
+Controlled metadata, robots, sitemap, canonical and verified Person JSON-LD
+are implemented. Public indexing remains blocked until the owner's launch
+flags, valid HTTPS domain, approved real project and contact email exist.
+Images now use Next.js 16 preload only when appropriate, with all unapproved
+and below-the-fold imagery deferred. An asset-size validation script and
+additional Chromium browser SEO checks are included. See
+docs/SEO_PERFORMANCE.md. Automated CI and real-world performance/launch QA
+must be confirmed separately.

@@ -98,7 +98,6 @@ export function SelectedWork() {
                         ? "(max-width: 768px) 100vw, 90vw"
                         : "(max-width: 768px) 100vw, 45vw"
                     }
-                    priority={lead}
                     className={lead ? "md:col-span-2" : undefined}
                   />
                 );

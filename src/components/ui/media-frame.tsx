@@ -21,8 +21,9 @@ const ratios: Record<MediaRatio, string> = {
 };
 
 /**
- * A card can deliberately crop with cover. Detailed artwork defaults to
- * contain at its callsite, preserving the entire approved composition.
+ * A card can crop with cover; case studies use contain to preserve artwork.
+ * Preload is reserved for a true above-the-fold image, not every gallery card.
+ * Next.js 16 favors preload over the deprecated Image priority prop.
  */
 export function MediaFrame({
   image,
@@ -46,7 +47,7 @@ export function MediaFrame({
           alt={image.alt}
           fill
           sizes={sizes}
-          priority={priority}
+          preload={priority}
           className={cn(
             "transition-transform duration-[var(--motion-slow)] ease-[var(--motion-ease)] motion-reduce:transition-none",
             fit === "contain"

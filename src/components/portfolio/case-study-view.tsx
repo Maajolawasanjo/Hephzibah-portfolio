@@ -12,10 +12,8 @@ type CaseStudyViewProps = {
 
 function ImageFeature({
   image,
-  index,
 }: {
   image: ProjectImage;
-  index: number;
 }) {
   return (
     <figure className="min-w-0">
@@ -24,7 +22,6 @@ function ImageFeature({
         ratio={image.ratio ?? "landscape"}
         fit="contain"
         sizes="(max-width: 768px) 100vw, 90vw"
-        priority={index === 0}
         className="border border-rule"
       />
       {image.caption && (
@@ -190,7 +187,6 @@ export function CaseStudyView({
               <ImageFeature
                 key={image.src + "-" + index}
                 image={image}
-                index={index}
               />
             ))}
           </div>

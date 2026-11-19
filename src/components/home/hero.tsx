@@ -34,7 +34,7 @@ export function Hero() {
               level={1}
               size="display"
               id="hero-heading"
-              className="motion-hero-heading max-w-[10.5ch] [overflow-wrap:normal] text-[clamp(2.9rem,7.6vw,8.5rem)] leading-[0.98] tracking-[-0.062em]"
+              className="motion-hero-heading max-w-[10.5ch] break-words text-[clamp(2.5rem,7.6vw,8.5rem)] leading-[0.98] tracking-[-0.062em]"
             >
               Design to
               <span className="block">stand out.</span>

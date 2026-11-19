@@ -17,6 +17,7 @@ jobs:
       - run: npm install --no-audit --no-fund
       - run: npm run lint
       - run: npm run typecheck
+      - run: npm run check:assets
       - run: npm run build
       - name: Install Chromium for browser accessibility audit
         run: npx playwright install --with-deps chromium

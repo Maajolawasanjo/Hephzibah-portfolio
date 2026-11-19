@@ -5,7 +5,7 @@ import {
   getPublishedCaseStudies,
   getPublishedCaseStudy,
 } from "@/content/projects";
-import { site } from "@/config/site";
+import { getSeoPublicationState } from "@/lib/seo";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -36,11 +36,17 @@ export async function generateMetadata({
     };
   }
 
+  const publication = getSeoPublicationState();
+
   return {
-    title: project.title + " — Case Study | " + site.brand,
+    title: project.title + " — Case Study",
     description: project.summary,
-    // Keep the portfolio unindexed until the overall launch is approved.
-    robots: { index: false, follow: false },
+    robots: publication.indexable
+      ? { index: true, follow: true }
+      : { index: false, follow: false, nocache: true },
+    ...(publication.url
+      ? { alternates: { canonical: "/work/" + project.slug } }
+      : {}),
   };
 }
 
