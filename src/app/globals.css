@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+/* Approved brand tokens. Alro is pending licensed webfont files. */
+:root {
+  --brand-burgundy: #66001f;
+  --brand-cream: #fefcef;
+  --brand-border: rgba(102, 0, 31, 0.2);
+  --content-max: 80rem;
+  --page-gutter: clamp(1.25rem, 4vw, 4rem);
+  --section-gap: clamp(4rem, 8vw, 8rem);
+  --motion-quick: 160ms;
+  --motion-base: 260ms;
+  --display-typeface: "Alro", "Arial Narrow", Arial, sans-serif;
+}
+
+@theme inline {
+  --color-brand-burgundy: var(--brand-burgundy);
+  --color-brand-cream: var(--brand-cream);
+  --color-brand-border: var(--brand-border);
+  --font-sans: var(--font-dm-sans), Arial, sans-serif;
+  --font-display: var(--display-typeface);
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { background: var(--brand-cream); color: var(--brand-burgundy); }
+  ::selection { background: var(--brand-burgundy); color: var(--brand-cream); }
+  :focus-visible { outline: 2px solid var(--brand-burgundy); outline-offset: 4px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
