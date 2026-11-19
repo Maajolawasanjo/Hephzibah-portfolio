@@ -1,18 +1,19 @@
 import { About } from "@/components/home/about";
-import { FocusStrip } from "@/components/home/focus-strip";
 import { Hero } from "@/components/home/hero";
 import { SelectedWork } from "@/components/home/selected-work";
+import { Services } from "@/components/home/services";
 
 /**
- * Phase 08 homepage: introduction, capability index, curated-work
- * architecture, and Hephzibah's editorial biography and philosophy.
+ * Phase 09 homepage:
+ * Hero, actual-work gallery architecture, four confirmed services,
+ * value proposition and the founder's editorial biography.
  */
 export default function HomePage() {
   return (
     <>
       <Hero />
-      <FocusStrip />
       <SelectedWork />
+      <Services />
       <About />
     </>
   );

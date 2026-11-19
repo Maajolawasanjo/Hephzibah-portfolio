@@ -51,7 +51,7 @@ export function Hero() {
                 </Text>
               </div>
               <div className="flex flex-wrap items-center gap-3 sm:flex-col sm:items-stretch">
-                <Button href="/#focus" size="lg" className="whitespace-nowrap">
+                <Button href="/#services" size="lg" className="whitespace-nowrap">
                   What I create <span aria-hidden="true">↗</span>
                 </Button>
                 <Button
@@ -94,7 +94,7 @@ export function Hero() {
             Independent designer · Lagos
           </Text>
           <a
-            href="#focus"
+            href="#selected-work"
             className="inline-flex min-h-10 items-center gap-3 rounded-[var(--radius-control)] text-sm font-medium underline-offset-4 hover:underline"
           >
             Explore below <span aria-hidden="true">↓</span>

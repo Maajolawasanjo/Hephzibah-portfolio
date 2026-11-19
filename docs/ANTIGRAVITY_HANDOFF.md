@@ -1,46 +1,47 @@
-# Antigravity Handoff — Phase 08
+# Antigravity Handoff — Phase 09
 
 Repository: https://github.com/Maajolawasanjo/Hephzibah-portfolio
 
-## Current scope
+## Current code and phase
 
-Phases 01–07 have introduced the project foundation, design tokens,
-shared UI components, global layout, hero, Selected Work architecture
-and approved-only case-study routes. Phase 08 adds Hephzibah's About
-section and first-person design philosophy.
+Phase 09 implements the complete homepage Services & Value Proposition
+section, after Phase 08's editorial biography.
 
-Read `docs/ABOUT.md`, `docs/DESIGN_SYSTEM.md`,
-`docs/NAVIGATION.md` and `docs/IMPLEMENTATION.md`.
+Read docs/SERVICES.md, docs/DESIGN_SYSTEM.md, docs/NAVIGATION.md,
+docs/SELECTED_WORK.md and docs/IMPLEMENTATION.md.
 
-## Design commitments
+The homepage section order is Hero → Selected Work → Services → About.
 
-- Hephie Creatives is the complete public brand name.
-- Palette: Burgundy `#66001F` and Cream `#FEFCEF`.
-- Modern Editorial Minimalism with confident, expressive typography.
-- Alro by Artyway is approved for display but licensed webfont files
-  have not yet been supplied. DM Sans is the temporary fallback.
-- Do not inherit OS/browser dark-mode styling automatically.
-- Keep focus indicators, semantic HTML and reduced-motion behavior.
+## Content system
 
-## About content guardrails
+- src/config/site.ts is the source for approved service names.
+- src/content/services.ts holds proposed editorial descriptions, audiences
+  and possible scope, with no unapproved guarantees or fixed package prices.
+- src/components/home/services.tsx renders the responsive editorial rows
+  and the inverse burgundy value proposition panel.
+- src/components/home/focus-strip.tsx has been removed.
+- Hero, header/footer, and Services links target real homepage sections.
 
-- Biography, design philosophy and location are based on the supplied
-  draft and should be signed off by Hephzibah before public launch.
-- No fabricated achievements, awards, projects, numbers or client names.
-- No headshot has been supplied. The abstract type panel is not a photo.
-- Use `src/content/about.ts` for copy revisions.
-- Only add actual image files with owner's permission and proper alt text.
-- The one-on-one teaching reference is not a full teaching section;
-  that is scheduled for Phase 10.
+Service copy needs Hephzibah's final approval before public launch.
 
-## Validation
+## Non-negotiable visual language
 
-1. Confirm Phase 08 GitHub Actions lint, typecheck and production build.
-2. Test `/#about` from header/footer on mobile and desktop.
-3. Test responsive menu with keyboard, Escape, resize and click-away.
-4. Inspect 320px/375px/tablet/desktop widths, zoom and text wrapping.
-5. Obtain owner sign-off on first-person copy and any portrait.
-6. Generate/commit package-lock.json and change CI to npm ci when ready.
-7. Add licensed Alro files only when webfont rights are confirmed.
+- Burgundy #66001F, Cream #FEFCEF.
+- Modern Editorial Minimalism with polished, confident typography.
+- Alro display type pending licensed webfont files, DM Sans supporting body.
+- No automatic system/browser dark-mode switching.
+- Accessible semantic headings, visible focus and reduced motion.
+- Never invent client projects, testimonials, results, service guarantees,
+  social contacts or pricing.
 
-Next milestone: **Phase 09 — Services & Value Proposition**.
+## Verification and next phase
+
+1. Inspect GitHub Actions for Phase 09 lint, typecheck and build.
+2. Test real 320px/375px/tablet/desktop layouts, zoom, and keyboard navigation.
+3. Obtain approval for service wording and actual offered deliverables.
+4. Supply licensed Alro webfont files and recheck heading proportions.
+5. Commit package-lock.json from a verified network-enabled npm install,
+   then migrate GitHub CI from npm install to npm ci.
+
+Next: Phase 10 — Supporting Sections. Only add verified teaching,
+tools, process, testimonials and more-work materials; do not invent results.

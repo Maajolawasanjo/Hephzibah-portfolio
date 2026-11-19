@@ -1,37 +1,29 @@
-# Global Navigation — Updated in Phase 08
+# Global Navigation — Updated in Phase 09
 
-The site's shared shell owns one header, one main landmark and one footer.
-All visible primary and footer navigation destinations currently exist.
+The shared shell owns the header, single main landmark and footer.
+The current primary and footer navigation destinations are all real.
 
-| Navigation label | Destination | Current content |
+| Label | Destination | Existing section |
 | --- | --- | --- |
-| Home | `/#home` | Homepage hero |
-| Work | `/#selected-work` | Gallery architecture; approved projects pending |
-| About | `/#about` | Hephzibah biography and design philosophy |
-| What I do | `/#focus` | Short, confirmed service-area index |
+| Home | /#home | Homepage hero |
+| Work | /#selected-work | Approved-only gallery / honest curation state |
+| Services | /#services | Four detailed service areas and value proposition |
+| About | /#about | Hephzibah biography and professional philosophy |
 
-The brand wordmark links to `/`. The primary CTA "Explore work"
-links to `/#selected-work`. This destination does not pretend missing
-client projects are available.
+The brand wordmark links to /. Explore work points to /#selected-work.
+The hero's What I create CTA points to /#services, and its Explore below
+link points to #selected-work. The Services value proposition links to
+/#about. None are broken or fabricated page routes.
 
-## Accessibility and responsiveness
+## Mobile and desktop behavior
 
-- Desktop links appear at `lg`; mobile disclosure is used below that
-  breakpoint to avoid crowding with four nav destinations and the CTA.
-- On opening, focus moves inside the mobile navigation.
+- Desktop links appear at lg; mobile disclosure appears below that.
+- On mobile-menu open, focus moves inside the menu.
 - Escape closes the menu and restores focus to the toggle.
-- Tab / Shift+Tab remain within the expanded header controls.
-- Outside pointer interactions close the menu.
-- Selecting a link closes the mobile menu.
-- Resizing to desktop closes any open mobile menu.
-- A skip link leads to the single `#main-content` landmark.
-- Global CSS supports reduced motion and visible focus indicators.
+- Tab / Shift+Tab remain within visible header controls while expanded.
+- Outside click, route selection, and resize to desktop close the menu.
+- The focus-visible skip link leads to #main-content.
+- Reduced-motion behavior is respected.
 
-## Later phases
-
-As the portfolio gains real Services and Contact content, update the
-navigation only when its section and actual destination exist.
-Do not create dead links, fake routes, or unverifiable social/contact URLs.
-
-Browser-based keyboard, zoom, and responsive QA remains required and
-cannot be replaced by CI alone.
+Contact and testimonial pages/sections do not exist yet and are not linked.
+Real browser accessibility/zoom/responsive validation is still necessary.

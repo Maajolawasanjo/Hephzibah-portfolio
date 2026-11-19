@@ -4,7 +4,7 @@
  * No portrait has been supplied or licensed for publication.
  */
 export const aboutContent = {
-  eyebrow: "03 / Behind the work",
+  eyebrow: "04 / Behind the work",
   heading: "A designer who listens before she creates.",
   intro:
     "I’m Hephzibah Uzorndu, a brand identity designer and visual storyteller based in Lagos, Nigeria, and the founder of Hephie Creatives.",

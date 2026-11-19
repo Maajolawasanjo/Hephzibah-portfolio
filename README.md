@@ -1,33 +1,30 @@
 # Hephie Creatives — Portfolio
 
-Portfolio for **Hephzibah Uzorndu**, founder of **Hephie Creatives**,
-Brand Identity Designer & Visual Storyteller in Lagos, Nigeria.
+Portfolio for **Hephzibah Uzorndu**, founder of Hephie Creatives and
+Brand Identity Designer & Visual Storyteller based in Lagos, Nigeria.
 
-## Current milestone — Phase 08: About & Professional Identity
+## Current milestone: Phase 09 — Services & Value Proposition
 
-The Next.js codebase now includes:
+Implemented in the Next.js codebase:
+- Homepage hero with approved positioning.
+- Selected Work gallery and case-study architecture gated by real project approval.
+- Four detailed brand/creative service areas and an editorial value proposition.
+- About section with founder biography and design philosophy.
+- Shared header, accessible mobile navigation, footer and UI components.
 
-- Responsive editorial homepage hero and confirmed service-area index.
-- Selected Work collection and case-study pages gated behind real content approval.
-- Reusable site layout, header, mobile menu, footer, and UI primitives.
-- An About section with Hephzibah's biography and design philosophy.
-- Navigation to existing Home, Work, About and What I Do sections.
+Approved visual direction: Modern Editorial Minimalism, Burgundy #66001F,
+Cream #FEFCEF, display font Alro by Artyway (licensed webfont pending),
+and DM Sans for supporting body text.
 
-The gallery and case-study collection contain no made-up client work.
-About copy is based on the project's supplied draft and needs owner sign-off
-before publication; numerical achievement claims and portraits are withheld.
+Only the four service category names are established; supporting descriptions
+and potential deliverables are editorial proposals awaiting owner approval.
+No project images, invented testimonials, fixed package prices or unverified
+social/contact URLs have been published.
 
-## Approved design
-
-- Modern Editorial Minimalism and expressive type.
-- Burgundy `#66001F`, Cream `#FEFCEF`.
-- Alro by Artyway approved display font (licensed webfont files pending).
-- DM Sans supporting body type and temporary display fallback.
-
-## Development
+## Tech and local verification
 
 Next.js App Router, React, TypeScript and Tailwind CSS v4.
-Use Node.js 22:
+Node.js 22 recommended.
 
     npm install
     npm run dev
@@ -35,23 +32,23 @@ Use Node.js 22:
     npm run typecheck
     npm run build
 
-A dependency lockfile has not yet been committed. Once generated with
-npm registry access and committed, change CI from npm install to npm ci.
-
-The portfolio deliberately remains noindex until approved content and
-project assets are ready for publication.
+Dependency package-lock.json is still pending. Once produced and verified
+in a network-enabled npm environment, commit it and change CI to npm ci.
+Public search indexing remains disabled pending content and launch approval.
 
 ## Documentation
 
-- [Design system](docs/DESIGN_SYSTEM.md)
-- [Shared components](docs/COMPONENTS.md)
-- [Navigation](docs/NAVIGATION.md)
-- [Homepage hero](docs/HOMEPAGE_HERO.md)
-- [Selected work](docs/SELECTED_WORK.md)
-- [Case studies](docs/CASE_STUDIES.md)
-- [About & professional identity](docs/ABOUT.md)
-- [15-phase roadmap](docs/IMPLEMENTATION.md)
-- [Antigravity handoff](docs/ANTIGRAVITY_HANDOFF.md)
+- docs/DESIGN_SYSTEM.md
+- docs/COMPONENTS.md
+- docs/NAVIGATION.md
+- docs/HOMEPAGE_HERO.md
+- docs/SELECTED_WORK.md
+- docs/CASE_STUDIES.md
+- docs/ABOUT.md
+- docs/SERVICES.md
+- docs/IMPLEMENTATION.md
+- docs/ANTIGRAVITY_HANDOFF.md
 
-Do not invent achievements, client projects, endorsements, portraits,
-social URLs or copyrighted font files.
+Never fabricate original project work, client identities, results,
+testimonials, numerical achievements, contact destinations or licensed
+font files.

@@ -45,7 +45,8 @@ have not been verified by this assistant. Do not mark the phase complete until t
 | 06 Selected Work | Gallery architecture implemented; actual projects pending |
 | 07 Case studies | Route/template written; real content pending |
 | 08 About & Professional Identity | About section implemented; CI and owner copy sign-off pending |
-| 09–15 | Not yet implemented |
+| 09 Services & Value Proposition | Section implemented; CI and owner copy approval pending |
+| 10–15 | Not yet implemented |
 
 Phase 05 introduces only the responsive hero, a concise index of confirmed
 services to support existing navigation, and an honest selected-work holding
@@ -79,4 +80,14 @@ The nav now includes a real About destination and the desktop breakpoint
 was adjusted to avoid crowding. The portrait is deliberately not fabricated:
 its space uses a decorative typographic composition until an actual approved
 photo is available. Achievement counts remain unpublished pending confirmation.
-See docs/ABOUT.md. Phase 08 CI and owner's content approval are pending.
+See docs/ABOUT.md. Phase 08 CI passed; owner's content approval remains pending.
+
+
+## Phase 09 — Services & Value Proposition
+
+A detailed four-service section and value proposition were added. Service
+names follow the existing approved categories. Potential areas of work and
+audience descriptions are editorial proposals, not a fixed scope guarantee.
+The short FocusStrip was removed and all homepage links updated to real
+Services, Selected Work and About anchors. See docs/SERVICES.md.
+CI and final owner sign-off should be tracked independently.
