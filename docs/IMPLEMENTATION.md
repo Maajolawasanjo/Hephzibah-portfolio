@@ -43,7 +43,8 @@ have not been verified by this assistant. Do not mark the phase complete until t
 | 04 Global layout and navigation | Committed; CI passed |
 | 05 Homepage hero | Committed; CI passed |
 | 06 Selected Work | Gallery architecture implemented; actual projects pending |
-| 07–15 | Not yet implemented |
+| 07 Case studies | Route/template written; real content pending |
+| 08–15 | Not yet implemented |
 
 Phase 05 introduces only the responsive hero, a concise index of confirmed
 services to support existing navigation, and an honest selected-work holding
@@ -60,3 +61,11 @@ Code is present, but no original approved work files were found in either
 repo. The gallery shows a clearly labelled curation state until actual client
 projects, images, captions and public-use permission are supplied. See
 docs/SELECTED_WORK.md. Phase 06 must not be reported as content-complete.
+
+
+## Phase 07 — Case Study Architecture
+
+The case-study template, typed project narrative data and protected slug-based
+route are added. No project pages are published while authentic approved
+briefs and images are absent. See docs/CASE_STUDIES.md. Automated CI checks
+and browser QA must be verified separately.

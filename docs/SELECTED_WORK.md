@@ -47,8 +47,8 @@ slug, order, title, summary, category, image path, meaningful alt text, and
 optional year or aspect ratio. Unapproved projects are excluded. Duplicate
 slugs, incomplete titles/summaries and missing alt text are excluded.
 
-`href` must remain absent until the corresponding real case study route
-exists in Phase 07. Cards without a valid route are intentionally not links.
+Phase 07 now derives project card links automatically from approved and complete
+case studies. Cards without an eligible study remain static and non-clickable.
 
 ### Quality checks and follow-up
 
@@ -63,3 +63,10 @@ exists in Phase 07. Cards without a valid route are intentionally not links.
 
 **Phase 06 is structurally implemented, not content-complete.**
 Phase 07 will introduce real project case-study routes once briefs and assets exist.
+
+
+## Phase 07 link integration
+
+An approved project can have an optional full caseStudy record. Only a fully
+approved study gets a real route/link, with full requirements documented in
+docs/CASE_STUDIES.md. No project records are available yet.

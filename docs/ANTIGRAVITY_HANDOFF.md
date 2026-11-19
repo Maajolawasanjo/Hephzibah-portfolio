@@ -1,35 +1,37 @@
-# Antigravity Handoff — Phase 06
+# Antigravity Handoff — Phase 07
 
 Repository: https://github.com/Maajolawasanjo/Hephzibah-portfolio
 
-## Completed code
+## Scope
 
-Phases 01–05 have passed GitHub Actions lint, TypeScript and production build.
-Phase 06 adds the SelectedWork editorial gallery, typed project collection,
-media sizing and an honest empty state while project assets are unavailable.
+Phases 01–06 form the existing foundation. Phase 07 now implements
+reusable case-study pages, a typed content schema and safe routing.
 
-Read `docs/SELECTED_WORK.md` and `docs/DESIGN_SYSTEM.md`.
+Read docs/CASE_STUDIES.md, docs/SELECTED_WORK.md,
+docs/DESIGN_SYSTEM.md and docs/IMPLEMENTATION.md.
 
-## Content and design rules
+## Approved design
 
-- Real approved work ONLY; no fabricated case studies or project artwork.
-- Never treat the decorative "Work." type specimen as a client brand/logo.
-- Preferred collection: six to eight best real brand identity projects.
-- Colors: burgundy #66001F and cream #FEFCEF.
-- Art direction: modern editorial minimalism, bold expressive typography.
-- Alro needs licensed webfont files; DM Sans is the temporary fallback.
-- Use `src/content/projects.ts` for curated entries and
-  `public/projects/<actual-slug>/` for licensed/approved real artwork.
-- Keep project cards without links until Phase 07 implements their actual routes.
-- Maintain responsive, accessible and reduced-motion behavior.
+- Modern Editorial Minimalism, deliberate expressive typography.
+- Burgundy #66001F, cream #FEFCEF, body font DM Sans.
+- Alro display font still needs licensed webfont files.
+- Respect keyboard focus, reduced motion, image alt text and original artwork.
+- Never automatically inherit browser/system dark mode.
 
-## Before marking Phase 06 content-complete
+## Content safety
 
-1. Acquire and verify the project titles, briefs, years and client permission.
-2. Obtain approved images and descriptive alt text; optimize and upload them.
-3. Populate the typed collection with six to eight verified entries.
-4. Inspect mobile, tablet, desktop, keyboard focus and image crops in a browser.
-5. Verify CI results for Phase 06.
-6. Commit package-lock.json after a connected npm install and migrate CI to npm ci.
+Do not fabricate brands, project work, graphics, clients, metrics or testimonials.
+No case-study records are published until actual client-approved material
+is supplied and the explicit project/study approval flags are set.
+No manual links to unfinished routes. Local image paths must resolve.
 
-Phase 07: Individual Project Case Studies using only real project information.
+## Next steps
+
+1. Confirm Phase 07 CI lint/typecheck/build.
+2. When assets are supplied, verify each brief/image and populate the collection.
+3. Test actual case-study paths, unavailable slug 404 behavior and image layout.
+4. Visually inspect mobile/tablet/desktop, zoom, keyboard and alt descriptions.
+5. Generate package-lock.json and migrate CI to npm ci in an npm-enabled runtime.
+6. Add licensed Alro files only with permission and correct web embedding rights.
+
+Phase 08 next: About & Professional Identity, using verified biography only.

@@ -2,7 +2,10 @@ import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
 import { ProjectCard } from "@/components/portfolio/project-card";
 import { Heading, Text } from "@/components/ui/typography";
-import { getSelectedProjects } from "@/content/projects";
+import {
+  getPublishedCaseStudy,
+  getSelectedProjects,
+} from "@/content/projects";
 
 function AwaitingWork() {
   return (
@@ -43,8 +46,8 @@ function AwaitingWork() {
 }
 
 /**
- * A ready-to-populate 1 + 2-column editorial gallery.
- * Empty until approved project artwork and descriptions exist.
+ * Published case studies get working links automatically. Approved projects
+ * without an approved full case study remain static (not false navigation).
  */
 export function SelectedWork() {
   const projects = getSelectedProjects();
@@ -76,6 +79,9 @@ export function SelectedWork() {
             <div className="mt-14 grid grid-cols-1 gap-x-[var(--layout-grid-gap)] gap-y-14 md:grid-cols-2 md:gap-y-20">
               {projects.map((project, index) => {
                 const lead = index === 0;
+                const hasCaseStudy = Boolean(
+                  getPublishedCaseStudy(project.slug)
+                );
                 return (
                   <ProjectCard
                     key={project.slug}
@@ -83,9 +89,15 @@ export function SelectedWork() {
                     category={project.category}
                     year={project.year}
                     image={project.cover}
-                    href={project.href}
+                    href={
+                      hasCaseStudy ? "/work/" + project.slug : undefined
+                    }
                     ratio={project.ratio ?? (lead ? "wide" : "landscape")}
-                    sizes={lead ? "(max-width: 768px) 100vw, 90vw" : "(max-width: 768px) 100vw, 45vw"}
+                    sizes={
+                      lead
+                        ? "(max-width: 768px) 100vw, 90vw"
+                        : "(max-width: 768px) 100vw, 45vw"
+                    }
                     priority={lead}
                     className={lead ? "md:col-span-2" : undefined}
                   />

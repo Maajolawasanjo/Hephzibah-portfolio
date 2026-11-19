@@ -2,10 +2,12 @@ import Image from "next/image";
 import { cn } from "@/lib/cn";
 
 export type MediaRatio = "landscape" | "wide" | "portrait" | "square";
+export type MediaFit = "cover" | "contain";
 
 export type MediaFrameProps = {
   image?: { src: string; alt: string };
   ratio?: MediaRatio;
+  fit?: MediaFit;
   priority?: boolean;
   sizes?: string;
   className?: string;
@@ -19,12 +21,13 @@ const ratios: Record<MediaRatio, string> = {
 };
 
 /**
- * Purposeful image cropping and clear missing-artwork state.
- * Real imagery must always include meaningful alt text.
+ * A card can deliberately crop with cover. Detailed artwork defaults to
+ * contain at its callsite, preserving the entire approved composition.
  */
 export function MediaFrame({
   image,
   ratio = "landscape",
+  fit = "cover",
   priority = false,
   sizes = "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw",
   className,
@@ -44,7 +47,12 @@ export function MediaFrame({
           fill
           sizes={sizes}
           priority={priority}
-          className="object-cover transition-transform duration-[var(--motion-slow)] ease-[var(--motion-ease)] motion-reduce:transition-none group-hover:scale-[1.025]"
+          className={cn(
+            "transition-transform duration-[var(--motion-slow)] ease-[var(--motion-ease)] motion-reduce:transition-none",
+            fit === "contain"
+              ? "object-contain"
+              : "object-cover group-hover:scale-[1.025]"
+          )}
         />
       ) : (
         <div
