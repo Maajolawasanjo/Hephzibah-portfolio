@@ -1,12 +1,12 @@
 import type { ReactNode } from "react";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
+import { getPublicContactEmail } from "@/lib/contact";
 
-/**
- * Shared landmarks and navigation. The page must render content, not
- * another <main> or duplicate <header>/<footer>.
- */
+/** Shared header, main landmark, footer and accessible skip link. */
 export function SiteShell({ children }: { children: ReactNode }) {
+  const contactReady = Boolean(getPublicContactEmail());
+
   return (
     <div className="flex min-h-screen flex-col">
       <a
@@ -15,7 +15,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
       >
         Skip to main content
       </a>
-      <SiteHeader />
+      <SiteHeader contactReady={contactReady} />
       <main id="main-content" tabIndex={-1} className="min-w-0 flex-1">
         {children}
       </main>

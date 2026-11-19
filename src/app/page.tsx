@@ -1,4 +1,5 @@
 import { About } from "@/components/home/about";
+import { Contact } from "@/components/home/contact";
 import { Hero } from "@/components/home/hero";
 import { Mentorship } from "@/components/home/mentorship";
 import { MoreWork } from "@/components/home/more-work";
@@ -9,9 +10,8 @@ import { Testimonials } from "@/components/home/testimonials";
 import { Toolkit } from "@/components/home/toolkit";
 
 /**
- * Phase 10: process, creative disciplines and one-on-one mentorship appear
- * alongside existing work, services, and About content.
- * Testimonials and More Work are gated behind verified actual content.
+ * Phase 11: conversion destination added after the supporting sections.
+ * Testimonials and More Work remain unpublished until approved.
  */
 export default function HomePage() {
   return (
@@ -25,6 +25,7 @@ export default function HomePage() {
       <Mentorship />
       <Testimonials />
       <MoreWork />
+      <Contact />
     </>
   );
 }

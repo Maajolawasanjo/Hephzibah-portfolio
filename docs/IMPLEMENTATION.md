@@ -47,7 +47,8 @@ have not been verified by this assistant. Do not mark the phase complete until t
 | 08 About & Professional Identity | About section implemented; CI and owner copy sign-off pending |
 | 09 Services & Value Proposition | Section implemented; CI and owner copy approval pending |
 | 10 Supporting Sections | Components implemented; CI and optional materials pending |
-| 11–15 | Not yet implemented |
+| 11 Contact & Conversion | Contact UI and draft composer implemented; public email approval pending |
+| 12–15 | Not yet implemented |
 
 Phase 05 introduces only the responsive hero, a concise index of confirmed
 services to support existing navigation, and an honest selected-work holding
@@ -99,4 +100,16 @@ Phase 09 CI passed; final owner sign-off remains pending.
 Process, creative disciplines and one-on-one mentorship are implemented.
 Testimonials and More Work have owner-approval content gates and are hidden
 while the collections are empty. Named creative tools are also excluded
-until verified. See docs/SUPPORTING_SECTIONS.md. Phase 10 CI pending.
+until verified. See docs/SUPPORTING_SECTIONS.md. Phase 10 lint, typecheck, build CI passed on the correction commit.
+
+
+## Phase 11 — Contact & Conversion
+
+A complete contact section and inquiry-draft interface are implemented,
+with a valid public address and explicit approval required before activation.
+The previously supplied email has not been verified as the owner's preferred
+public inbox, so it is intentionally NOT committed to GitHub. Navigation
+now links to a real Contact anchor, with the header primary CTA automatically
+changing after an approved address is configured. The form opens an email
+draft only and never claims to have sent or stored a message.
+See docs/CONTACT.md. Phase 11 CI and public contact approval remain pending.

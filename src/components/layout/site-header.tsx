@@ -7,7 +7,7 @@ import { Container } from "@/components/layout/container";
 import { site } from "@/config/site";
 import { siteNavigation } from "@/config/navigation";
 
-export function SiteHeader() {
+export function SiteHeader({ contactReady }: { contactReady: boolean }) {
   const [isOpen, setIsOpen] = useState(false);
   const menuId = useId();
   const headerRef = useRef<HTMLElement>(null);
@@ -112,8 +112,8 @@ export function SiteHeader() {
           </nav>
 
           <div className="hidden lg:block">
-            <Button href="/#selected-work" size="sm">
-              Explore work <span aria-hidden="true">↗</span>
+            <Button href={contactReady ? "/#contact" : "/#selected-work"} size="sm">
+              {contactReady ? "Start a project" : "Explore work"} <span aria-hidden="true">↗</span>
             </Button>
           </div>
 
@@ -156,12 +156,12 @@ export function SiteHeader() {
             </ul>
             <div className="mt-4 border-t border-rule pt-5">
               <Button
-                href="/#selected-work"
+                href={contactReady ? "/#contact" : "/#selected-work"}
                 variant="primary"
                 className="w-full"
                 onClick={() => setIsOpen(false)}
               >
-                Explore work <span aria-hidden="true">↗</span>
+                {contactReady ? "Start a project" : "Explore work"} <span aria-hidden="true">↗</span>
               </Button>
             </div>
           </nav>

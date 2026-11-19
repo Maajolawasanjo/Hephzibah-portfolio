@@ -1,6 +1,6 @@
 /**
- * Every navigation target currently exists on the homepage.
- * Future contact and testimonial destinations are withheld until implemented.
+ * Navigation only targets sections that exist. The brand wordmark is also
+ * the homepage link, so it does not need a duplicate Home menu item.
  */
 export type NavigationItem = {
   label: string;
@@ -8,8 +8,8 @@ export type NavigationItem = {
 };
 
 export const siteNavigation: readonly NavigationItem[] = [
-  { label: "Home", href: "/#home" },
   { label: "Work", href: "/#selected-work" },
   { label: "Services", href: "/#services" },
   { label: "About", href: "/#about" },
+  { label: "Contact", href: "/#contact" },
 ];

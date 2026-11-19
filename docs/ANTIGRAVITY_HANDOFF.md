@@ -1,38 +1,38 @@
-# Antigravity Handoff — Phase 10
+# Antigravity Handoff — Phase 11
 
 Repository: https://github.com/Maajolawasanjo/Hephzibah-portfolio
 
-Phases 01–09 are implemented and CI-verified; Phases 06–07 still need
-approved real project art and case-study content. Phase 10 now adds
-Process, Creative Toolkit, Teaching, gated Testimonials, and gated More Work.
+## Implemented
 
-Read docs/SUPPORTING_SECTIONS.md, docs/SERVICES.md, docs/ABOUT.md,
-docs/DESIGN_SYSTEM.md and docs/IMPLEMENTATION.md before proceeding.
+Phase 11 adds the final homepage Contact section and the optional,
+approval-gated mailto inquiry composer. It does not establish an email
+sending service or store inquiries on a server.
 
-## Brand and content rules
+Read docs/CONTACT.md, docs/DESIGN_SYSTEM.md, docs/NAVIGATION.md,
+docs/SERVICES.md, docs/SELECTED_WORK.md, and docs/IMPLEMENTATION.md.
 
-- Hephie Creatives by Hephzibah Uzorndu.
-- Burgundy #66001F and Cream #FEFCEF, editorial minimalism.
-- Display font Alro by Artyway is approved but not installed;
-  licensed embedding files are still pending.
-- DM Sans is body type and temporary fallback.
-- No automatic OS/browser dark-mode override.
-- Preserve semantic HTML, keyboard access and reduced-motion behavior.
-- Do not invent personal achievements, schools, tools, names, testimonials,
-  clients, pricing, projects, guarantees or contact destinations.
-- Testimonials render only when verified and attribution permission exists.
-- Additional projects render only if approved real visuals are available.
-- Named tools must be confirmed by the designer before publication.
-- Process copy is a narrative, not a fixed service contract.
+## Publication rules
 
-## Verification and next phase
+- Contact email supplied previously has not been approved as a **public**
+  inquiry destination. No personal addresses or phone numbers are committed.
+- After owner approval, set NEXT_PUBLIC_CONTACT_EMAIL and
+  CONTACT_EMAIL_APPROVED=true in the deployment environment and redeploy.
+- Only then is the direct-email link, inquiry composer and "Start a project"
+  primary CTA active. Do not invent WhatsApp or social URLs.
+- Mailto prepares a draft. It does not send, confirm delivery, or store data.
+- Use the approved Burgundy #66001F / Cream #FEFCEF palette.
+- Editorial minimalism, accessible labels, focus states, no OS dark override.
+- Alro webfont files require suitable website-embedding rights.
+- No fabricated case studies, clients, testimonials, metrics or guarantees.
 
-1. Confirm the Phase 10 GitHub Actions lint/typecheck/build result.
-2. Review browser mobile, desktop, keyboard focus, zoom, text overflow.
-3. Owner to approve mentorship and process copy.
-4. Obtain approved evidence for optional quotes, additional work and tools.
-5. Generate and commit package-lock.json, then migrate CI to npm ci.
-6. Obtain legally licensed Alro webfont files before final typography review.
+## Verify
 
-Next milestone: Phase 11 — Contact & Conversion. Do not add an inquiry
-endpoint, personal phone number, email or messaging link until verified.
+1. Confirm Phase 11 GitHub Actions lint, TypeScript and production build.
+2. Inspect contact section in unconfigured state (no false send controls).
+3. With a verified test email in a local staging environment, exercise
+   draft creation, email handler, validation, and direct email fallback.
+4. Review mobile/tablet/desktop, keyboard, focus, reduced motion, zoom.
+5. Obtain public-email sign-off before setting production environment vars.
+6. Generate a committed npm lockfile; change CI to npm ci after verification.
+
+Next planned phase: Phase 12 — Animation & Microinteractions.

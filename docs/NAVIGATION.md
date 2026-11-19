@@ -1,29 +1,24 @@
-# Global Navigation — Updated in Phase 09
+# Global Navigation — Updated in Phase 11
 
-The shared shell owns the header, single main landmark and footer.
-The current primary and footer navigation destinations are all real.
+The shared global layout owns exactly one header, main landmark and footer.
 
-| Label | Destination | Existing section |
+| Navigation label | Destination | Existing content |
 | --- | --- | --- |
-| Home | /#home | Homepage hero |
-| Work | /#selected-work | Approved-only gallery / honest curation state |
-| Services | /#services | Four detailed service areas and value proposition |
-| About | /#about | Hephzibah biography and professional philosophy |
+| Work | /#selected-work | Approved-only gallery and honest empty state |
+| Services | /#services | Four service areas |
+| About | /#about | Hephzibah biography |
+| Contact | /#contact | Conversion section with email approval gate |
 
-The brand wordmark links to /. Explore work points to /#selected-work.
-The hero's What I create CTA points to /#services, and its Explore below
-link points to #selected-work. The Services value proposition links to
-/#about. None are broken or fabricated page routes.
+The brand wordmark routes to /, so Home is not duplicated as a menu item.
+The primary header CTA switches to Start a project (/#contact) only when
+a valid, explicitly approved public email has been configured; otherwise
+it remains Explore work (/#selected-work).
 
-## Mobile and desktop behavior
+The Contact link is valid even in the unconfigured state, because the
+section transparently explains that the public inquiry channel is pending.
+The contact form and direct email link are withheld until approval.
 
-- Desktop links appear at lg; mobile disclosure appears below that.
-- On mobile-menu open, focus moves inside the menu.
-- Escape closes the menu and restores focus to the toggle.
-- Tab / Shift+Tab remain within visible header controls while expanded.
-- Outside click, route selection, and resize to desktop close the menu.
-- The focus-visible skip link leads to #main-content.
-- Reduced-motion behavior is respected.
-
-Contact and testimonial pages/sections do not exist yet and are not linked.
-Real browser accessibility/zoom/responsive validation is still necessary.
+Mobile menu: focus moves inside on open, Escape restores focus, outside
+click closes it, and resize to desktop closes the disclosure.
+The skip link leads to #main-content. Actual browser/zoom/screen reader
+QA is still required before launch.

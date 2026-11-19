@@ -1,26 +1,43 @@
 # Hephie Creatives — Portfolio
 
-Portfolio for **Hephzibah Uzorndu**, founder of Hephie Creatives and a
-Brand Identity Designer & Visual Storyteller in Lagos, Nigeria.
+Professional portfolio for **Hephzibah Uzorndu**, founder of
+**Hephie Creatives**, a Brand Identity Designer & Visual Storyteller
+based in Lagos, Nigeria.
 
-## Phase 10 — Supporting Sections
+## Milestone — Phase 11: Contact & Conversion
 
-The Next.js portfolio now contains a responsive editorial homepage hero,
-a gated Selected Work gallery and case-study system, four service areas,
-an About biography, Design Process, Creative Toolkit, and one-on-one
-Teaching & Mentorship.
+The Next.js portfolio contains an editorial hero, approved-service overview,
+About biography, design process, creative toolkit, mentorship, Selected Work
+gallery framework, case-study templates and a new Contact section.
 
-Testimonials and More Work are deliberately **hidden while their approved
-content collections are empty**. Real names, testimonials, client artwork,
-project impact claims and software experience must not be fabricated.
+Additional projects and testimonials remain hidden until verified.
+Contact email and contact-form activation are deliberately approval-gated.
+The address supplied earlier has not been approved for PUBLIC publishing,
+so no private email, WhatsApp number or social profile is committed.
 
-Brand direction: Modern Editorial Minimalism, Burgundy #66001F and
-Cream #FEFCEF. Alro is the approved display font but licensed webfont
-files are pending; DM Sans is the temporary fallback.
+### Activating the contact section
 
-## Stack and checks
+Confirm Hephzibah's preferred public inquiry address and configure:
 
-Next.js App Router, React, TypeScript, Tailwind CSS v4. Node.js 22.
+    NEXT_PUBLIC_CONTACT_EMAIL=approved-address@example.com
+    CONTACT_EMAIL_APPROVED=true
+
+in the environment (not Git), then rebuild/redeploy. The form opens
+a prefilled draft in the visitor's own mail app and **does not send**
+or store an inquiry by itself. A direct email link is also provided.
+
+See [Contact implementation and validation](docs/CONTACT.md).
+
+## Brand
+
+Modern Editorial Minimalism with expressive typography,
+Burgundy #66001F and Cream #FEFCEF. Alro by Artyway is the approved
+display font, pending licensed webfont files. DM Sans is the fallback.
+
+## Technology
+
+Next.js App Router, React, TypeScript, Tailwind CSS v4.
+Node.js 22 recommended.
 
     npm install
     npm run dev
@@ -28,13 +45,12 @@ Next.js App Router, React, TypeScript, Tailwind CSS v4. Node.js 22.
     npm run typecheck
     npm run build
 
-package-lock.json remains pending. Generate and commit it in an npm-enabled
-environment, then change GitHub Actions to npm ci.
+package-lock.json remains pending. Generate and commit it from a verified
+npm-enabled environment, then change GitHub Actions to npm ci.
 
-Search indexing remains disabled pending launch and approved real content.
-Browser-based visual and accessibility QA is still required.
+The site remains noindex until approved content and launch sign-off.
 
-## Project documents
+## Documentation
 
 - docs/DESIGN_SYSTEM.md
 - docs/COMPONENTS.md
@@ -45,5 +61,6 @@ Browser-based visual and accessibility QA is still required.
 - docs/ABOUT.md
 - docs/SERVICES.md
 - docs/SUPPORTING_SECTIONS.md
+- docs/CONTACT.md
 - docs/IMPLEMENTATION.md
 - docs/ANTIGRAVITY_HANDOFF.md
