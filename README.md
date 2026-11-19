@@ -1,39 +1,42 @@
 # Hephie Creatives — Portfolio
 
-Portfolio for **Hephzibah Uzorndu**, Brand Identity Designer & Visual Storyteller and founder of **Hephie Creatives**.
+Professional portfolio for Hephzibah Uzorndu, founder of Hephie Creatives
+and a Brand Identity Designer & Visual Storyteller.
 
-## Phase 01 — Project Foundation
+## Milestone: Phase 04
 
-- **Art direction:** Modern Editorial Minimalism with expressive typography.
-- **Official colors:** Burgundy `#66001F`, Cream `#FEFCEF`.
-- **Fonts:** Alro (display; licensed webfont files not yet supplied) and DM Sans (body).
-- **Stack:** Next.js 16 App Router, React 19, TypeScript, Tailwind CSS v4.
-- Motion and Lucide React can be added selectively in later phases.
-- Static content first. No database or CMS required for launch.
+Shared site shell, sticky desktop navigation, accessible mobile menu, footer,
+and skip navigation are implemented. The root route is a DESIGN PREVIEW,
+not the final public homepage. Links lead only to existing preview anchors.
 
-## Local setup
+Approved design: Modern Editorial Minimalism, Burgundy #66001F,
+Cream #FEFCEF, Alro display (licensed font files pending), DM Sans body.
 
-Use Node.js 22.
+Stack: Next.js App Router, React, TypeScript, Tailwind CSS v4.
 
-```bash
-npm install
-npm run dev
-```
+## Run locally
 
-Commit the generated `package-lock.json` after installation; update CI to use `npm ci`.
+Node.js 22 recommended.
 
-## Verification
+    npm install
+    npm run dev
+    npm run lint
+    npm run typecheck
+    npm run build
 
-```bash
-npm run lint
-npm run typecheck
-npm run build
-```
+The npm lockfile remains pending because the working environment could not
+reach the npm registry. Generate and commit it in a network-enabled
+development environment; then switch CI to npm ci. The current CI uses npm
+install, and results are reported separately for each commit.
 
-**These commands have not yet been executed and verified.** This is a scaffold, not a production-ready implementation.
+## Specification
 
-The root page is an intentional **foundation preview**, not the final portfolio homepage. Search indexing is disabled until launch.
+- docs/DESIGN_SYSTEM.md — design tokens and typography.
+- docs/COMPONENTS.md — shared UI components.
+- docs/NAVIGATION.md — global layout and mobile navigation.
+- docs/ANTIGRAVITY_HANDOFF.md — next phase implementation guidance.
+- docs/IMPLEMENTATION.md — all 15 development phases.
 
-Do not invent clients, case studies, testimonials, logos, project images, public contact links, or metrics. Do not obtain or distribute Alro font files without a suitable webfont license.
-
-See `docs/DESIGN_SYSTEM.md`, `docs/IMPLEMENTATION.md`, and `docs/ANTIGRAVITY_HANDOFF.md` for scope and acceptance criteria.
+No fabricated projects, testimonials, case studies, social links, contact
+destinations, claims, or unlicensed font files. Enable public indexing only
+when the real site is ready for launch.

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
+import { SiteShell } from "@/components/layout/site-shell";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -9,10 +10,10 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Hephie Creatives — Component Library Preview",
+  title: "Hephie Creatives — Global Layout Preview",
   description:
-    "Shared component preview for Hephzibah Uzorndu, Brand Identity Designer and Visual Storyteller.",
-  // Preview only. Production portfolio metadata and indexing follow at launch.
+    "Shared layout preview for Hephzibah Uzorndu, Brand Identity Designer and Visual Storyteller.",
+  // Development preview only. Enable indexing when the real portfolio launches.
   robots: { index: false, follow: false },
 };
 
@@ -22,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={dmSans.variable + " font-sans antialiased"}>
-        {children}
+        <SiteShell>{children}</SiteShell>
       </body>
     </html>
   );

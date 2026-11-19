@@ -1,37 +1,26 @@
-# Antigravity Handoff — Phase 03
+# Antigravity Handoff — Phase 04
 
-Repository: https://github.com/Maajolawasanjo/Hephzibah-portfolio
+Repo: https://github.com/Maajolawasanjo/Hephzibah-portfolio
 
-## Scope
+The project has completed initial design foundation (01), global tokens (02),
+typed shared components (03), and site-wide layout/navigation (04).
 
-All Phase 03 shared components are under src/components.
-Study docs/DESIGN_SYSTEM.md and docs/COMPONENTS.md before making changes.
+Read docs/DESIGN_SYSTEM.md, docs/COMPONENTS.md, docs/NAVIGATION.md and
+docs/IMPLEMENTATION.md before implementing the next phase.
 
-The root route is a development COMPONENT PREVIEW, not the finished homepage.
-Placeholder cards are explicitly labeled and must never be presented as real work.
+Rules:
+- Burgundy #66001F, cream #FEFCEF, editorial minimalism.
+- Alro display requires licensed webfont files, which are not present.
+- DM Sans is the body and temporary display fallback.
+- Do not fabricate client projects, testimonials, social links or outcomes.
+- Current root page is a development preview, not the final public homepage.
+- Preview nav points only to sections that actually exist.
+- Avoid OS/browser theme overrides, gradients, excessive decorative cards.
 
-## Branding
-
-- Burgundy: #66001F
-- Cream: #FEFCEF
-- Display typography: Alro (licensed webfont files not yet supplied)
-- Body: DM Sans
-- Style: editorial minimalism with sophisticated typography and restrained motion.
-
-Do not fabricate clients, projects, client reviews, statistics or contact links.
-Do not add a database, CMS, component library, or animation dependency without a need.
-
-## Phase 04 next
-
-Implement shared global header, desktop navigation, accessible mobile menu,
-footer and overall page layout using the Phase 03 primitives.
-Do not begin the final hero, project gallery or project case studies yet.
-
-## Verification
-
-- Run npm install and commit the generated package-lock.json if missing;
-  then change CI to use npm ci.
-- Run npm run lint, npm run typecheck and npm run build.
-- Test desktop/mobile, reduced-motion, keyboard focus, and links.
-- Reevaluate typography once Alro files are legally supplied.
-- Report exact files, commit SHA, CI result, and remaining issues.
+Verification:
+1. Run npm install, lint, typecheck, and build.
+2. Generate and commit package-lock.json when npm registry access is available;
+   subsequently update CI to use npm ci.
+3. Use a real browser to test mobile menu, keyboard tab order, focus trap,
+   Escape-to-close, click-away, 200% zoom and small-screen overflow.
+4. Preserve approved structure while implementing Phase 05 homepage hero.
