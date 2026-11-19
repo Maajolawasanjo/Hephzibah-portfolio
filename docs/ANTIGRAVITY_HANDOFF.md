@@ -1,38 +1,35 @@
-# Antigravity Handoff — Phase 05
+# Antigravity Handoff — Phase 06
 
 Repository: https://github.com/Maajolawasanjo/Hephzibah-portfolio
 
-Phase 05 now has a real homepage hero, a compact confirmed-service index,
-and a clearly labelled Selected Work holding section. See
-docs/HOMEPAGE_HERO.md for exact content and design decisions.
+## Completed code
 
-## Approved brand identity
+Phases 01–05 have passed GitHub Actions lint, TypeScript and production build.
+Phase 06 adds the SelectedWork editorial gallery, typed project collection,
+media sizing and an honest empty state while project assets are unavailable.
 
-- Hephie Creatives — Hephzibah Uzorndu.
-- Brand Identity Designer & Visual Storyteller; Lagos, Nigeria.
-- Burgundy #66001F and Cream #FEFCEF.
-- Modern Editorial Minimalism, confident expressive typography.
-- Approved display: Alro (licensed webfont files still unavailable).
-- Body: DM Sans, also the temporary display fallback.
+Read `docs/SELECTED_WORK.md` and `docs/DESIGN_SYSTEM.md`.
 
-## Navigation and scope
+## Content and design rules
 
-Header/footer nav destinations: /#home, /#focus, /#selected-work.
-Those anchors all exist. The selected-work section explicitly says case
-studies are being prepared; it does not display fabricated projects.
+- Real approved work ONLY; no fabricated case studies or project artwork.
+- Never treat the decorative "Work." type specimen as a client brand/logo.
+- Preferred collection: six to eight best real brand identity projects.
+- Colors: burgundy #66001F and cream #FEFCEF.
+- Art direction: modern editorial minimalism, bold expressive typography.
+- Alro needs licensed webfont files; DM Sans is the temporary fallback.
+- Use `src/content/projects.ts` for curated entries and
+  `public/projects/<actual-slug>/` for licensed/approved real artwork.
+- Keep project cards without links until Phase 07 implements their actual routes.
+- Maintain responsive, accessible and reduced-motion behavior.
 
-Keep Phase 05 hero copy and services grounded in verified information.
-Do not publish email, WhatsApp, social accounts, portfolio assets, metrics
-or endorsements without verification.
+## Before marking Phase 06 content-complete
 
-Phase 06 is SELECTED WORK ONLY: curate 6–8 actual strong branding projects
-with approved images. Phase 07 develops dynamic case-study pages.
+1. Acquire and verify the project titles, briefs, years and client permission.
+2. Obtain approved images and descriptive alt text; optimize and upload them.
+3. Populate the typed collection with six to eight verified entries.
+4. Inspect mobile, tablet, desktop, keyboard focus and image crops in a browser.
+5. Verify CI results for Phase 06.
+6. Commit package-lock.json after a connected npm install and migrate CI to npm ci.
 
-## Verify before advancing
-
-1. Confirm current Phase 05 GitHub Actions lint, typecheck, build checks.
-2. Inspect 320px, 375px, tablet and desktop layout in a browser.
-3. Verify keyboard links, header focus, contrast, zoom and reduced motion.
-4. Generate and commit package-lock.json when npm registry access permits;
-   use npm ci in CI after lockfile is available.
-5. Supply legally licensed Alro webfont files for final typographic review.
+Phase 07: Individual Project Case Studies using only real project information.

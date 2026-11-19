@@ -1,17 +1,17 @@
 import { FocusStrip } from "@/components/home/focus-strip";
 import { Hero } from "@/components/home/hero";
-import { WorkPlaceholder } from "@/components/home/work-placeholder";
+import { SelectedWork } from "@/components/home/selected-work";
 
 /**
- * Phase 05 — real homepage hero with honest destinations for current navigation.
- * The selected work gallery is intentionally deferred to Phase 06.
+ * Phase 06 — actual selected-work gallery architecture, populated only
+ * when approved real artwork and project details are provided.
  */
 export default function HomePage() {
   return (
     <>
       <Hero />
       <FocusStrip />
-      <WorkPlaceholder />
+      <SelectedWork />
     </>
   );
 }

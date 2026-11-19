@@ -41,8 +41,9 @@ have not been verified by this assistant. Do not mark the phase complete until t
 | 02 Design system | Committed; CI passed |
 | 03 Shared components | Committed; CI passed |
 | 04 Global layout and navigation | Committed; CI passed |
-| 05 Homepage hero | Implemented; CI verification pending |
-| 06–15 | Not yet implemented |
+| 05 Homepage hero | Committed; CI passed |
+| 06 Selected Work | Gallery architecture implemented; actual projects pending |
+| 07–15 | Not yet implemented |
 
 Phase 05 introduces only the responsive hero, a concise index of confirmed
 services to support existing navigation, and an honest selected-work holding
@@ -51,3 +52,11 @@ section. See docs/HOMEPAGE_HERO.md.
 Earlier Phase 01 checkboxes remain the original initial acceptance list.
 Automated lint/typecheck/build checks passed in GitHub Actions for Phases
 01–04, but visual QA, Alro licensing and a committed npm lockfile are still open.
+
+
+## Phase 06 — Gallery status
+
+Code is present, but no original approved work files were found in either
+repo. The gallery shows a clearly labelled curation state until actual client
+projects, images, captions and public-use permission are supplied. See
+docs/SELECTED_WORK.md. Phase 06 must not be reported as content-complete.
