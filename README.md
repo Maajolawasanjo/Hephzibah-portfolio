@@ -1,42 +1,31 @@
 # Hephie Creatives — Portfolio
 
-Professional portfolio for **Hephzibah Uzorndu**, founder of
-**Hephie Creatives**, a Brand Identity Designer & Visual Storyteller
-based in Lagos, Nigeria.
+Portfolio for Hephzibah Uzorndu, founder of **Hephie Creatives** and a
+Brand Identity Designer & Visual Storyteller based in Lagos, Nigeria.
 
-## Milestone — Phase 11: Contact & Conversion
+## Milestone — Phase 12: Animation & Microinteractions
 
-The Next.js portfolio contains an editorial hero, approved-service overview,
-About biography, design process, creative toolkit, mentorship, Selected Work
-gallery framework, case-study templates and a new Contact section.
+Next.js App Router, React, TypeScript and Tailwind CSS v4.
 
-Additional projects and testimonials remain hidden until verified.
-Contact email and contact-form activation are deliberately approval-gated.
-The address supplied earlier has not been approved for PUBLIC publishing,
-so no private email, WhatsApp number or social profile is committed.
+The codebase includes the typography-led hero, real service descriptions,
+About biography, process, creative toolkit, mentorship, approval-gated
+Selected Work and case-study architecture, Contact section, and
+progressively enhanced editorial motion.
 
-### Activating the contact section
+Phase 12 adds understated hero entrances, selective scroll reveals,
+navigation underline and menu transitions, responsive button/project-card
+hover feedback and inquiry form focus polish. No animation library was
+introduced; content is visible without JavaScript, and reduced-motion
+preferences are respected. See docs/MOTION.md.
 
-Confirm Hephzibah's preferred public inquiry address and configure:
+## Brand direction
 
-    NEXT_PUBLIC_CONTACT_EMAIL=approved-address@example.com
-    CONTACT_EMAIL_APPROVED=true
+Modern Editorial Minimalism, Burgundy #66001F, Cream #FEFCEF.
+Alro by Artyway is the approved display font but licensed webfont files
+are not yet supplied; DM Sans is the temporary fallback.
 
-in the environment (not Git), then rebuild/redeploy. The form opens
-a prefilled draft in the visitor's own mail app and **does not send**
-or store an inquiry by itself. A direct email link is also provided.
+## Local development
 
-See [Contact implementation and validation](docs/CONTACT.md).
-
-## Brand
-
-Modern Editorial Minimalism with expressive typography,
-Burgundy #66001F and Cream #FEFCEF. Alro by Artyway is the approved
-display font, pending licensed webfont files. DM Sans is the fallback.
-
-## Technology
-
-Next.js App Router, React, TypeScript, Tailwind CSS v4.
 Node.js 22 recommended.
 
     npm install
@@ -45,12 +34,21 @@ Node.js 22 recommended.
     npm run typecheck
     npm run build
 
-package-lock.json remains pending. Generate and commit it from a verified
-npm-enabled environment, then change GitHub Actions to npm ci.
+The npm lockfile is still uncommitted; generate it in an npm-enabled
+environment, then migrate CI to `npm ci` after validation.
 
-The site remains noindex until approved content and launch sign-off.
+## Outstanding launch dependencies
 
-## Documentation
+- Hephzibah's approval and original artwork for real work/case studies.
+- Owner-approved first-person copy, services and optional testimonials.
+- An explicitly approved public inquiry email for contact activation.
+- Licensed Alro webfont files.
+- Actual desktop/mobile/keyboard/reduced-motion browser QA.
+- SEO, performance, deployment and final launch review.
+
+Public search indexing remains disabled until launch approval.
+
+## Documents
 
 - docs/DESIGN_SYSTEM.md
 - docs/COMPONENTS.md
@@ -62,5 +60,6 @@ The site remains noindex until approved content and launch sign-off.
 - docs/SERVICES.md
 - docs/SUPPORTING_SECTIONS.md
 - docs/CONTACT.md
+- docs/MOTION.md
 - docs/IMPLEMENTATION.md
 - docs/ANTIGRAVITY_HANDOFF.md

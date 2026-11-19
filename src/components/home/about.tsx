@@ -13,7 +13,7 @@ export function About() {
   return (
     <Section id="about" aria-labelledby="about-heading" className="bg-brand-cream text-brand-burgundy">
       <Container>
-        <div className="grid gap-8 border-t border-rule pt-10 lg:grid-cols-12 lg:items-start">
+        <div data-reveal="up" className="grid gap-8 border-t border-rule pt-10 lg:grid-cols-12 lg:items-start">
           <div className="lg:col-span-4">
             <Text variant="label" muted className="mb-5">
               {aboutContent.eyebrow}

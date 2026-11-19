@@ -8,7 +8,7 @@ export function Process() {
   return (
     <Section tone="inverse" id="process" aria-labelledby="process-heading">
       <Container>
-        <div className="grid gap-9 lg:grid-cols-12 lg:gap-12">
+        <div data-reveal="up" className="grid gap-9 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-7">
             <Text variant="label" muted className="mb-7">
               05 / My process

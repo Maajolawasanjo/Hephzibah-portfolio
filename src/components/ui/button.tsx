@@ -59,7 +59,7 @@ export function Button(props: ButtonProps) {
   } = props;
 
   const classes = cn(
-    "inline-flex max-w-full items-center justify-center gap-2 rounded-[var(--radius-control)] font-medium",
+    "motion-button inline-flex max-w-full items-center justify-center gap-2 rounded-[var(--radius-control)] font-medium",
     "transition-[opacity,background-color,transform] duration-[var(--motion-fast)] ease-[var(--motion-ease)]",
     "motion-reduce:transition-none active:translate-y-px",
     "disabled:cursor-not-allowed disabled:opacity-50",

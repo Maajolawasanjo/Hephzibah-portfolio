@@ -48,7 +48,8 @@ have not been verified by this assistant. Do not mark the phase complete until t
 | 09 Services & Value Proposition | Section implemented; CI and owner copy approval pending |
 | 10 Supporting Sections | Components implemented; CI and optional materials pending |
 | 11 Contact & Conversion | Contact UI and draft composer implemented; public email approval pending |
-| 12–15 | Not yet implemented |
+| 12 Animation & Microinteractions | Implemented, CI pending |
+| 13–15 | Not yet implemented |
 
 Phase 05 introduces only the responsive hero, a concise index of confirmed
 services to support existing navigation, and an honest selected-work holding
@@ -112,4 +113,14 @@ public inbox, so it is intentionally NOT committed to GitHub. Navigation
 now links to a real Contact anchor, with the header primary CTA automatically
 changing after an approved address is configured. The form opens an email
 draft only and never claims to have sent or stored a message.
-See docs/CONTACT.md. Phase 11 CI and public contact approval remain pending.
+See docs/CONTACT.md. Phase 11 CI passed; public contact approval remains pending.
+
+
+## Phase 12 — Editorial Motion
+
+Hero entrance, selected intersection-triggered reveals, desktop nav underline,
+mobile-menu entrance, button/project hover and inquiry-field focus feedback
+were implemented without adding an animation package. The observer preserves
+server-rendered content when JavaScript or observers are unavailable and
+respects reduced motion. Read docs/MOTION.md. CI and real-browser motion QA
+must be confirmed separately.

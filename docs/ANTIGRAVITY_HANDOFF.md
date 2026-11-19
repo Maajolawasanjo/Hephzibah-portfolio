@@ -1,38 +1,43 @@
-# Antigravity Handoff — Phase 11
+# Antigravity Handoff — Phase 12
 
 Repository: https://github.com/Maajolawasanjo/Hephzibah-portfolio
 
-## Implemented
+Phases 01–11 have been implemented, with automated lint/typecheck/build
+passing for each corrected milestone. Work and case studies remain
+unpopulated until approved client assets are supplied. The Phase 11 contact
+composer is disabled until a public inbox is expressly approved.
 
-Phase 11 adds the final homepage Contact section and the optional,
-approval-gated mailto inquiry composer. It does not establish an email
-sending service or store inquiries on a server.
+Phase 12 introduces light editorial motion and microinteractions without
+adding a third-party motion dependency. Read docs/MOTION.md first.
 
-Read docs/CONTACT.md, docs/DESIGN_SYSTEM.md, docs/NAVIGATION.md,
-docs/SERVICES.md, docs/SELECTED_WORK.md, and docs/IMPLEMENTATION.md.
+## Implementation decisions
 
-## Publication rules
+- `src/components/motion/motion-observer.tsx` is route-aware, progressive,
+  visible-by-default and removes pending states if reduced motion becomes
+  active.
+- CSS hero entrances, menu opening, desktop nav underline, button/card
+  hover and form focus polish live in `src/app/globals.css`.
+- Explicit `data-reveal` markup marks only relevant text/content groups.
+- Never introduce blocking intro animations, parallax or scrolling hijacks.
+- Do not hide content without JavaScript or on reduced-motion devices.
 
-- Contact email supplied previously has not been approved as a **public**
-  inquiry destination. No personal addresses or phone numbers are committed.
-- After owner approval, set NEXT_PUBLIC_CONTACT_EMAIL and
-  CONTACT_EMAIL_APPROVED=true in the deployment environment and redeploy.
-- Only then is the direct-email link, inquiry composer and "Start a project"
-  primary CTA active. Do not invent WhatsApp or social URLs.
-- Mailto prepares a draft. It does not send, confirm delivery, or store data.
-- Use the approved Burgundy #66001F / Cream #FEFCEF palette.
-- Editorial minimalism, accessible labels, focus states, no OS dark override.
-- Alro webfont files require suitable website-embedding rights.
-- No fabricated case studies, clients, testimonials, metrics or guarantees.
+## Approved design
 
-## Verify
+Modern Editorial Minimalism, Burgundy #66001F, Cream #FEFCEF.
+Alro by Artyway display is still awaiting licensed website font files;
+DM Sans is the temporary fallback. No system/browser dark theme.
 
-1. Confirm Phase 11 GitHub Actions lint, TypeScript and production build.
-2. Inspect contact section in unconfigured state (no false send controls).
-3. With a verified test email in a local staging environment, exercise
-   draft creation, email handler, validation, and direct email fallback.
-4. Review mobile/tablet/desktop, keyboard, focus, reduced motion, zoom.
-5. Obtain public-email sign-off before setting production environment vars.
-6. Generate a committed npm lockfile; change CI to npm ci after verification.
+No fabricated projects, metrics, clients, portrait, testimonials, tools,
+social/contact channels or case studies.
 
-Next planned phase: Phase 12 — Animation & Microinteractions.
+## Verification
+
+1. Confirm Phase 12 GitHub Actions lint, TypeScript and production build.
+2. Check reduced motion, disabled JS and unsupported observer fallbacks.
+3. Test 320px/375px/mobile, tablet, desktop and text zoom in real browsers.
+4. Inspect sticky header/menu focus, click-away and Escape behavior.
+5. Check for unintentional hidden content after hash/route navigation.
+6. Resolve approved project assets, public inbox, licensed Alro and lockfile
+   before launch.
+
+Next: Phase 13 — Responsive Design & Accessibility Audit.

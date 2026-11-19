@@ -26,7 +26,7 @@ export function Hero() {
 
         <div className="grid min-h-[min(46rem,88svh)] items-center gap-12 py-[clamp(4rem,7vw,8rem)] lg:grid-cols-12 lg:gap-10">
           <div className="min-w-0 lg:col-span-8 xl:col-span-9">
-            <Text variant="label" muted className="mb-6 sm:mb-9">
+            <Text variant="label" muted className="motion-hero-intro mb-6 sm:mb-9">
               Hello, I’m {site.name}
             </Text>
 
@@ -34,14 +34,14 @@ export function Hero() {
               level={1}
               size="display"
               id="hero-heading"
-              className="max-w-[10.5ch] [overflow-wrap:normal] text-[clamp(2.9rem,7.6vw,8.5rem)] leading-[0.98] tracking-[-0.062em]"
+              className="motion-hero-heading max-w-[10.5ch] [overflow-wrap:normal] text-[clamp(2.9rem,7.6vw,8.5rem)] leading-[0.98] tracking-[-0.062em]"
             >
               Design to
               <span className="block">stand out.</span>
               <span className="block">Stay seen.</span>
             </Heading>
 
-            <div className="mt-9 grid max-w-[48rem] gap-7 border-t border-rule pt-7 sm:mt-12 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end sm:gap-10 sm:pt-9">
+            <div className="motion-hero-summary mt-9 grid max-w-[48rem] gap-7 border-t border-rule pt-7 sm:mt-12 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end sm:gap-10 sm:pt-9">
               <div>
                 <Text variant="lead" className="max-w-[36ch]">
                   {site.tagline}
@@ -66,7 +66,7 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="relative min-w-0 lg:col-span-4 xl:col-span-3">
+          <div className="motion-hero-specimen relative min-w-0 lg:col-span-4 xl:col-span-3">
             <div
               aria-hidden="true"
               className="relative flex min-h-[18rem] flex-col justify-between overflow-hidden bg-brand-burgundy p-6 text-brand-cream sm:min-h-[22rem] sm:p-8 lg:aspect-[3/5] lg:min-h-0"

@@ -60,7 +60,7 @@ export function ProjectCard({
       {href ? (
         <Link
           href={href}
-          className="group block rounded-[var(--radius-control)] focus-visible:outline-offset-4"
+          className="motion-project-card group block rounded-[var(--radius-control)] focus-visible:outline-offset-4"
           aria-label={"View " + title + " case study"}
         >
           {contents}

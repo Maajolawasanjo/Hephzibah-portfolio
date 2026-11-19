@@ -37,7 +37,7 @@ export function ContactForm({ recipient }: { recipient: string }) {
   }
 
   const fieldClass =
-    "w-full min-h-12 rounded-[var(--radius-control)] border border-rule bg-paper px-4 py-3 text-ink outline-offset-4 placeholder:text-muted focus-visible:outline-2";
+    "motion-field w-full min-h-12 rounded-[var(--radius-control)] border border-rule bg-paper px-4 py-3 text-ink outline-offset-4 placeholder:text-muted focus-visible:outline-2";
   const labelClass = "mb-2 block text-sm font-medium";
 
   return (

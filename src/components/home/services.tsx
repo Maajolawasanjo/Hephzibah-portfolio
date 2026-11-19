@@ -13,7 +13,7 @@ export function Services() {
   return (
     <Section id="services" aria-labelledby="services-heading">
       <Container>
-        <div className="grid gap-8 border-t border-rule pt-10 lg:grid-cols-12 lg:gap-12">
+        <div data-reveal="up" className="grid gap-8 border-t border-rule pt-10 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-4">
             <Text variant="label" muted className="mb-6">
               03 / Services
@@ -42,6 +42,7 @@ export function Services() {
           {serviceDetails.map((service) => (
             <article
               key={service.id}
+              data-reveal="up"
               id={service.id}
               aria-labelledby={service.id + "-heading"}
               className="grid gap-8 border-t border-rule py-10 sm:py-12 lg:grid-cols-12 lg:gap-12 lg:py-16"
@@ -94,7 +95,7 @@ export function Services() {
           ))}
         </div>
 
-        <div className="theme-inverse mt-10 grid gap-8 px-6 py-10 sm:px-10 sm:py-14 lg:grid-cols-12 lg:items-end lg:gap-12 lg:px-14 lg:py-16">
+        <div data-reveal="up" className="theme-inverse mt-10 grid gap-8 px-6 py-10 sm:px-10 sm:py-14 lg:grid-cols-12 lg:items-end lg:gap-12 lg:px-14 lg:py-16">
           <div className="lg:col-span-8">
             <Text variant="label" muted className="mb-6">
               {serviceValue.eyebrow}

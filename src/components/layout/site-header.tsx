@@ -104,7 +104,7 @@ export function SiteHeader({ contactReady }: { contactReady: boolean }) {
               <Link
                 key={item.href}
                 href={item.href}
-                className="rounded-[var(--radius-control)] text-sm font-medium decoration-1 underline-offset-8 transition-opacity duration-[var(--motion-fast)] hover:underline motion-reduce:transition-none"
+                className="rounded-[var(--radius-control)] text-sm font-medium motion-nav-link pb-1 transition-opacity duration-[var(--motion-fast)] motion-reduce:transition-none"
               >
                 {item.label}
               </Link>
@@ -136,7 +136,7 @@ export function SiteHeader({ contactReady }: { contactReady: boolean }) {
             ref={menuRef}
             id={menuId}
             aria-label="Mobile navigation"
-            className="border-t border-rule pb-5 pt-3 lg:hidden"
+            className="motion-menu-enter border-t border-rule pb-5 pt-3 lg:hidden"
           >
             <ul className="flex flex-col">
               {siteNavigation.map((item, index) => (

@@ -16,7 +16,7 @@ export function Toolkit() {
   return (
     <Section id="toolkit" aria-labelledby="toolkit-heading">
       <Container>
-        <div className="grid gap-8 border-t border-rule pt-10 lg:grid-cols-12 lg:gap-12">
+        <div data-reveal="up" className="grid gap-8 border-t border-rule pt-10 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-4">
             <Text variant="label" muted>06 / Creative toolkit</Text>
           </div>

@@ -13,7 +13,7 @@ export function Mentorship() {
   return (
     <Section compact id="mentorship" aria-labelledby="mentorship-heading">
       <Container>
-        <div className="grid gap-10 border-t border-rule pt-10 lg:grid-cols-12 lg:gap-16">
+        <div data-reveal="up" className="grid gap-10 border-t border-rule pt-10 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-4">
             <Text variant="label" muted>
               {mentorshipContent.eyebrow}

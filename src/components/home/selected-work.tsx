@@ -55,7 +55,7 @@ export function SelectedWork() {
   return (
     <Section id="selected-work" aria-labelledby="selected-work-heading">
       <Container>
-        <div className="grid gap-8 border-t border-rule pt-10 lg:grid-cols-12 lg:items-end">
+        <div data-reveal="up" className="grid gap-8 border-t border-rule pt-10 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-8">
             <Text variant="label" muted className="mb-6">
               02 / Selected work
