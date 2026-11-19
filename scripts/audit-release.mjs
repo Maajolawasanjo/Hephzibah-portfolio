@@ -1,4 +1,5 @@
-import { existsSync, readdirSync, readFileSync } from "node:fs";
+import { existsSync, readdirSync } from "node:fs";
+import { loadTypeScriptContent } from "./lib/load-portfolio-content.mjs";
 import { spawnSync } from "node:child_process";
 import { join, resolve } from "node:path";
 
@@ -81,11 +82,11 @@ function validEmail() {
   );
 }
 
-const approvedProjectData = readFileSync(resolve(cwd, "src/content/projects.ts"), "utf8");
+const { getPublishedCaseStudies } = await loadTypeScriptContent("src/content/projects.ts");
 required(
-  "Actual approved project records",
-  /export const selectedProjects:\s*readonly SelectedProject\[\]\s*=\s*\[(?!\s*\])/s.test(approvedProjectData),
-  "Add real owner-approved case studies and public artwork; review the data manually."
+  "Actual complete, approved case studies",
+  getPublishedCaseStudies().length > 0,
+  "Publish at least one real project with an approved, complete case study and original imagery."
 );
 required(
   "Optimized original portfolio artwork",

@@ -121,3 +121,19 @@ manual tests, addressed in Phase 15.
 - Next.js 16 MetadataRoute conventions for robots and sitemap.
 - Next.js 16 Image component: `preload` replaces deprecated `priority`.
 - Site requirements in docs/DESIGN_SYSTEM.md and docs/CASE_STUDIES.md.
+
+
+## Additional safeguards after final audit
+
+Search indexing now requires at least one complete approved **case study**,
+not just an approved gallery card. It also requires `RELEASE_QA_APPROVED=true`
+and `VERCEL_ENV=production`. The publication gate retains explicit owner
+content and launch approvals, approved public contact and a verified custom
+HTTPS origin. These are necessary release controls, not a substitute for
+checking actual asset permissions and domain ownership.
+
+The `npm run check:content` validation now inspects owner-approved project,
+additional-project and portrait asset references and verifies that each local
+image file exists within the public directory. Approval of an incomplete
+case study is treated as a CI error. The validator is intentionally a
+**separate quality check** from the informational release preflight.

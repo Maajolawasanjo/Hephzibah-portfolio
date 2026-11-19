@@ -75,3 +75,12 @@ client images should be fabricated to make the site appear complete.
 - [Case Studies](docs/CASE_STUDIES.md)
 - [Contact](docs/CONTACT.md)
 - [Implementation roadmap](docs/IMPLEMENTATION.md)
+
+
+## Post-launch-audit safeguards
+
+The release gate now requires complete approved case studies and recorded
+manual QA sign-off before search indexing can be enabled. The CI workflow
+also validates actual image references via `npm run check:content`.
+See [owner content handoff](docs/OWNER_HANDOFF.md) and
+[post-audit readiness update](docs/LAUNCH_READINESS_UPDATE.md).

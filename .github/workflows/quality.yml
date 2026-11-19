@@ -18,6 +18,7 @@ jobs:
       - run: npm run lint
       - run: npm run typecheck
       - run: npm run check:assets
+      - run: npm run check:content
       - name: Report release blockers (non-publishing)
         run: npm run audit:release
       - run: npm run build

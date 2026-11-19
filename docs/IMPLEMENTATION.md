@@ -178,3 +178,12 @@ and build. The normal quality workflow now uses `npm ci` for reproducible
 installations. Browser tests and Vercel deployment continue to run as
 separate CI and deployment checks. Public release remains blocked pending
 authentic content, approved assets, fonts, domain, contact and manual QA.
+
+
+## Post-launch safeguards and owner handoff
+
+After the verified npm ci migration, the publication gate was tightened:
+completed approved case studies and explicit manual QA approval are
+mandatory before indexing. CI now checks actual portfolio image references.
+See docs/LAUNCH_READINESS_UPDATE.md and docs/OWNER_HANDOFF.md. The
+site remains protected; no public release authorization was granted.

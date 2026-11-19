@@ -1,9 +1,9 @@
-import { getSelectedProjects } from "@/content/projects";
+import { getPublishedCaseStudies } from "@/content/projects";
 import { getPublicContactEmail } from "@/lib/contact";
 
 /**
- * Publication is a deliberate, multi-step decision, not an inference
- * from the Vercel-generated preview hostname or the GitHub repository.
+ * Publication is an explicit, reviewed release decision. Neither a preview
+ * hostname nor a single approved gallery card demonstrates launch readiness.
  */
 export function getApprovedSiteUrl(): URL | null {
   const raw = process.env.NEXT_PUBLIC_SITE_URL?.trim();
@@ -37,21 +37,22 @@ export type SeoPublicationState = {
 };
 
 /**
- * Requires owner-reviewed site content, explicit launch authorization,
- * a production HTTPS domain, at least one approved real project and an
- * explicitly authorized public contact address.
+ * Site-wide public indexing requires an approved FULL case study, owner
+ * content sign-off, a confirmed public inbox, a verified HTTPS origin,
+ * explicit launch authorization and documented manual QA sign-off.
  *
- * The public portfolio collection is empty today, so preview deployments
- * remain noindex even if somebody sets other variables prematurely.
+ * Flags alone cannot verify image ownership or DNS. Those must be reviewed
+ * by people before these environment values are enabled.
  */
 export function getSeoPublicationState(): SeoPublicationState {
   const url = getApprovedSiteUrl();
   const indexable = Boolean(
     url &&
       process.env.SITE_CONTENT_APPROVED === "true" &&
+      process.env.RELEASE_QA_APPROVED === "true" &&
       process.env.SITE_LAUNCH_APPROVED === "true" &&
-      process.env.VERCEL_ENV !== "preview" &&
-      getSelectedProjects().length > 0 &&
+      process.env.VERCEL_ENV === "production" &&
+      getPublishedCaseStudies().length > 0 &&
       getPublicContactEmail()
   );
 

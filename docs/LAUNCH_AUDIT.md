@@ -175,3 +175,18 @@ and the one-time bootstrap workflow was removed. This closes the
 previously unresolved reproducible-installation requirement; approved
 project work, licensing, public contact, custom domain, manual testing
 and explicit launch authorization remain outstanding.
+
+
+## Strengthened publication and asset validation
+
+A subsequent source audit found that the original indexing gate checked
+for any approved featured card rather than an approved complete case study,
+and did not independently require the release QA sign-off. The publication
+gate now requires both a complete approved study and
+`RELEASE_QA_APPROVED=true`, as well as an explicit production Vercel
+context. The release-preflight script now inspects actual approved cases
+instead of merely matching a nonempty TypeScript array declaration.
+
+The new content validator checks approved project image paths and real
+files. This removes a potential false-positive launch check when content
+is entered without the corresponding assets. See docs/OWNER_HANDOFF.md.
