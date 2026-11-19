@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
 import { Heading, Text } from "@/components/ui/typography";
@@ -43,12 +44,12 @@ export function Mentorship() {
             <Text className="mt-6 max-w-[60ch]" muted>
               {mentorshipContent.detail}
             </Text>
-            <a
+            <Link
               href="/#about"
               className="mt-9 inline-flex min-h-11 items-center gap-3 rounded-[var(--radius-control)] text-sm font-medium underline underline-offset-8"
             >
               More about me <span aria-hidden="true">↗</span>
-            </a>
+            </Link>
           </div>
         </div>
       </Container>
