@@ -1,4 +1,5 @@
 import { existsSync, readdirSync, readFileSync } from "node:fs";
+import { spawnSync } from "node:child_process";
 import { join, resolve } from "node:path";
 
 /**
@@ -34,6 +35,19 @@ function hasFiles(root, extensions) {
     }
   }
   return false;
+}
+
+/**
+ * npm install may create an UNTRACKED lockfile in CI. Only the committed
+ * lockfile is reproducible across fresh checkouts and release environments.
+ */
+function hasCommittedLockfile() {
+  const result = spawnSync(
+    "git",
+    ["ls-files", "--error-unmatch", "--", "package-lock.json"],
+    { cwd, encoding: "utf8" }
+  );
+  return result.status === 0;
 }
 
 function validApprovedDomain() {
@@ -106,8 +120,8 @@ required(
 );
 required(
   "Committed npm lockfile",
-  existsSync(resolve(cwd, "package-lock.json")),
-  "Generate, verify and commit package-lock.json; move CI to npm ci."
+  hasCommittedLockfile(),
+  "Generate, verify and COMMIT package-lock.json; move CI to npm ci."
 );
 required(
   "Manual release QA sign-off",

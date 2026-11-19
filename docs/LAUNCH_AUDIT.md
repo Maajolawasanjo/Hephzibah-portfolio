@@ -147,3 +147,21 @@ Do not commit a personal or unapproved public contact email.
 and CI-verified, but public launch must remain BLOCKED until the owner's
 materials and sign-offs are complete. Do not disable deployment protection
 or set publication flags as a shortcut.
+
+
+## Phase 15 automated and deployment verification update
+
+The first Phase 15 commit passed GitHub lint, TypeScript, asset validation,
+production build and **17 Chromium browser tests**. Vercel deployed the
+matching commit as READY. Authenticated live requests returned HTTP 200
+for homepage, robots.txt and sitemap.xml, correctly showing noindex,
+robots Disallow: / and an empty sitemap, plus the intended response
+security headers. Project Node runtime remained 22.x and Vercel
+Authentication remained active.
+
+The release preflight initially counted eight blockers because npm install
+created a **local untracked package-lock.json** in CI. This was a false
+positive. Phase 15 now checks the Git-tracked lockfile instead, so the
+missing committed lockfile is correctly reported as a ninth release blocker.
+The corrected audit must pass CI again before this phase is considered
+verified. None of these blockers authorizes a public launch.
