@@ -9,10 +9,10 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Hephie Creatives — Foundation Preview",
+  title: "Hephie Creatives — Design System Preview",
   description:
-    "Portfolio foundation preview for Hephzibah Uzorndu, Brand Identity Designer and Visual Storyteller.",
-  // Development preview only. Allow indexing at the final launch, not now.
+    "Design-system preview for Hephzibah Uzorndu, Brand Identity Designer and Visual Storyteller.",
+  // Preview, not the final live portfolio.
   robots: { index: false, follow: false },
 };
 

@@ -1,28 +1,37 @@
-# Antigravity Handoff — Phase 01
+# Antigravity Handoff — Phase 02
 
-Temporary project repository:
+Repository:
 https://github.com/Maajolawasanjo/Hephzibah-portfolio
 
-This repository belongs to Maajolawasanjo and is being used for the initial
-implementation while the original Hephzibah-owned repository remains inaccessible
-to the connected GitHub App.
+## Phase 02 design system
 
-## Instructions
+The source of truth is `src/styles/tokens.css` and
+`docs/DESIGN_SYSTEM.md`. Tailwind semantic utility mappings and global
+typographic styles live in `src/app/globals.css`.
 
-1. Inspect the existing code before making changes.
-2. Use Node 22, run npm install and commit the generated package-lock.json.
-3. Run npm run lint, npm run typecheck, and npm run build; report results honestly.
-4. Test the foundation preview at mobile, tablet, and desktop viewport sizes.
-5. Preserve the approved colors #66001F and #FEFCEF and editorial minimalism.
-6. Do not embed or redistribute the Alro font until official licensed webfont
-   files are provided. A temporary fallback is explicitly documented.
-7. Do not invent projects, testimonials, credentials or public contact channels.
-8. Do not proceed to the homepage or shared components before Phase 01 approval.
+The root route is a **design-system preview**, not the final homepage.
+Future components must use tokens and existing type classes instead
+of scattering hardcoded colors or creating independent typography scales.
 
-## Required completion report
+### Approved visual constraints
 
-- Files added or changed
-- Commands run and their results
-- Preview and accessibility notes
-- Unresolved issues
-- Commit SHA and status of CI
+- Burgundy `#66001F`; cream `#FEFCEF`
+- Modern Editorial Minimalism with expressive type and disciplined grid
+- Alro is approved for display but cannot be embedded until licensed webfont
+  files have been provided. Current fallback is explicitly temporary.
+- DM Sans for body copy
+- Accessible focus indicators, reduced-motion support, no automatic dark theme
+- Avoid excess cards, gradients, glassmorphism, glow and decorative clutter
+
+### Validation before Phase 03
+
+1. Run install, lint, type checking and production build.
+2. Commit `package-lock.json` if it is still missing; switch CI to `npm ci`.
+3. Inspect 320px/375px/mobile, tablet and wide desktop layouts.
+4. Confirm no clipped headlines or horizontal scrolling.
+5. Verify color contrast and focus styling in normal/inverse sections.
+6. Review actual Alro metrics after licensed font files are available.
+7. Record the commit and CI outcome.
+
+Next planned phase: **Shared UI Components**. Do not build production
+homepage or client project sections before those shared pieces.

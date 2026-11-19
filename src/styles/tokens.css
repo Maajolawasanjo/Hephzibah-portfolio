@@ -1,0 +1,80 @@
+/*
+ * Hephie Creatives — Phase 02 design tokens
+ * Two approved brand colors only. All secondary tones are derived from them.
+ * This stylesheet is the source of truth for styling variables.
+ */
+:root {
+  color-scheme: light;
+
+  /* Brand */
+  --brand-burgundy: #66001f;
+  --brand-cream: #fefcef;
+
+  /* Semantic colors (light mode is deliberately the default) */
+  --color-page: var(--brand-cream);
+  --color-text: var(--brand-burgundy);
+  --color-text-muted: color-mix(in srgb, var(--brand-burgundy) 82%, var(--brand-cream));
+  --color-surface-soft: color-mix(in srgb, var(--brand-burgundy) 4%, var(--brand-cream));
+  --color-line: color-mix(in srgb, var(--brand-burgundy) 20%, var(--brand-cream));
+  --color-action: var(--brand-burgundy);
+  --color-action-text: var(--brand-cream);
+
+  /* Typography. Do not embed Alro without licensed webfont files. */
+  --font-display-stack: "Alro", var(--font-dm-sans), Arial, sans-serif;
+  --font-body-stack: var(--font-dm-sans), Arial, sans-serif;
+  --type-display: clamp(3.25rem, 8vw, 8.5rem);
+  --type-heading-xl: clamp(2.75rem, 6.2vw, 6.25rem);
+  --type-heading-lg: clamp(2.125rem, 4.4vw, 4.5rem);
+  --type-heading-md: clamp(1.625rem, 2.8vw, 2.5rem);
+  --type-lead: clamp(1.125rem, 1.6vw, 1.375rem);
+  --type-body: 1rem;
+  --type-small: 0.875rem;
+  --type-label: 0.75rem;
+  --leading-display: 0.94;
+  --leading-heading: 1.06;
+  --leading-body: 1.65;
+  --tracking-display: -0.062em;
+  --tracking-heading: -0.04em;
+  --tracking-label: 0.16em;
+  --measure-body: 65ch;
+
+  /* Consistent 4px baseline / 8px rhythm where practical */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+  --layout-content-max: 80rem;
+  --layout-reading-max: 42rem;
+  --layout-gutter: clamp(1.25rem, 4vw, 4rem);
+  --layout-section-space: clamp(4.5rem, 9vw, 9rem);
+  --layout-grid-gap: clamp(1rem, 2.4vw, 3rem);
+
+  /* Minimal borders / shape */
+  --stroke-hairline: 1px;
+  --radius-control: 0.25rem;
+  --radius-media: 0.5rem;
+
+  /* Refined, restrained transitions */
+  --motion-fast: 160ms;
+  --motion-base: 260ms;
+  --motion-slow: 480ms;
+  --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Explicit inverted sections, NOT automatic OS/browser dark mode. */
+.theme-inverse {
+  --color-page: var(--brand-burgundy);
+  --color-text: var(--brand-cream);
+  --color-text-muted: color-mix(in srgb, var(--brand-cream) 82%, var(--brand-burgundy));
+  --color-surface-soft: color-mix(in srgb, var(--brand-cream) 7%, var(--brand-burgundy));
+  --color-line: color-mix(in srgb, var(--brand-cream) 28%, var(--brand-burgundy));
+  --color-action: var(--brand-cream);
+  --color-action-text: var(--brand-burgundy);
+  background: var(--color-page);
+  color: var(--color-text);
+}

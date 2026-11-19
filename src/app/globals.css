@@ -1,38 +1,142 @@
 @import "tailwindcss";
+@import "../styles/tokens.css";
 
-/* Approved brand tokens. Alro is pending licensed webfont files. */
-:root {
-  --brand-burgundy: #66001f;
-  --brand-cream: #fefcef;
-  --brand-border: rgba(102, 0, 31, 0.2);
-  --content-max: 80rem;
-  --page-gutter: clamp(1.25rem, 4vw, 4rem);
-  --section-gap: clamp(4rem, 8vw, 8rem);
-  --motion-quick: 160ms;
-  --motion-base: 260ms;
-  --display-typeface: "Alro", "Arial Narrow", Arial, sans-serif;
-}
-
+/* Tailwind v4 utilities map to semantic CSS tokens. */
 @theme inline {
   --color-brand-burgundy: var(--brand-burgundy);
   --color-brand-cream: var(--brand-cream);
-  --color-brand-border: var(--brand-border);
-  --font-sans: var(--font-dm-sans), Arial, sans-serif;
-  --font-display: var(--display-typeface);
+  --color-brand-border: var(--color-line);
+  --color-paper: var(--color-page);
+  --color-ink: var(--color-text);
+  --color-muted: var(--color-text-muted);
+  --color-soft: var(--color-surface-soft);
+  --color-rule: var(--color-line);
+  --color-cta: var(--color-action);
+  --color-cta-text: var(--color-action-text);
+  --font-sans: var(--font-body-stack);
+  --font-display: var(--font-display-stack);
 }
 
 @layer base {
-  html { scroll-behavior: smooth; }
-  body { background: var(--brand-cream); color: var(--brand-burgundy); }
-  ::selection { background: var(--brand-burgundy); color: var(--brand-cream); }
-  :focus-visible { outline: 2px solid var(--brand-burgundy); outline-offset: 4px; }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    min-height: 100vh;
+    background: var(--color-page);
+    color: var(--color-text);
+    font-family: var(--font-body-stack);
+    line-height: var(--leading-body);
+  }
+
+  h1, h2, h3, h4 {
+    text-wrap: balance;
+  }
+
+  p { text-wrap: pretty; }
+
+  ::selection {
+    background: var(--color-text);
+    color: var(--color-page);
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-text);
+    outline-offset: 4px;
+  }
 }
 
+/* Global typographic styles: React components come in Phase 03. */
+@layer components {
+  .type-display {
+    font-family: var(--font-display-stack);
+    font-size: var(--type-display);
+    font-weight: 700;
+    line-height: var(--leading-display);
+    letter-spacing: var(--tracking-display);
+    text-wrap: balance;
+  }
+
+  .type-heading-xl {
+    font-family: var(--font-display-stack);
+    font-size: var(--type-heading-xl);
+    font-weight: 700;
+    line-height: var(--leading-heading);
+    letter-spacing: var(--tracking-heading);
+  }
+
+  .type-heading-lg {
+    font-family: var(--font-display-stack);
+    font-size: var(--type-heading-lg);
+    font-weight: 700;
+    line-height: var(--leading-heading);
+    letter-spacing: var(--tracking-heading);
+  }
+
+  .type-heading-md {
+    font-family: var(--font-display-stack);
+    font-size: var(--type-heading-md);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+  }
+
+  .type-lead {
+    font-size: var(--type-lead);
+    line-height: 1.5;
+    max-width: var(--measure-body);
+  }
+
+  .type-body {
+    font-size: var(--type-body);
+    line-height: var(--leading-body);
+    max-width: var(--measure-body);
+  }
+
+  .type-small {
+    font-size: var(--type-small);
+    line-height: 1.5;
+  }
+
+  .type-label {
+    font-size: var(--type-label);
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+  }
+
+  .layout-container {
+    width: calc(100% - var(--layout-gutter) - var(--layout-gutter));
+    max-width: var(--layout-content-max);
+    margin-inline: auto;
+  }
+
+  .layout-section {
+    padding-block: var(--layout-section-space);
+  }
+
+  .editorial-rule {
+    border-top: var(--stroke-hairline) solid var(--color-line);
+  }
+}
+
+/* Avoid mandatory animation and always respect accessibility preferences. */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (forced-colors: active) {
+  :focus-visible {
+    outline: 3px solid Highlight;
   }
 }
