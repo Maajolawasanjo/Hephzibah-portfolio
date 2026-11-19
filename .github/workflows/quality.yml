@@ -19,6 +19,8 @@ jobs:
       - run: npm run typecheck
       - run: npm run check:assets
       - run: npm run check:content
+      - name: Verify project intake tools
+        run: npm run test:intake
       - name: Report release blockers (non-publishing)
         run: npm run audit:release
       - run: npm run build

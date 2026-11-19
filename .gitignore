@@ -19,3 +19,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Local client project intake; NEVER publish unapproved briefs or artwork.
+/private-intake/

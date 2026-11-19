@@ -79,3 +79,19 @@ accessibility, and an automated green build does not authorize publication.
 The fully staged implementation, approved assets, manual QA and public
 domain must be reviewed on a protected release candidate before unprotecting
 the site or allowing search indexing.
+
+
+## Guided local project submission
+
+The engineer can create a **gitignored** intake directory by running
+`npm run intake:project -- actual-project-slug`. Hephzibah can fill the
+`project.json` fields and provide actual client-approved artwork in
+`private-intake/actual-project-slug/artwork/`, without placing unapproved
+material in the public site. Use `npm run intake:check -- actual-project-slug`
+to identify missing descriptions, image files and permission sign-offs.
+
+**Important:** Gitignore reduces accidental Git commits but is not encryption.
+Use a genuinely access-controlled channel when exchanging private client
+assets. The intake does not publish anything automatically.
+
+See docs/PROJECT_INTAKE.md.

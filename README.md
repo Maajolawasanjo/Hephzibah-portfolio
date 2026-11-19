@@ -84,3 +84,12 @@ manual QA sign-off before search indexing can be enabled. The CI workflow
 also validates actual image references via `npm run check:content`.
 See [owner content handoff](docs/OWNER_HANDOFF.md) and
 [post-audit readiness update](docs/LAUNCH_READINESS_UPDATE.md).
+
+
+## Real-project intake (local and unpublished)
+
+When Hephzibah provides a genuine project, start a **gitignored** local
+intake with `npm run intake:project -- actual-project-slug`. Fill the
+private JSON draft, add approved original artwork locally, and check it
+with `npm run intake:check -- actual-project-slug`. This does not publish
+a case study or change the website. See [Project intake](docs/PROJECT_INTAKE.md).

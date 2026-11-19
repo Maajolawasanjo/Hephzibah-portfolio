@@ -64,3 +64,15 @@ Do not use third-party stock imagery, mock clients, or fabricated visuals.
 - [ ] Licensed Alro font files installed and typography reviewed.
 
 Phase 07 is structurally implemented; content publication remains blocked.
+
+
+## Optional reviewed project intake
+
+Use `npm run intake:project -- actual-project-slug` to create a local
+`private-intake/` draft containing blank factual fields and an artwork
+folder. Once owner/client rights are confirmed, run
+`npm run intake:check -- actual-project-slug`. Only after independent
+review, copy approved optimized media into public/projects/ and add a
+properly approved typed record to `src/content/projects.ts`. This
+private intake path is not a publishing mechanism. Full instructions:
+docs/PROJECT_INTAKE.md.
