@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Container } from "@/components/layout/container";
 import { Divider } from "@/components/ui/divider";
 import { Text } from "@/components/ui/typography";
-import { previewNavigation } from "@/config/navigation";
+import { siteNavigation } from "@/config/navigation";
 import { site } from "@/config/site";
 
 export function SiteFooter() {
@@ -24,12 +24,12 @@ export function SiteFooter() {
               {site.location}
             </Text>
           </div>
-          <nav aria-label="Footer preview navigation" className="md:col-span-5">
+          <nav aria-label="Footer navigation" className="md:col-span-5">
             <Text variant="label" muted className="mb-5">
-              Explore the foundation
+              Explore
             </Text>
             <ul className="flex flex-col gap-4">
-              {previewNavigation.map((item) => (
+              {siteNavigation.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
@@ -48,7 +48,7 @@ export function SiteFooter() {
             © {new Date().getFullYear()} {site.brand}
           </Text>
           <Text variant="small" muted>
-            Foundation preview · Portfolio content coming in later phases
+            Selected projects and case studies coming soon
           </Text>
         </div>
       </Container>

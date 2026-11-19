@@ -5,7 +5,7 @@ import { useEffect, useId, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/layout/container";
 import { site } from "@/config/site";
-import { previewNavigation } from "@/config/navigation";
+import { siteNavigation } from "@/config/navigation";
 
 export function SiteHeader() {
   const [isOpen, setIsOpen] = useState(false);
@@ -89,9 +89,9 @@ export function SiteHeader() {
 
           <nav
             className="hidden items-center gap-6 md:flex lg:gap-8"
-            aria-label="Preview sections"
+            aria-label="Primary navigation"
           >
-            {previewNavigation.map((item) => (
+            {siteNavigation.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
@@ -103,8 +103,8 @@ export function SiteHeader() {
           </nav>
 
           <div className="hidden md:block">
-            <Button href="/#projects-preview" size="sm">
-              Explore preview <span aria-hidden="true">↗</span>
+            <Button href="/#selected-work" size="sm">
+              Explore work <span aria-hidden="true">↗</span>
             </Button>
           </div>
 
@@ -126,11 +126,11 @@ export function SiteHeader() {
           <nav
             ref={menuRef}
             id={menuId}
-            aria-label="Mobile preview navigation"
+            aria-label="Mobile navigation"
             className="border-t border-rule pb-5 pt-3 md:hidden"
           >
             <ul className="flex flex-col">
-              {previewNavigation.map((item, index) => (
+              {siteNavigation.map((item, index) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
@@ -147,12 +147,12 @@ export function SiteHeader() {
             </ul>
             <div className="mt-4 border-t border-rule pt-5">
               <Button
-                href="/#projects-preview"
+                href="/#selected-work"
                 variant="primary"
                 className="w-full"
                 onClick={() => setIsOpen(false)}
               >
-                Explore preview <span aria-hidden="true">↗</span>
+                Explore work <span aria-hidden="true">↗</span>
               </Button>
             </div>
           </nav>

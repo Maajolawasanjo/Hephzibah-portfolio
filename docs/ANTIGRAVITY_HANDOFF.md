@@ -1,26 +1,38 @@
-# Antigravity Handoff — Phase 04
+# Antigravity Handoff — Phase 05
 
-Repo: https://github.com/Maajolawasanjo/Hephzibah-portfolio
+Repository: https://github.com/Maajolawasanjo/Hephzibah-portfolio
 
-The project has completed initial design foundation (01), global tokens (02),
-typed shared components (03), and site-wide layout/navigation (04).
+Phase 05 now has a real homepage hero, a compact confirmed-service index,
+and a clearly labelled Selected Work holding section. See
+docs/HOMEPAGE_HERO.md for exact content and design decisions.
 
-Read docs/DESIGN_SYSTEM.md, docs/COMPONENTS.md, docs/NAVIGATION.md and
-docs/IMPLEMENTATION.md before implementing the next phase.
+## Approved brand identity
 
-Rules:
-- Burgundy #66001F, cream #FEFCEF, editorial minimalism.
-- Alro display requires licensed webfont files, which are not present.
-- DM Sans is the body and temporary display fallback.
-- Do not fabricate client projects, testimonials, social links or outcomes.
-- Current root page is a development preview, not the final public homepage.
-- Preview nav points only to sections that actually exist.
-- Avoid OS/browser theme overrides, gradients, excessive decorative cards.
+- Hephie Creatives — Hephzibah Uzorndu.
+- Brand Identity Designer & Visual Storyteller; Lagos, Nigeria.
+- Burgundy #66001F and Cream #FEFCEF.
+- Modern Editorial Minimalism, confident expressive typography.
+- Approved display: Alro (licensed webfont files still unavailable).
+- Body: DM Sans, also the temporary display fallback.
 
-Verification:
-1. Run npm install, lint, typecheck, and build.
-2. Generate and commit package-lock.json when npm registry access is available;
-   subsequently update CI to use npm ci.
-3. Use a real browser to test mobile menu, keyboard tab order, focus trap,
-   Escape-to-close, click-away, 200% zoom and small-screen overflow.
-4. Preserve approved structure while implementing Phase 05 homepage hero.
+## Navigation and scope
+
+Header/footer nav destinations: /#home, /#focus, /#selected-work.
+Those anchors all exist. The selected-work section explicitly says case
+studies are being prepared; it does not display fabricated projects.
+
+Keep Phase 05 hero copy and services grounded in verified information.
+Do not publish email, WhatsApp, social accounts, portfolio assets, metrics
+or endorsements without verification.
+
+Phase 06 is SELECTED WORK ONLY: curate 6–8 actual strong branding projects
+with approved images. Phase 07 develops dynamic case-study pages.
+
+## Verify before advancing
+
+1. Confirm current Phase 05 GitHub Actions lint, typecheck, build checks.
+2. Inspect 320px, 375px, tablet and desktop layout in a browser.
+3. Verify keyboard links, header focus, contrast, zoom and reduced motion.
+4. Generate and commit package-lock.json when npm registry access permits;
+   use npm ci in CI after lockfile is available.
+5. Supply legally licensed Alro webfont files for final typographic review.

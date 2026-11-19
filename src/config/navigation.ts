@@ -1,14 +1,14 @@
 /**
- * Phase 04 preview navigation. Every href resolves to a real section on "/".
- * Replace with approved production routes when the corresponding pages exist.
+ * Every navigation target currently exists on the homepage.
+ * Add new routes only after their corresponding sections are implemented.
  */
 export type NavigationItem = {
   label: string;
   href: string;
 };
 
-export const previewNavigation: readonly NavigationItem[] = [
-  { label: "Components", href: "/#buttons-preview" },
-  { label: "Typography", href: "/#typography-preview" },
-  { label: "Project cards", href: "/#projects-preview" },
+export const siteNavigation: readonly NavigationItem[] = [
+  { label: "Home", href: "/#home" },
+  { label: "What I do", href: "/#focus" },
+  { label: "Selected work", href: "/#selected-work" },
 ];

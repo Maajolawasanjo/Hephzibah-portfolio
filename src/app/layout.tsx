@@ -10,10 +10,10 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Hephie Creatives — Global Layout Preview",
+  title: "Hephie Creatives | Brand Identity Designer",
   description:
-    "Shared layout preview for Hephzibah Uzorndu, Brand Identity Designer and Visual Storyteller.",
-  // Development preview only. Enable indexing when the real portfolio launches.
+    "Hephzibah Uzorndu is a brand identity designer and visual storyteller based in Lagos, Nigeria. Purposeful identity, branding, and visual content through Hephie Creatives.",
+  // Keep search indexing disabled while portfolio and approved project assets are incomplete.
   robots: { index: false, follow: false },
 };
 

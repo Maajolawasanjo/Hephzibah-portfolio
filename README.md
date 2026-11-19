@@ -1,21 +1,25 @@
 # Hephie Creatives — Portfolio
 
-Professional portfolio for Hephzibah Uzorndu, founder of Hephie Creatives
-and a Brand Identity Designer & Visual Storyteller.
+Portfolio for **Hephzibah Uzorndu**, founder of Hephie Creatives and a
+Brand Identity Designer & Visual Storyteller in Lagos, Nigeria.
 
-## Milestone: Phase 04
+## Current milestone — Phase 05: Homepage Hero
 
-Shared site shell, sticky desktop navigation, accessible mobile menu, footer,
-and skip navigation are implemented. The root route is a DESIGN PREVIEW,
-not the final public homepage. Links lead only to existing preview anchors.
+The homepage now contains a responsive, typography-led hero using approved
+brand positioning and an accessible site shell. It also includes a concise
+index of confirmed service areas and an honest selected-work holding section.
+Phase 06 will replace that section with curated real brand projects.
 
-Approved design: Modern Editorial Minimalism, Burgundy #66001F,
-Cream #FEFCEF, Alro display (licensed font files pending), DM Sans body.
+Approved direction: **Modern Editorial Minimalism**, burgundy
+`#66001F`, cream `#FEFCEF`, display typeface **Alro** (licensed
+webfont files not yet supplied), and body font **DM Sans**.
 
-Stack: Next.js App Router, React, TypeScript, Tailwind CSS v4.
+The hero includes no fabricated case studies, client imagery, statistics,
+unconfirmed contacts, or imaginary social links.
 
-## Run locally
+## Stack and development
 
+Next.js App Router, React, TypeScript, Tailwind CSS v4.
 Node.js 22 recommended.
 
     npm install
@@ -24,19 +28,18 @@ Node.js 22 recommended.
     npm run typecheck
     npm run build
 
-The npm lockfile remains pending because the working environment could not
-reach the npm registry. Generate and commit it in a network-enabled
-development environment; then switch CI to npm ci. The current CI uses npm
-install, and results are reported separately for each commit.
+The repository does not yet have package-lock.json; generate and commit it
+in a connected npm environment and then switch CI to npm ci.
+The current CI validates using npm install.
 
-## Specification
+## Project documentation
 
-- docs/DESIGN_SYSTEM.md — design tokens and typography.
-- docs/COMPONENTS.md — shared UI components.
-- docs/NAVIGATION.md — global layout and mobile navigation.
-- docs/ANTIGRAVITY_HANDOFF.md — next phase implementation guidance.
-- docs/IMPLEMENTATION.md — all 15 development phases.
+- docs/DESIGN_SYSTEM.md — approved styling rules.
+- docs/COMPONENTS.md — reusable components.
+- docs/NAVIGATION.md — site-wide navigation and behavior.
+- docs/HOMEPAGE_HERO.md — Phase 05 copy, layout, CTA decisions and limitations.
+- docs/IMPLEMENTATION.md — all 15 phases.
+- docs/ANTIGRAVITY_HANDOFF.md — next phase implementation notes.
 
-No fabricated projects, testimonials, case studies, social links, contact
-destinations, claims, or unlicensed font files. Enable public indexing only
-when the real site is ready for launch.
+Search indexing remains disabled until real approved portfolio content is live.
+Do not claim Alro is implemented until its licensed webfont files are supplied.

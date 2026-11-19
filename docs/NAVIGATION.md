@@ -1,53 +1,33 @@
-# Phase 04 — Global Layout & Navigation
+# Phase 05 — Global Navigation Updated for Homepage
 
-A site-wide layout wraps all pages in src/app/layout.tsx.
+The shared navigation and footer were introduced in Phase 04; Phase 05
+changes their labels to match actual homepage anchors. No fake routes.
 
-## Components
-
-- src/components/layout/site-shell.tsx — shared header, main, footer landmarks, accessible skip link.
-- src/components/layout/site-header.tsx — sticky brand header, desktop navigation, mobile disclosure menu.
-- src/components/layout/site-footer.tsx — real brand identity, location, in-page links, copyright.
-- src/config/navigation.ts — typed source of all preview navigation links.
-
-## Current preview routes
-
-The actual Work, About, Services and Contact pages do not exist yet.
-Do not create fake URLs. Existing preview destinations are:
-
-| Label | Destination |
+| Label | Working destination |
 | --- | --- |
-| Components | /#buttons-preview |
-| Typography | /#typography-preview |
-| Project cards | /#projects-preview |
-| Explore preview | /#projects-preview |
+| Home | /#home |
+| What I do | /#focus |
+| Selected work | /#selected-work |
+| Explore work CTA | /#selected-work |
 
-Brand links point home. Replace previewNavigation with actual production routes
-only as corresponding portfolio pages or sections are implemented.
+The selected-work destination is currently an honest, clearly labeled
+holding section. Phase 06 replaces it with actual curated branding projects.
 
-## Accessible mobile navigation
+Brand links return to /.
 
-- Native button has aria-expanded, aria-controls, and a descriptive label.
-- Focus initially enters the opened menu.
-- Escape closes the menu and restores focus to its toggle.
-- Tab/Shift+Tab loop within visible header interactive controls while open.
-- Clicking outside or selecting a nav link closes the menu.
-- Desktop and mobile nav use one source of truth.
-- Skip-to-content link bypasses header and focuses the main landmark.
+## Architecture and accessibility
 
-## Visual direction
+- src/components/layout/site-shell.tsx owns the shared header/main/footer
+  landmarks and a visible-on-focus skip-to-main link.
+- src/components/layout/site-header.tsx owns the sticky header and accessible
+  mobile navigation (expanded state, focus handling, Escape, outside click).
+- src/components/layout/site-footer.tsx owns the shared footer.
+- src/config/navigation.ts is the single source of truth for visible nav links.
+- Mobile and desktop navigation use the same source.
+- The root page must never reintroduce duplicate landmarks or dead links.
 
-Keep approved burgundy #66001F and cream #FEFCEF, DM Sans for supporting text,
-and Alro as an approved but not yet supplied licensed display font.
-Use tokens and existing shared components. Avoid unapproved colors,
-automatic browser dark mode and decorative excess.
+## Manual QA still needed
 
-## Acceptance
-
-Implemented: site shell, header, footer, working preview navigation, mobile
-disclosure controls and no duplicate page landmarks.
-
-Awaiting independent checks: automated Phase 04 CI, browser viewport testing
-at 320px/375px/tablet/desktop, 200% text zoom, keyboard and screen-reader
-navigation. Also pending: licensed Alro fonts and npm lockfile.
-
-Next is Phase 05, the actual homepage hero.
+Test at 320px and 375px, tablet, and desktop; keyboard traversal, Escape
+behavior, click-away, 200% zoom and actual in-browser layout on real screens.
+CI checks do not substitute for visual or assistive-technology validation.
