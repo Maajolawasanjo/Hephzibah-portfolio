@@ -15,6 +15,15 @@ export function SiteHeader() {
   const menuRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
+    const media = window.matchMedia("(min-width: 1024px)");
+    const closeAtDesktop = () => {
+      if (media.matches) setIsOpen(false);
+    };
+    media.addEventListener("change", closeAtDesktop);
+    return () => media.removeEventListener("change", closeAtDesktop);
+  }, []);
+
+  useEffect(() => {
     if (!isOpen) return;
 
     // Keep keyboard users inside the expanded mobile navigation.
@@ -88,7 +97,7 @@ export function SiteHeader() {
           </Link>
 
           <nav
-            className="hidden items-center gap-6 md:flex lg:gap-8"
+            className="hidden items-center gap-5 lg:flex xl:gap-8"
             aria-label="Primary navigation"
           >
             {siteNavigation.map((item) => (
@@ -102,7 +111,7 @@ export function SiteHeader() {
             ))}
           </nav>
 
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <Button href="/#selected-work" size="sm">
               Explore work <span aria-hidden="true">↗</span>
             </Button>
@@ -115,7 +124,7 @@ export function SiteHeader() {
             aria-controls={menuId}
             aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
             onClick={() => setIsOpen((value) => !value)}
-            className="flex min-h-11 min-w-11 items-center justify-center gap-2 rounded-[var(--radius-control)] border border-brand-burgundy px-3 text-sm font-medium md:hidden"
+            className="flex min-h-11 min-w-11 items-center justify-center gap-2 rounded-[var(--radius-control)] border border-brand-burgundy px-3 text-sm font-medium lg:hidden"
           >
             <span aria-hidden="true">{isOpen ? "×" : "☰"}</span>
             <span>{isOpen ? "Close" : "Menu"}</span>
@@ -127,7 +136,7 @@ export function SiteHeader() {
             ref={menuRef}
             id={menuId}
             aria-label="Mobile navigation"
-            className="border-t border-rule pb-5 pt-3 md:hidden"
+            className="border-t border-rule pb-5 pt-3 lg:hidden"
           >
             <ul className="flex flex-col">
               {siteNavigation.map((item, index) => (

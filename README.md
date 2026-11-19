@@ -1,29 +1,33 @@
 # Hephie Creatives — Portfolio
 
-Portfolio for Hephzibah Uzorndu, founder of Hephie Creatives and a
-Brand Identity Designer & Visual Storyteller based in Lagos, Nigeria.
+Portfolio for **Hephzibah Uzorndu**, founder of **Hephie Creatives**,
+Brand Identity Designer & Visual Storyteller in Lagos, Nigeria.
 
-## Current milestone: Phase 07 — Project Case Studies
+## Current milestone — Phase 08: About & Professional Identity
 
-The codebase now provides a responsive homepage hero, confirmed capability
-index, data-driven Selected Work section, shared global navigation/layout,
-and reusable project case-study pages.
+The Next.js codebase now includes:
 
-The collection contains no approved project records yet. Individual study
-routes only become available when authentic briefs, artwork and explicit
-publication approval are supplied. No invented brands or projects appear.
+- Responsive editorial homepage hero and confirmed service-area index.
+- Selected Work collection and case-study pages gated behind real content approval.
+- Reusable site layout, header, mobile menu, footer, and UI primitives.
+- An About section with Hephzibah's biography and design philosophy.
+- Navigation to existing Home, Work, About and What I Do sections.
 
-## Visual direction
+The gallery and case-study collection contain no made-up client work.
+About copy is based on the project's supplied draft and needs owner sign-off
+before publication; numerical achievement claims and portraits are withheld.
 
-- Modern Editorial Minimalism and expressive typography.
-- Burgundy #66001F, cream #FEFCEF.
-- Display: Alro by Artyway (licensed webfont files required, not present).
-- Supporting body: DM Sans (temporary display fallback).
+## Approved design
 
-## Technology and checks
+- Modern Editorial Minimalism and expressive type.
+- Burgundy `#66001F`, Cream `#FEFCEF`.
+- Alro by Artyway approved display font (licensed webfont files pending).
+- DM Sans supporting body type and temporary display fallback.
 
-Next.js App Router, React, TypeScript, Tailwind CSS v4.
-Recommended Node.js 22.
+## Development
+
+Next.js App Router, React, TypeScript and Tailwind CSS v4.
+Use Node.js 22:
 
     npm install
     npm run dev
@@ -31,18 +35,23 @@ Recommended Node.js 22.
     npm run typecheck
     npm run build
 
-Package lockfile is not yet committed. Generate it with npm registry access,
-commit and migrate CI to npm ci. Indexing remains disabled until site launch.
+A dependency lockfile has not yet been committed. Once generated with
+npm registry access and committed, change CI from npm install to npm ci.
 
-## Project documentation
+The portfolio deliberately remains noindex until approved content and
+project assets are ready for publication.
 
-- docs/DESIGN_SYSTEM.md
-- docs/COMPONENTS.md
-- docs/NAVIGATION.md
-- docs/HOMEPAGE_HERO.md
-- docs/SELECTED_WORK.md
-- docs/CASE_STUDIES.md
-- docs/IMPLEMENTATION.md
-- docs/ANTIGRAVITY_HANDOFF.md
+## Documentation
 
-Never invent outcomes, testimonials, social profiles, case studies or logos.
+- [Design system](docs/DESIGN_SYSTEM.md)
+- [Shared components](docs/COMPONENTS.md)
+- [Navigation](docs/NAVIGATION.md)
+- [Homepage hero](docs/HOMEPAGE_HERO.md)
+- [Selected work](docs/SELECTED_WORK.md)
+- [Case studies](docs/CASE_STUDIES.md)
+- [About & professional identity](docs/ABOUT.md)
+- [15-phase roadmap](docs/IMPLEMENTATION.md)
+- [Antigravity handoff](docs/ANTIGRAVITY_HANDOFF.md)
+
+Do not invent achievements, client projects, endorsements, portraits,
+social URLs or copyrighted font files.

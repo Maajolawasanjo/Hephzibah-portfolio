@@ -44,7 +44,8 @@ have not been verified by this assistant. Do not mark the phase complete until t
 | 05 Homepage hero | Committed; CI passed |
 | 06 Selected Work | Gallery architecture implemented; actual projects pending |
 | 07 Case studies | Route/template written; real content pending |
-| 08–15 | Not yet implemented |
+| 08 About & Professional Identity | About section implemented; CI and owner copy sign-off pending |
+| 09–15 | Not yet implemented |
 
 Phase 05 introduces only the responsive hero, a concise index of confirmed
 services to support existing navigation, and an honest selected-work holding
@@ -67,5 +68,15 @@ docs/SELECTED_WORK.md. Phase 06 must not be reported as content-complete.
 
 The case-study template, typed project narrative data and protected slug-based
 route are added. No project pages are published while authentic approved
-briefs and images are absent. See docs/CASE_STUDIES.md. Automated CI checks
-and browser QA must be verified separately.
+briefs and images are absent. See docs/CASE_STUDIES.md. Phase 07 automated CI passed; browser QA remains outstanding.
+
+
+## Phase 08 — About & Professional Identity
+
+A standalone About section is integrated into the homepage, presenting the
+established first-person biography and a three-point design philosophy.
+The nav now includes a real About destination and the desktop breakpoint
+was adjusted to avoid crowding. The portrait is deliberately not fabricated:
+its space uses a decorative typographic composition until an actual approved
+photo is available. Achievement counts remain unpublished pending confirmation.
+See docs/ABOUT.md. Phase 08 CI and owner's content approval are pending.

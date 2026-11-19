@@ -1,37 +1,46 @@
-# Antigravity Handoff — Phase 07
+# Antigravity Handoff — Phase 08
 
 Repository: https://github.com/Maajolawasanjo/Hephzibah-portfolio
 
-## Scope
+## Current scope
 
-Phases 01–06 form the existing foundation. Phase 07 now implements
-reusable case-study pages, a typed content schema and safe routing.
+Phases 01–07 have introduced the project foundation, design tokens,
+shared UI components, global layout, hero, Selected Work architecture
+and approved-only case-study routes. Phase 08 adds Hephzibah's About
+section and first-person design philosophy.
 
-Read docs/CASE_STUDIES.md, docs/SELECTED_WORK.md,
-docs/DESIGN_SYSTEM.md and docs/IMPLEMENTATION.md.
+Read `docs/ABOUT.md`, `docs/DESIGN_SYSTEM.md`,
+`docs/NAVIGATION.md` and `docs/IMPLEMENTATION.md`.
 
-## Approved design
+## Design commitments
 
-- Modern Editorial Minimalism, deliberate expressive typography.
-- Burgundy #66001F, cream #FEFCEF, body font DM Sans.
-- Alro display font still needs licensed webfont files.
-- Respect keyboard focus, reduced motion, image alt text and original artwork.
-- Never automatically inherit browser/system dark mode.
+- Hephie Creatives is the complete public brand name.
+- Palette: Burgundy `#66001F` and Cream `#FEFCEF`.
+- Modern Editorial Minimalism with confident, expressive typography.
+- Alro by Artyway is approved for display but licensed webfont files
+  have not yet been supplied. DM Sans is the temporary fallback.
+- Do not inherit OS/browser dark-mode styling automatically.
+- Keep focus indicators, semantic HTML and reduced-motion behavior.
 
-## Content safety
+## About content guardrails
 
-Do not fabricate brands, project work, graphics, clients, metrics or testimonials.
-No case-study records are published until actual client-approved material
-is supplied and the explicit project/study approval flags are set.
-No manual links to unfinished routes. Local image paths must resolve.
+- Biography, design philosophy and location are based on the supplied
+  draft and should be signed off by Hephzibah before public launch.
+- No fabricated achievements, awards, projects, numbers or client names.
+- No headshot has been supplied. The abstract type panel is not a photo.
+- Use `src/content/about.ts` for copy revisions.
+- Only add actual image files with owner's permission and proper alt text.
+- The one-on-one teaching reference is not a full teaching section;
+  that is scheduled for Phase 10.
 
-## Next steps
+## Validation
 
-1. Confirm Phase 07 CI lint/typecheck/build.
-2. When assets are supplied, verify each brief/image and populate the collection.
-3. Test actual case-study paths, unavailable slug 404 behavior and image layout.
-4. Visually inspect mobile/tablet/desktop, zoom, keyboard and alt descriptions.
-5. Generate package-lock.json and migrate CI to npm ci in an npm-enabled runtime.
-6. Add licensed Alro files only with permission and correct web embedding rights.
+1. Confirm Phase 08 GitHub Actions lint, typecheck and production build.
+2. Test `/#about` from header/footer on mobile and desktop.
+3. Test responsive menu with keyboard, Escape, resize and click-away.
+4. Inspect 320px/375px/tablet/desktop widths, zoom and text wrapping.
+5. Obtain owner sign-off on first-person copy and any portrait.
+6. Generate/commit package-lock.json and change CI to npm ci when ready.
+7. Add licensed Alro files only when webfont rights are confirmed.
 
-Phase 08 next: About & Professional Identity, using verified biography only.
+Next milestone: **Phase 09 — Services & Value Proposition**.

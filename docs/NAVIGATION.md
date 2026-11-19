@@ -1,33 +1,37 @@
-# Phase 05 — Global Navigation Updated for Homepage
+# Global Navigation — Updated in Phase 08
 
-The shared navigation and footer were introduced in Phase 04; Phase 05
-changes their labels to match actual homepage anchors. No fake routes.
+The site's shared shell owns one header, one main landmark and one footer.
+All visible primary and footer navigation destinations currently exist.
 
-| Label | Working destination |
-| --- | --- |
-| Home | /#home |
-| What I do | /#focus |
-| Selected work | /#selected-work |
-| Explore work CTA | /#selected-work |
+| Navigation label | Destination | Current content |
+| --- | --- | --- |
+| Home | `/#home` | Homepage hero |
+| Work | `/#selected-work` | Gallery architecture; approved projects pending |
+| About | `/#about` | Hephzibah biography and design philosophy |
+| What I do | `/#focus` | Short, confirmed service-area index |
 
-The selected-work destination is currently an honest, clearly labeled
-holding section. Phase 06 replaces it with actual curated branding projects.
+The brand wordmark links to `/`. The primary CTA "Explore work"
+links to `/#selected-work`. This destination does not pretend missing
+client projects are available.
 
-Brand links return to /.
+## Accessibility and responsiveness
 
-## Architecture and accessibility
+- Desktop links appear at `lg`; mobile disclosure is used below that
+  breakpoint to avoid crowding with four nav destinations and the CTA.
+- On opening, focus moves inside the mobile navigation.
+- Escape closes the menu and restores focus to the toggle.
+- Tab / Shift+Tab remain within the expanded header controls.
+- Outside pointer interactions close the menu.
+- Selecting a link closes the mobile menu.
+- Resizing to desktop closes any open mobile menu.
+- A skip link leads to the single `#main-content` landmark.
+- Global CSS supports reduced motion and visible focus indicators.
 
-- src/components/layout/site-shell.tsx owns the shared header/main/footer
-  landmarks and a visible-on-focus skip-to-main link.
-- src/components/layout/site-header.tsx owns the sticky header and accessible
-  mobile navigation (expanded state, focus handling, Escape, outside click).
-- src/components/layout/site-footer.tsx owns the shared footer.
-- src/config/navigation.ts is the single source of truth for visible nav links.
-- Mobile and desktop navigation use the same source.
-- The root page must never reintroduce duplicate landmarks or dead links.
+## Later phases
 
-## Manual QA still needed
+As the portfolio gains real Services and Contact content, update the
+navigation only when its section and actual destination exist.
+Do not create dead links, fake routes, or unverifiable social/contact URLs.
 
-Test at 320px and 375px, tablet, and desktop; keyboard traversal, Escape
-behavior, click-away, 200% zoom and actual in-browser layout on real screens.
-CI checks do not substitute for visual or assistive-technology validation.
+Browser-based keyboard, zoom, and responsive QA remains required and
+cannot be replaced by CI alone.

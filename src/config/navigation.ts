@@ -1,6 +1,6 @@
 /**
- * Every navigation target currently exists on the homepage.
- * Add new routes only after their corresponding sections are implemented.
+ * Each navigation destination exists on the homepage.
+ * Unimplemented routes and future contact sections are not linked.
  */
 export type NavigationItem = {
   label: string;
@@ -9,6 +9,7 @@ export type NavigationItem = {
 
 export const siteNavigation: readonly NavigationItem[] = [
   { label: "Home", href: "/#home" },
+  { label: "Work", href: "/#selected-work" },
+  { label: "About", href: "/#about" },
   { label: "What I do", href: "/#focus" },
-  { label: "Selected work", href: "/#selected-work" },
 ];
