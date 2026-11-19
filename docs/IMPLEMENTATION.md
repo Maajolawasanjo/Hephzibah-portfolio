@@ -46,7 +46,8 @@ have not been verified by this assistant. Do not mark the phase complete until t
 | 07 Case studies | Route/template written; real content pending |
 | 08 About & Professional Identity | About section implemented; CI and owner copy sign-off pending |
 | 09 Services & Value Proposition | Section implemented; CI and owner copy approval pending |
-| 10–15 | Not yet implemented |
+| 10 Supporting Sections | Components implemented; CI and optional materials pending |
+| 11–15 | Not yet implemented |
 
 Phase 05 introduces only the responsive hero, a concise index of confirmed
 services to support existing navigation, and an honest selected-work holding
@@ -90,4 +91,12 @@ names follow the existing approved categories. Potential areas of work and
 audience descriptions are editorial proposals, not a fixed scope guarantee.
 The short FocusStrip was removed and all homepage links updated to real
 Services, Selected Work and About anchors. See docs/SERVICES.md.
-CI and final owner sign-off should be tracked independently.
+Phase 09 CI passed; final owner sign-off remains pending.
+
+
+## Phase 10 — Supporting Sections
+
+Process, creative disciplines and one-on-one mentorship are implemented.
+Testimonials and More Work have owner-approval content gates and are hidden
+while the collections are empty. Named creative tools are also excluded
+until verified. See docs/SUPPORTING_SECTIONS.md. Phase 10 CI pending.

@@ -1,30 +1,26 @@
 # Hephie Creatives — Portfolio
 
-Portfolio for **Hephzibah Uzorndu**, founder of Hephie Creatives and
-Brand Identity Designer & Visual Storyteller based in Lagos, Nigeria.
+Portfolio for **Hephzibah Uzorndu**, founder of Hephie Creatives and a
+Brand Identity Designer & Visual Storyteller in Lagos, Nigeria.
 
-## Current milestone: Phase 09 — Services & Value Proposition
+## Phase 10 — Supporting Sections
 
-Implemented in the Next.js codebase:
-- Homepage hero with approved positioning.
-- Selected Work gallery and case-study architecture gated by real project approval.
-- Four detailed brand/creative service areas and an editorial value proposition.
-- About section with founder biography and design philosophy.
-- Shared header, accessible mobile navigation, footer and UI components.
+The Next.js portfolio now contains a responsive editorial homepage hero,
+a gated Selected Work gallery and case-study system, four service areas,
+an About biography, Design Process, Creative Toolkit, and one-on-one
+Teaching & Mentorship.
 
-Approved visual direction: Modern Editorial Minimalism, Burgundy #66001F,
-Cream #FEFCEF, display font Alro by Artyway (licensed webfont pending),
-and DM Sans for supporting body text.
+Testimonials and More Work are deliberately **hidden while their approved
+content collections are empty**. Real names, testimonials, client artwork,
+project impact claims and software experience must not be fabricated.
 
-Only the four service category names are established; supporting descriptions
-and potential deliverables are editorial proposals awaiting owner approval.
-No project images, invented testimonials, fixed package prices or unverified
-social/contact URLs have been published.
+Brand direction: Modern Editorial Minimalism, Burgundy #66001F and
+Cream #FEFCEF. Alro is the approved display font but licensed webfont
+files are pending; DM Sans is the temporary fallback.
 
-## Tech and local verification
+## Stack and checks
 
-Next.js App Router, React, TypeScript and Tailwind CSS v4.
-Node.js 22 recommended.
+Next.js App Router, React, TypeScript, Tailwind CSS v4. Node.js 22.
 
     npm install
     npm run dev
@@ -32,11 +28,13 @@ Node.js 22 recommended.
     npm run typecheck
     npm run build
 
-Dependency package-lock.json is still pending. Once produced and verified
-in a network-enabled npm environment, commit it and change CI to npm ci.
-Public search indexing remains disabled pending content and launch approval.
+package-lock.json remains pending. Generate and commit it in an npm-enabled
+environment, then change GitHub Actions to npm ci.
 
-## Documentation
+Search indexing remains disabled pending launch and approved real content.
+Browser-based visual and accessibility QA is still required.
+
+## Project documents
 
 - docs/DESIGN_SYSTEM.md
 - docs/COMPONENTS.md
@@ -46,9 +44,6 @@ Public search indexing remains disabled pending content and launch approval.
 - docs/CASE_STUDIES.md
 - docs/ABOUT.md
 - docs/SERVICES.md
+- docs/SUPPORTING_SECTIONS.md
 - docs/IMPLEMENTATION.md
 - docs/ANTIGRAVITY_HANDOFF.md
-
-Never fabricate original project work, client identities, results,
-testimonials, numerical achievements, contact destinations or licensed
-font files.

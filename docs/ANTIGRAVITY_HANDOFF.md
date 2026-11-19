@@ -1,47 +1,38 @@
-# Antigravity Handoff — Phase 09
+# Antigravity Handoff — Phase 10
 
 Repository: https://github.com/Maajolawasanjo/Hephzibah-portfolio
 
-## Current code and phase
+Phases 01–09 are implemented and CI-verified; Phases 06–07 still need
+approved real project art and case-study content. Phase 10 now adds
+Process, Creative Toolkit, Teaching, gated Testimonials, and gated More Work.
 
-Phase 09 implements the complete homepage Services & Value Proposition
-section, after Phase 08's editorial biography.
+Read docs/SUPPORTING_SECTIONS.md, docs/SERVICES.md, docs/ABOUT.md,
+docs/DESIGN_SYSTEM.md and docs/IMPLEMENTATION.md before proceeding.
 
-Read docs/SERVICES.md, docs/DESIGN_SYSTEM.md, docs/NAVIGATION.md,
-docs/SELECTED_WORK.md and docs/IMPLEMENTATION.md.
+## Brand and content rules
 
-The homepage section order is Hero → Selected Work → Services → About.
-
-## Content system
-
-- src/config/site.ts is the source for approved service names.
-- src/content/services.ts holds proposed editorial descriptions, audiences
-  and possible scope, with no unapproved guarantees or fixed package prices.
-- src/components/home/services.tsx renders the responsive editorial rows
-  and the inverse burgundy value proposition panel.
-- src/components/home/focus-strip.tsx has been removed.
-- Hero, header/footer, and Services links target real homepage sections.
-
-Service copy needs Hephzibah's final approval before public launch.
-
-## Non-negotiable visual language
-
-- Burgundy #66001F, Cream #FEFCEF.
-- Modern Editorial Minimalism with polished, confident typography.
-- Alro display type pending licensed webfont files, DM Sans supporting body.
-- No automatic system/browser dark-mode switching.
-- Accessible semantic headings, visible focus and reduced motion.
-- Never invent client projects, testimonials, results, service guarantees,
-  social contacts or pricing.
+- Hephie Creatives by Hephzibah Uzorndu.
+- Burgundy #66001F and Cream #FEFCEF, editorial minimalism.
+- Display font Alro by Artyway is approved but not installed;
+  licensed embedding files are still pending.
+- DM Sans is body type and temporary fallback.
+- No automatic OS/browser dark-mode override.
+- Preserve semantic HTML, keyboard access and reduced-motion behavior.
+- Do not invent personal achievements, schools, tools, names, testimonials,
+  clients, pricing, projects, guarantees or contact destinations.
+- Testimonials render only when verified and attribution permission exists.
+- Additional projects render only if approved real visuals are available.
+- Named tools must be confirmed by the designer before publication.
+- Process copy is a narrative, not a fixed service contract.
 
 ## Verification and next phase
 
-1. Inspect GitHub Actions for Phase 09 lint, typecheck and build.
-2. Test real 320px/375px/tablet/desktop layouts, zoom, and keyboard navigation.
-3. Obtain approval for service wording and actual offered deliverables.
-4. Supply licensed Alro webfont files and recheck heading proportions.
-5. Commit package-lock.json from a verified network-enabled npm install,
-   then migrate GitHub CI from npm install to npm ci.
+1. Confirm the Phase 10 GitHub Actions lint/typecheck/build result.
+2. Review browser mobile, desktop, keyboard focus, zoom, text overflow.
+3. Owner to approve mentorship and process copy.
+4. Obtain approved evidence for optional quotes, additional work and tools.
+5. Generate and commit package-lock.json, then migrate CI to npm ci.
+6. Obtain legally licensed Alro webfont files before final typography review.
 
-Next: Phase 10 — Supporting Sections. Only add verified teaching,
-tools, process, testimonials and more-work materials; do not invent results.
+Next milestone: Phase 11 — Contact & Conversion. Do not add an inquiry
+endpoint, personal phone number, email or messaging link until verified.
