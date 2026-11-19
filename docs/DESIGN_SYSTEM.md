@@ -126,3 +126,13 @@ case studies** are included. Those are scoped for later phases.
 - [ ] Automated lint, type-check and build revalidated after push.
 - [ ] Visual QA at 320px, 375px, tablet and desktop.
 - [ ] Licensed Alro webfonts supplied and tested (external dependency).
+
+## Phase 03 — Shared components
+
+The foundational styling system is now consumed through reusable React
+components. See docs/COMPONENTS.md for the complete inventory, examples,
+accessibility rules and phase boundaries. Global header/footer and mobile
+navigation remain in Phase 04.
+
+Phase 02 CI was successful; Phase 03 CI will be checked after the commit.
+Browser-based visual testing and legal Alro webfont integration remain pending.

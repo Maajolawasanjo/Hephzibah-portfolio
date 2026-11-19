@@ -1,133 +1,173 @@
+import { Container } from "@/components/layout/container";
+import { Section } from "@/components/layout/section";
+import { ProjectCard } from "@/components/portfolio/project-card";
+import { Button } from "@/components/ui/button";
+import { Divider } from "@/components/ui/divider";
+import { SectionHeading } from "@/components/ui/section-heading";
+import { Heading, Text } from "@/components/ui/typography";
+
 /**
- * Phase 02 design-system preview only.
- * This is NOT the final homepage, navigation, or project gallery.
+ * Phase 03 component review page — NOT the portfolio homepage.
+ * No real client projects, links, contact information or photographs are implied.
  */
-export default function DesignSystemPreview() {
+export default function ComponentPreview() {
   return (
     <main className="min-h-screen bg-paper text-ink">
-      <div className="layout-container">
+      <Container>
         <header className="flex flex-wrap items-center justify-between gap-4 border-b border-rule py-6">
-          <p className="type-label">Hephie Creatives</p>
-          <p className="type-label text-muted">Design system / 02</p>
+          <Text variant="label">Hephie Creatives</Text>
+          <Text variant="label" muted>
+            Component library / 03
+          </Text>
         </header>
+      </Container>
 
-        <section className="layout-section grid gap-10 lg:grid-cols-12 lg:items-end">
-          <div className="min-w-0 lg:col-span-9">
-            <p className="type-label mb-7 text-muted">Modern editorial minimalism</p>
-            <h1 className="type-display">
-              Intentional
-              <span className="block">by design.</span>
-            </h1>
+      <Section aria-labelledby="preview-intro">
+        <Container>
+          <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
+            <div className="lg:col-span-9">
+              <Text variant="label" muted className="mb-7">
+                Modern editorial minimalism
+              </Text>
+              <Heading level={1} size="display" id="preview-intro">
+                Made to be
+                <span className="block">distinctive.</span>
+              </Heading>
+            </div>
+            <div className="lg:col-span-3">
+              <Text variant="lead">
+                Reusable, considered details for Hephzibah Uzorndu’s
+                portfolio.
+              </Text>
+              <Text variant="small" muted className="mt-5">
+                Development preview only. Final artwork, homepage copy,
+                navigation and Alro font integration are still pending.
+              </Text>
+            </div>
           </div>
-          <div className="lg:col-span-3">
-            <p className="type-lead">
-              A typography-led foundation for Hephzibah Uzorndu’s creative portfolio.
-            </p>
-            <p className="type-small mt-5 text-muted">
-              This is a token showcase, not the final homepage. Alro remains a
-              documented display-font fallback until licensed webfont files arrive.
-            </p>
-          </div>
-        </section>
+        </Container>
+      </Section>
 
-        <section aria-labelledby="palette" className="editorial-rule layout-section">
-          <div className="mb-10 grid gap-5 lg:grid-cols-12">
-            <h2 id="palette" className="type-heading-md lg:col-span-5">01 / Color</h2>
-            <p className="type-body text-muted lg:col-span-7">
-              Two approved brand colors. Secondary surfaces, rules, and supporting
-              text are derived from the same pair, not introduced as new brand colors.
-            </p>
-          </div>
-          <div className="grid gap-4 sm:grid-cols-2">
-            <div className="flex min-h-56 flex-col justify-end bg-brand-burgundy p-7 text-brand-cream">
-              <p className="type-heading-md">Burgundy</p>
-              <p className="type-small mt-2">#66001F / Primary ink</p>
-            </div>
-            <div className="flex min-h-56 flex-col justify-end border border-rule bg-brand-cream p-7 text-brand-burgundy">
-              <p className="type-heading-md">Cream</p>
-              <p className="type-small mt-2">#FEFCEF / Primary paper</p>
-            </div>
-          </div>
-          <p className="type-small mt-5 text-muted">
-            Burgundy on cream contrast: approximately 12.9:1 (WCAG AAA for normal text).
-          </p>
-        </section>
+      <Container>
+        <Divider />
+      </Container>
 
-        <section aria-labelledby="typography" className="editorial-rule layout-section">
-          <div className="mb-12 grid gap-5 lg:grid-cols-12">
-            <h2 id="typography" className="type-heading-md lg:col-span-5">02 / Typography</h2>
-            <p className="type-body text-muted lg:col-span-7">
-              Fluid sizes and carefully controlled spacing. Alro is the intended
-              display face; DM Sans is the supporting body type.
-            </p>
+      <Section aria-labelledby="buttons-preview" compact>
+        <Container>
+          <SectionHeading
+            eyebrow="01 / Interactions"
+            title="Buttons & links."
+            titleId="buttons-preview"
+            description="One shared set of actions, with navigational links and genuine native button behavior."
+          />
+          <div className="mt-10 flex flex-wrap items-center gap-4">
+            <Button href="#projects-preview" variant="primary">
+              View card examples <span aria-hidden="true">↗</span>
+            </Button>
+            <Button href="#typography-preview" variant="secondary">
+              Typography
+            </Button>
+            <Button href="#inverse-preview" variant="text">
+              Inverse surface →
+            </Button>
+            <Button disabled>Disabled state</Button>
           </div>
-          <div className="space-y-9">
-            <div>
-              <p className="type-label mb-3 text-muted">Display / Alro pending</p>
-              <p className="type-heading-xl">Type has presence.</p>
-            </div>
-            <div>
-              <p className="type-label mb-3 text-muted">Section heading</p>
-              <p className="type-heading-lg">Every detail matters.</p>
-            </div>
-            <div>
-              <p className="type-label mb-3 text-muted">Supporting statement</p>
-              <p className="type-lead">
-                Quiet structure gives expressive visual storytelling room to breathe.
-              </p>
-            </div>
-            <div>
-              <p className="type-label mb-3 text-muted">Body copy</p>
-              <p className="type-body">
-                From brand identity to editorial composition, the visual system uses
-                measured whitespace, legible copy, and a consistent rhythm. Real
-                client projects will retain their own creative colors and imagery.
-              </p>
-            </div>
-          </div>
-        </section>
-      </div>
+        </Container>
+      </Section>
 
-      <section aria-labelledby="inverse" className="theme-inverse layout-section">
-        <div className="layout-container grid gap-9 lg:grid-cols-12">
-          <h2 id="inverse" className="type-heading-lg lg:col-span-7">
-            Contrast creates rhythm.
-          </h2>
-          <div className="lg:col-span-5">
-            <p className="type-label mb-4 text-muted">03 / Inverse section</p>
-            <p className="type-lead">
-              Burgundy sections use cream typography with the same semantic color
-              system and accessible contrast.
-            </p>
-          </div>
-        </div>
-      </section>
+      <Container>
+        <Divider />
+      </Container>
 
-      <div className="layout-container">
-        <section aria-labelledby="grid" className="layout-section grid gap-10 lg:grid-cols-12">
-          <div className="lg:col-span-5">
-            <p className="type-label mb-4 text-muted">04 / Layout rhythm</p>
-            <h2 id="grid" className="type-heading-lg">A disciplined grid.</h2>
-          </div>
-          <div className="lg:col-span-7">
-            <p className="type-lead">
-              Mobile-first responsive gutters, a wide portfolio canvas, and a
-              readable column for longer project stories.
-            </p>
-            <div className="mt-10 grid grid-cols-2 gap-[var(--layout-grid-gap)] sm:grid-cols-4">
-              {["01", "02", "03", "04"].map((number) => (
-                <div key={number} className="flex aspect-square items-end border border-rule bg-soft p-4">
-                  <span className="type-label">{number}</span>
-                </div>
-              ))}
+      <Section aria-labelledby="typography-preview" compact>
+        <Container>
+          <SectionHeading
+            eyebrow="02 / Typography"
+            title="Words with character."
+            titleId="typography-preview"
+            description="The heading system separates semantic levels from visual scale."
+          />
+          <div className="mt-12 grid gap-10 lg:grid-cols-12">
+            <div className="lg:col-span-7">
+              <Heading level={3} size="xl">
+                Type creates
+                <span className="block">the rhythm.</span>
+              </Heading>
+            </div>
+            <div className="space-y-5 lg:col-span-5">
+              <Text variant="lead">
+                Clean composition and expressive type help authentic projects
+                stand out.
+              </Text>
+              <Text muted>
+                Alro remains pending licensed webfont files. Until then the
+                display stack uses a documented temporary fallback.
+              </Text>
+              <Text variant="label">Detail / Editorial</Text>
             </div>
           </div>
-        </section>
-        <footer className="flex flex-wrap justify-between gap-4 border-t border-rule py-7">
-          <p className="type-small">Hephie Creatives / Foundation preview</p>
-          <p className="type-small text-muted">Components follow in Phase 03</p>
+        </Container>
+      </Section>
+
+      <Container>
+        <Divider />
+      </Container>
+
+      <Section aria-labelledby="projects-preview" compact>
+        <Container>
+          <SectionHeading
+            eyebrow="03 / Portfolio components"
+            title="Work takes the lead."
+            titleId="projects-preview"
+            description="No fabricated client work. These static cards demonstrate the missing-artwork state until approved projects arrive."
+          />
+          <div className="mt-12 grid gap-10 md:grid-cols-2">
+            <ProjectCard
+              title="Layout sample A"
+              category="Component preview only — not a real project"
+            />
+            <ProjectCard
+              title="Layout sample B"
+              category="Component preview only — not a real project"
+              ratio="wide"
+            />
+          </div>
+        </Container>
+      </Section>
+
+      <Section tone="inverse" id="inverse-preview" aria-labelledby="inverse-heading">
+        <Container>
+          <div className="grid items-end gap-10 lg:grid-cols-12">
+            <div className="lg:col-span-8">
+              <Text variant="label" muted className="mb-6">
+                04 / Inverse treatment
+              </Text>
+              <Heading level={2} size="xl" id="inverse-heading">
+                A deliberate
+                <span className="block">contrast.</span>
+              </Heading>
+            </div>
+            <div className="space-y-6 lg:col-span-4">
+              <Text variant="lead">
+                Cream typography on burgundy, created from the same semantic
+                design tokens.
+              </Text>
+              <Button variant="primary" href="#preview-intro">
+                Return to top ↑
+              </Button>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      <Container>
+        <footer className="flex flex-wrap justify-between gap-4 py-8">
+          <Text variant="small">Hephie Creatives / Component preview</Text>
+          <Text variant="small" muted>
+            Site-wide navigation follows in Phase 04
+          </Text>
         </footer>
-      </div>
+      </Container>
     </main>
   );
 }

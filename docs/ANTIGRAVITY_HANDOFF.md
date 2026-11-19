@@ -1,37 +1,37 @@
-# Antigravity Handoff — Phase 02
+# Antigravity Handoff — Phase 03
 
-Repository:
-https://github.com/Maajolawasanjo/Hephzibah-portfolio
+Repository: https://github.com/Maajolawasanjo/Hephzibah-portfolio
 
-## Phase 02 design system
+## Scope
 
-The source of truth is `src/styles/tokens.css` and
-`docs/DESIGN_SYSTEM.md`. Tailwind semantic utility mappings and global
-typographic styles live in `src/app/globals.css`.
+All Phase 03 shared components are under src/components.
+Study docs/DESIGN_SYSTEM.md and docs/COMPONENTS.md before making changes.
 
-The root route is a **design-system preview**, not the final homepage.
-Future components must use tokens and existing type classes instead
-of scattering hardcoded colors or creating independent typography scales.
+The root route is a development COMPONENT PREVIEW, not the finished homepage.
+Placeholder cards are explicitly labeled and must never be presented as real work.
 
-### Approved visual constraints
+## Branding
 
-- Burgundy `#66001F`; cream `#FEFCEF`
-- Modern Editorial Minimalism with expressive type and disciplined grid
-- Alro is approved for display but cannot be embedded until licensed webfont
-  files have been provided. Current fallback is explicitly temporary.
-- DM Sans for body copy
-- Accessible focus indicators, reduced-motion support, no automatic dark theme
-- Avoid excess cards, gradients, glassmorphism, glow and decorative clutter
+- Burgundy: #66001F
+- Cream: #FEFCEF
+- Display typography: Alro (licensed webfont files not yet supplied)
+- Body: DM Sans
+- Style: editorial minimalism with sophisticated typography and restrained motion.
 
-### Validation before Phase 03
+Do not fabricate clients, projects, client reviews, statistics or contact links.
+Do not add a database, CMS, component library, or animation dependency without a need.
 
-1. Run install, lint, type checking and production build.
-2. Commit `package-lock.json` if it is still missing; switch CI to `npm ci`.
-3. Inspect 320px/375px/mobile, tablet and wide desktop layouts.
-4. Confirm no clipped headlines or horizontal scrolling.
-5. Verify color contrast and focus styling in normal/inverse sections.
-6. Review actual Alro metrics after licensed font files are available.
-7. Record the commit and CI outcome.
+## Phase 04 next
 
-Next planned phase: **Shared UI Components**. Do not build production
-homepage or client project sections before those shared pieces.
+Implement shared global header, desktop navigation, accessible mobile menu,
+footer and overall page layout using the Phase 03 primitives.
+Do not begin the final hero, project gallery or project case studies yet.
+
+## Verification
+
+- Run npm install and commit the generated package-lock.json if missing;
+  then change CI to use npm ci.
+- Run npm run lint, npm run typecheck and npm run build.
+- Test desktop/mobile, reduced-motion, keyboard focus, and links.
+- Reevaluate typography once Alro files are legally supplied.
+- Report exact files, commit SHA, CI result, and remaining issues.

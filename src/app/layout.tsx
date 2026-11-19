@@ -9,10 +9,10 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Hephie Creatives — Design System Preview",
+  title: "Hephie Creatives — Component Library Preview",
   description:
-    "Design-system preview for Hephzibah Uzorndu, Brand Identity Designer and Visual Storyteller.",
-  // Preview, not the final live portfolio.
+    "Shared component preview for Hephzibah Uzorndu, Brand Identity Designer and Visual Storyteller.",
+  // Preview only. Production portfolio metadata and indexing follow at launch.
   robots: { index: false, follow: false },
 };
 
@@ -21,7 +21,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={`${dmSans.variable} font-sans antialiased`}>
+      <body className={dmSans.variable + " font-sans antialiased"}>
         {children}
       </body>
     </html>
