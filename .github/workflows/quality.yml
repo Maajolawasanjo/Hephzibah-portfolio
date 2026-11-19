@@ -18,6 +18,8 @@ jobs:
       - run: npm run lint
       - run: npm run typecheck
       - run: npm run check:assets
+      - name: Report release blockers (non-publishing)
+        run: npm run audit:release
       - run: npm run build
       - name: Install Chromium for browser accessibility audit
         run: npx playwright install --with-deps chromium

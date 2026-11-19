@@ -10,7 +10,8 @@
     "typecheck": "tsc --noEmit",
     "check": "npm run lint && npm run typecheck && npm run build",
     "test:browser": "playwright test",
-    "check:assets": "node scripts/check-assets.mjs"
+    "check:assets": "node scripts/check-assets.mjs",
+    "audit:release": "node scripts/audit-release.mjs"
   },
   "dependencies": {
     "next": "^16.4.6",
@@ -30,6 +31,6 @@
     "@playwright/test": "1.65.1"
   },
   "engines": {
-    "node": ">=20.9.0"
+    "node": "22.x"
   }
 }

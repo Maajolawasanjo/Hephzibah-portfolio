@@ -1,47 +1,52 @@
-# Antigravity Handoff — Phase 14
+# Antigravity Handoff — Phase 15
 
-Repository: https://github.com/Maajolawasanjo/Hephzibah-portfolio
+Source: https://github.com/Maajolawasanjo/Hephzibah-portfolio
 
-Phase 14 adds controlled search metadata, indexing rules, conditional
-sitemaps, verified identity JSON-LD, image-loading refinements,
-a preventative image size budget, and Chromium SEO smoke tests.
+**Audit state:** Vercel production-target deployment READY and protected;
+not approved for public launch. See docs/LAUNCH_AUDIT.md.
 
-Read docs/SEO_PERFORMANCE.md, docs/CASE_STUDIES.md,
-docs/ACCESSIBILITY_AUDIT.md and docs/IMPLEMENTATION.md.
+The current Vercel project is hephzibah-portfolio, linked to main.
+Vercel Node version was aligned to 22.x. Do not create a second duplicate
+project or turn off Vercel Authentication to simplify testing.
 
-## Important publication controls
+## Release guardrails
 
-The site is NOT approved for public indexing, and the custom domain has
-not been verified. Search robots currently disallow crawling; page
-metadata is noindex. Sitemap has no URLs, and canonical/JSON-LD are
-withheld until strict owner and content approval gates pass.
+- Do not enable SITE_CONTENT_APPROVED, SITE_LAUNCH_APPROVED or
+  RELEASE_QA_APPROVED without real owner sign-off.
+- Do not set CONTACT_EMAIL_APPROVED or NEXT_PUBLIC_CONTACT_EMAIL until
+  the owner confirms the PUBLIC business inbox.
+- Only use an owner-controlled verified custom HTTPS domain.
+- Beware: current Vercel Authentication is all_except_custom_domains;
+  attaching a custom domain may expose it. Review protection before connecting.
+- No fake brands, project images, reviews, results, email or social links.
+- Alro by Artyway requires licensed website-embedding font files.
+- Brand remains Burgundy #66001F and Cream #FEFCEF, editorial minimalism.
+- No automatic OS dark mode changes.
 
-Activation requires explicit SITE_CONTENT_APPROVED and SITE_LAUNCH_APPROVED,
-an approved HTTPS NEXT_PUBLIC_SITE_URL, at least one verified project,
-and a verified public inquiry email. A preview environment cannot index.
+## Commands
 
-Do not invent client results, testimonials, images, portraits, social
-profiles, contact emails, official logos or project descriptions.
+    npm install
+    npm run lint
+    npm run typecheck
+    npm run check:assets
+    npm run audit:release
+    npm run build
+    npx playwright install chromium
+    npm run test:browser
 
-## Design and performance
+For the final release sign-off:
 
-Modern Editorial Minimalism, Burgundy #66001F, Cream #FEFCEF.
-Alro display is still awaiting licensed webfont files.
-Body font DM Sans; avoid unnecessary JS and animation dependencies.
-Only preload a genuine above-the-fold case-study cover image.
-Keep approved project art at or below the documented size budget.
+    npm run audit:release -- --strict
 
-## Before Phase 15
+Generate and commit package-lock.json after a network-enabled verified
+npm installation, then use npm ci in GitHub Actions. Do not insert a
+guessed lockfile.
 
-1. Confirm GitHub Actions on Phase 14 passes lint, typecheck, assets,
-   production build and all Chromium browser smoke tests.
-2. Review actual browser visual performance and Core Web Vitals, not
-   just CSS/source-level promises.
-3. Obtain owner approval of real work, services copy, display font,
-   public email, logo/preview assets and final production domain.
-4. Confirm explicit permission for public launch and search indexing.
-5. Prepare Vercel production deployment and real browser release audit.
-6. Generate/commit npm package-lock.json and migrate CI to npm ci.
+## Outstanding
 
-Next: Phase 15 — Deployment & Final Audit. Never mark it complete merely
-because a Vercel deployment exists or the build passes.
+Original project covers/case studies, rights and owner reviews, Alro,
+public email, custom domain, full manual device/accessibility testing,
+performance measurements, approved brand/social assets and launch authorization.
+
+Phase 15 is a controlled readiness gate: a successful build or a Vercel
+READY deployment is not synonymous with an approved public launch.

@@ -15,6 +15,7 @@ export function getApprovedSiteUrl(): URL | null {
       url.protocol !== "https:" ||
       !url.hostname.includes(".") ||
       url.hostname === "localhost" ||
+      url.hostname.endsWith(".vercel.app") ||
       url.username ||
       url.password ||
       url.port ||

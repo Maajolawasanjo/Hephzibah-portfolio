@@ -1,79 +1,77 @@
 # Hephie Creatives — Portfolio
 
 Portfolio for **Hephzibah Uzorndu**, founder of Hephie Creatives,
-Brand Identity Designer & Visual Storyteller based in Lagos, Nigeria.
+a Brand Identity Designer & Visual Storyteller in Lagos, Nigeria.
 
-## Milestone — Phase 14: SEO, Performance & Quality Assurance
+## Phase 15 — Deployment & Final Audit
 
-Next.js App Router, React, TypeScript and Tailwind CSS v4.
+**Current state: deployed to Vercel behind authentication, not approved
+for public launch.** The site already has a successful production-target
+deployment from GitHub `main`. The final phase adds release safeguards
+and a repeatable launch-preflight audit.
 
-The site contains an editorial homepage, Services, About, Process,
-creative toolkit, mentorship, approval-gated selected-work/case-study
-components, a Contact section and restrained reduced-motion-aware
-interactions.
+See **[the consolidated deployment and launch audit](docs/LAUNCH_AUDIT.md)**.
 
-Phase 14 adds metadata, robots.txt, conditional sitemap.xml, verified
-identity JSON-LD, optimized image preload rules, an asset-size check
-and Chromium SEO tests.
+## What is implemented
 
-**Search indexing is deliberately OFF until explicit launch approval,
-an owner-controlled production domain, real project content and approved
-contact details exist.** No fake client work or unverified social images
-are published.
+- Next.js homepage with editorial hero, About, Services, Process,
+  creative disciplines, mentorship, global navigation and accessible
+  mobile menu.
+- Approved-only selected-work and reusable project case-study templates.
+- Optional authentic testimonials and extra projects (hidden until verified).
+- Contact interface activated only for an owner-approved public email;
+  the form prepares a mailto draft and does not send or store email.
+- Responsive and reduced-motion-aware interactions.
+- Safe prelaunch robots/noindex/sitemap rules.
+- Playwright Chromium browser checks, asset size check, release audit.
 
-See [SEO, Performance and Quality Assurance](docs/SEO_PERFORMANCE.md).
+## How to verify
 
-## Development
-
-Recommended Node.js 22:
+Use Node.js **22**, also configured for the Vercel project:
 
     npm install
     npm run lint
     npm run typecheck
     npm run check:assets
+    npm run audit:release
     npm run build
     npx playwright install chromium
     npm run test:browser
 
-package-lock.json has not yet been committed. Generate and verify it
-with an npm-enabled environment, then migrate CI to npm ci.
+The informational preflight lists missing release requirements without
+failing staging CI. After full content, artwork, font, domain, inbox and
+manual QA sign-off, run:
 
-## Publication configuration
+    npm run audit:release -- --strict
 
-After owner sign-off, configure `.env.example` variables in the
-deployment environment, **not as hard-coded code**. Only after
-approving project assets, editorials, a real public email, and an
-owned HTTPS production domain should the content and launch approval
-flags be enabled. Rebuild after changing these variables.
+The npm lockfile is still pending: this working environment cannot resolve
+the npm registry to generate a trustworthy lockfile. After verified
+generation, commit it and move CI from npm install to npm ci.
 
-## Brand
+## Design language
 
-Modern Editorial Minimalism, Burgundy #66001F and Cream #FEFCEF.
-Alro by Artyway is the licensed display-font target; files are still
-unavailable. DM Sans is the temporary fallback.
+Modern Editorial Minimalism, Burgundy #66001F, Cream #FEFCEF,
+Alro by Artyway as the approved but not-yet-installed display font,
+and DM Sans as the body and temporary fallback typeface.
 
-## Outstanding launch items
+## Before public launch
 
-- 6–8 real approved gallery projects and complete case-study assets.
-- Hephzibah's editorial sign-off and approved public contact email.
-- Licensed Alro webfont and genuine social-preview/logo artwork.
-- Actual Core Web Vitals, Safari/Firefox, real screen-reader testing.
-- Production domain verification, final SEO and deployment audit.
+The owner must approve genuine project/case-study content and imagery,
+first-person copy and potential client quotes, the public business contact,
+legally licensed Alro webfont files, a verified custom HTTPS domain and
+the actual launch. Review deployment protection before adding custom
+domains, since existing Vercel Authentication excludes them.
 
-## Documentation
+No unverified case studies, achievements, contacts, testimonials or
+client images should be fabricated to make the site appear complete.
 
-- docs/DESIGN_SYSTEM.md
-- docs/COMPONENTS.md
-- docs/NAVIGATION.md
-- docs/HOMEPAGE_HERO.md
-- docs/SELECTED_WORK.md
-- docs/CASE_STUDIES.md
-- docs/ABOUT.md
-- docs/SERVICES.md
-- docs/SUPPORTING_SECTIONS.md
-- docs/CONTACT.md
-- docs/MOTION.md
-- docs/ACCESSIBILITY_AUDIT.md
-- docs/SEO_PERFORMANCE.md
-- docs/IMPLEMENTATION.md
-- docs/ANTIGRAVITY_HANDOFF.md
+### Documentation
+
+- [Consolidated launch audit](docs/LAUNCH_AUDIT.md)
+- [SEO and performance](docs/SEO_PERFORMANCE.md)
+- [Accessibility](docs/ACCESSIBILITY_AUDIT.md)
+- [Global design system](docs/DESIGN_SYSTEM.md)
+- [Selected Work](docs/SELECTED_WORK.md)
+- [Case Studies](docs/CASE_STUDIES.md)
+- [Contact](docs/CONTACT.md)
+- [Implementation roadmap](docs/IMPLEMENTATION.md)
