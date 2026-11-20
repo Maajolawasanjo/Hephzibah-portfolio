@@ -24,9 +24,9 @@ jobs:
       - name: Report release blockers (non-publishing)
         run: npm run audit:release
       - run: npm run build
-      - name: Install Chromium for browser accessibility audit
-        run: npx playwright install --with-deps chromium
-      - name: Responsive and accessibility browser smoke tests
+      - name: Install Chromium, Firefox and WebKit for compatibility audit
+        run: npx playwright install --with-deps chromium firefox webkit
+      - name: Cross-browser responsive, accessibility and SEO checks
         run: npm run test:browser
       - name: Save browser evidence on failure
         if: failure()

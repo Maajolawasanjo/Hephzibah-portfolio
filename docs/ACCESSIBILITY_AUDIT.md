@@ -87,3 +87,30 @@ Manual visual and assistive-technology checks remain open and should not
 be described as passed without evidence.
 
 Next planned phase: Phase 14 — SEO, Performance & Quality Assurance.
+
+
+## Post-phase automated cross-browser expansion
+
+The release QA suite now covers Playwright's **Chromium, Firefox and WebKit**
+browser engines in GitHub Actions. This runs the existing responsive layout,
+mobile menu, reduced-motion, prelaunch SEO and security smoke tests in each
+engine, plus a targeted contact-navigation/keyboard-focus compatibility
+check. The intended default run is 19 tests × 3 engines = 57 cases.
+
+Install browser dependencies and run with:
+
+```bash
+npm ci
+npm run build
+npx playwright install --with-deps chromium firefox webkit
+npm run test:browser
+```
+
+Automated Playwright WebKit on a Linux CI runner is not a substitute for
+**real Safari on iOS/macOS**, and Playwright Firefox is not a substitute for
+a manual Firefox and screen-reader audit. Browser-engine automation catches
+more layout and keyboard regressions, but real device, assistive-technology,
+actual 200%/400% zoom, and approved-media checks remain open.
+
+The CI run status for this addition must be verified separately before
+reporting it as passing.

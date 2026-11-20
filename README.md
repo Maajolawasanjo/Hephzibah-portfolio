@@ -107,3 +107,12 @@ This generates a static, private `review.html` inside the gitignored
 intake folder, using only the owner's entered copy and local artwork.
 Missing content is identified; approval flags are not set automatically.
 Read docs/PROJECT_INTAKE.md for secure-handling guidance.
+
+
+## Cross-browser release checks
+
+GitHub CI now runs Playwright browser tests against Chromium, Firefox and
+WebKit, including responsive widths, disclosure-menu navigation, reduced
+motion, focus visibility, robots/sitemap and contact safety checks. These
+checks complement but do not replace manual Safari, Firefox, real-device
+and NVDA/VoiceOver acceptance. See docs/ACCESSIBILITY_AUDIT.md.
