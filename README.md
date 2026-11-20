@@ -116,3 +116,14 @@ WebKit, including responsive widths, disclosure-menu navigation, reduced
 motion, focus visibility, robots/sitemap and contact safety checks. These
 checks complement but do not replace manual Safari, Firefox, real-device
 and NVDA/VoiceOver acceptance. See docs/ACCESSIBILITY_AUDIT.md.
+
+## Canonical repository handoff
+
+The verified implementation currently lives in this repository. The
+designer-owned intended destination,
+`okezibauzorndu-rgb/Hephzibah-Portfolio-`, is empty. Although the
+collaborator has GitHub push access, the connected GitHub integration
+returned HTTP 403 on the owner's repository because it has not been
+installed/authorized for that account. No transfer has occurred.
+See [canonical repository handoff](docs/CANONICAL_REPOSITORY_HANDOFF.md)
+for the precise unblock and history-preserving transfer steps.
