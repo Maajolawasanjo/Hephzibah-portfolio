@@ -95,7 +95,7 @@ required(
 );
 required(
   "Satoshi typography source configured",
-  readFileSync(resolve(cwd, "src/app/globals.css"), "utf8").includes("api.fontshare.com/v2/css?f[]=satoshi@") &&
+  readFileSync(resolve(cwd, "src/app/layout.tsx"), "utf8").includes("api.fontshare.com/v2/css?f[]=satoshi@") &&
     readFileSync(resolve(cwd, "src/styles/tokens.css"), "utf8").includes('"Satoshi"'),
   "Use the official Fontshare Satoshi CSS source, verify actual loading on devices, and honor the ITF font license."
 );

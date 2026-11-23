@@ -24,6 +24,7 @@ test("unapproved contact destination cannot collect or submit information", asyn
 
 test("unified Satoshi type system and premium palette are configured", async ({ page }) => {
   await page.goto("/");
+  await expect(page.locator('link[rel="stylesheet"][href*="api.fontshare.com/v2/css"]')).toHaveCount(1);
   const styles = await page.evaluate(() => {
     const computed = getComputedStyle(document.body);
     const root = getComputedStyle(document.documentElement);

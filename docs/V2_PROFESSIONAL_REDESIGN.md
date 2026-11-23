@@ -49,3 +49,17 @@ programme and verified qualification detail remain open.
 6. Real Safari/iPhone, mobile, screen-reader, performance and font-load QA.
 
 The current deployment must stay protected and noindex until approvals.
+
+
+## Satoshi production-load correction
+
+The initial V2 build's CSS bundle retained the `Satoshi` font-family stack,
+but did **not** retain the external CSS import. Therefore, the font could
+fall back to Arial despite a green build. The correction puts an explicit
+Fontshare CSS stylesheet link in the root layout's HTML head and removes
+the ineffective CSS import.
+
+The release audit now inspects the actual root-layout font source, and
+the browser test requires the Fontshare stylesheet link to exist. Real
+network delivery and rendered glyph metrics should still be inspected
+in a normal browser; no font binaries are committed or redistributed.
