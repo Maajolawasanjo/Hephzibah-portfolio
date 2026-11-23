@@ -13,7 +13,6 @@ test("preview contact and publishing features remain locked", async ({ page }) =
   await page.goto("/#contact");
   await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", /noindex/);
   await expect(page.getByText("The public inquiry email is being finalized.")).toBeVisible();
-  await expect(page.locator("form")).toHaveCount(1);
-  await expect(page.getByRole("button", { name: "Prepare my inquiry" })).toBeDisabled();
+  await expect(page.locator("#contact form")).toHaveCount(0);
   await expect(page.locator('a[href^="mailto:"]')).toHaveCount(0);
 });

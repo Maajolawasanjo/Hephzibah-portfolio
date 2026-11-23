@@ -1,137 +1,48 @@
-import { EditorialImage } from "@/components/ui/editorial-image";
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
-import { Button } from "@/components/ui/button";
 import { Heading, Text } from "@/components/ui/typography";
-import { serviceDetails, serviceValue } from "@/content/services";
-import type { EditorialMediaKey } from "@/content/editorial-media";
-
-const serviceImages: Record<string, EditorialMediaKey> = {
-  "logo-design": "logo",
-  "brand-identity": "branding",
-  "social-media-branding": "branding",
-  "photo-video": "photography",
-};
+import { serviceDetails } from "@/content/services";
 
 /**
- * Phase 09: service explanations and value proposition.
- * Descriptions are editorial scope illustrations, not fixed-price packages,
- * proven client outcomes or guarantees.
+ * No repeated sub-sections for scope, audience or visual references.
+ * Each service is a single focused offer with a concise optional list.
  */
 export function Services() {
   return (
-    <Section id="services" compact aria-labelledby="services-heading">
+    <Section id="services" compact aria-labelledby="services-heading" className="bg-soft">
       <Container>
-        <div data-reveal="up" className="grid gap-8 border-t border-rule pt-10 lg:grid-cols-12 lg:gap-12">
-          <div className="lg:col-span-4">
-            <Text variant="label" muted className="mb-6">
-              Services & design capabilities
-            </Text>
-            <Text variant="small" className="max-w-[28ch]">
-              Brand identity & visual storytelling
-            </Text>
-          </div>
-          <div className="lg:col-span-8">
-            <Heading
-              id="services-heading"
-              level={2}
-              size="lg"
-              className="max-w-[20ch]"
-            >
-              Designed to communicate, not just decorate.
-            </Heading>
-            <Text variant="lead" className="mt-7 max-w-[55ch]">
-              From the first idea to a complete visual system, each service connects
-              creative thinking with practical communication and the needs of the audience.
-            </Text>
-          </div>
+        <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between md:gap-10">
+          <Heading id="services-heading" level={2} size="lg">
+            What I create.
+          </Heading>
+          <Text className="max-w-[48ch]">
+            Creative services for businesses and individuals who want an identity
+            that feels clear, distinctive and consistent.
+          </Text>
         </div>
-
-        <div className="mt-9 lg:mt-12">
+        <div className="mt-9 grid gap-5 md:grid-cols-2">
           {serviceDetails.map((service) => (
             <article
               key={service.id}
-              data-reveal="up"
               id={service.id}
               aria-labelledby={service.id + "-heading"}
-              className="grid gap-8 border-t border-rule py-10 sm:py-12 lg:grid-cols-12 lg:gap-12 lg:py-10"
+              className="flex min-w-0 flex-col rounded-xl bg-brand-cream p-6 sm:p-8"
             >
-              <div className="lg:col-span-1">
-                <Text variant="label" muted>
-                  {service.number}
-                </Text>
-              </div>
-
-              <div className="min-w-0 lg:col-span-3">
-                <EditorialImage
-                  asset={serviceImages[service.id]}
-                  sizes="(max-width: 1024px) 80vw, 24vw"
-                  fit={service.id === "logo-design" ? "contain" : "cover"}
-                />
-              </div>
-              <div className="min-w-0 lg:col-span-4">
-                <Heading
-                  id={service.id + "-heading"}
-                  level={3}
-                  size="md"
-                  className="max-w-[21ch] break-words"
-                >
-                  {service.title}
-                </Heading>
-                <Text variant="lead" className="mt-6 max-w-[55ch]">
-                  {service.summary}
-                </Text>
-                <Text variant="small" muted className="mt-5 max-w-[55ch]">
-                  {service.suitableFor}
-                </Text>
-              </div>
-
-              <div className="lg:col-span-4 lg:pl-2">
-                <Text variant="label" muted className="mb-5">
-                  Scope may include
-                </Text>
-                <ul>
-                  {service.possibleDeliverables.map((deliverable, index) => (
-                    <li
-                      key={deliverable}
-                      className="flex gap-4 border-t border-rule py-4"
-                    >
-                      <span
-                        aria-hidden="true"
-                        className="pt-0.5 text-xs tabular-nums text-muted"
-                      >
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
-                      <Text variant="body">{deliverable}</Text>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <span className="text-sm font-semibold opacity-60">{service.number}</span>
+              <Heading id={service.id + "-heading"} level={3} size="md" className="mt-4">
+                {service.title}
+              </Heading>
+              <Text className="mt-3 max-w-[50ch]">{service.summary}</Text>
+              <ul className="mt-5 flex flex-col gap-2">
+                {service.possibleDeliverables.map((item) => (
+                  <li key={item} className="flex gap-2.5 text-sm leading-relaxed">
+                    <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-burgundy" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </article>
           ))}
-        </div>
-
-        <div data-reveal="up" className="theme-inverse mt-10 grid gap-8 px-6 py-10 sm:px-10 sm:py-14 lg:grid-cols-12 lg:items-end lg:gap-12 lg:px-14 lg:py-16">
-          <div className="lg:col-span-8">
-            <Text variant="label" muted className="mb-6">
-              {serviceValue.eyebrow}
-            </Text>
-            <Heading
-              level={3}
-              size="lg"
-              className="max-w-[18ch]"
-            >
-              {serviceValue.heading}
-            </Heading>
-            <Text variant="lead" className="mt-7 max-w-[55ch]">
-              {serviceValue.description}
-            </Text>
-          </div>
-          <div className="lg:col-span-4 lg:justify-self-end">
-            <Button href="/#about" size="lg">
-              Meet the designer <span aria-hidden="true">↗</span>
-            </Button>
-          </div>
         </div>
       </Container>
     </Section>

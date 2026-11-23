@@ -1,54 +1,46 @@
 import Link from "next/link";
 import { Container } from "@/components/layout/container";
-import { Divider } from "@/components/ui/divider";
 import { Text } from "@/components/ui/typography";
 import { siteNavigation } from "@/config/navigation";
 import { site } from "@/config/site";
 
+/** Single, compact footer rather than a second full-page directory. */
 export function SiteFooter() {
   return (
     <footer className="bg-brand-cream text-brand-burgundy">
       <Container>
-        <Divider />
-        <div className="grid gap-10 py-12 md:grid-cols-12 md:gap-8 md:py-16">
-          <div className="min-w-0 md:col-span-7">
-            <Link href="/" className="inline-block rounded-[var(--radius-control)]">
-              <span className="font-display text-[clamp(1.75rem,4vw,3rem)] font-bold leading-none tracking-[-0.05em]">
-                {site.brand}
-              </span>
+        <div className="flex flex-col gap-7 border-t border-rule py-8 md:flex-row md:items-center md:justify-between md:gap-10">
+          <div>
+            <Link href="/" className="font-display text-2xl font-bold tracking-[-0.045em]">
+              {site.brand}
             </Link>
-            <Text variant="small" className="mt-4 max-w-md">
-              {site.name} · {site.role}
-            </Text>
-            <Text variant="small" muted className="mt-2">
-              {site.location}
+            <Text variant="small" className="mt-1" muted>
+              {site.name} · {site.location}
             </Text>
           </div>
-          <nav aria-label="Footer navigation" className="md:col-span-5">
-            <Text variant="label" muted className="mb-5">
-              Explore
-            </Text>
-            <ul className="flex flex-col gap-4">
+          <nav aria-label="Footer navigation">
+            <ul className="flex flex-wrap gap-x-5 gap-y-3">
               {siteNavigation.map((item) => (
                 <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="inline-block rounded-[var(--radius-control)] text-sm font-medium underline-offset-4 hover:underline"
-                  >
+                  <Link href={item.href} className="text-sm font-medium hover:underline underline-offset-4">
                     {item.label}
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link href="/#process" className="text-sm font-medium hover:underline underline-offset-4">
+                  Process
+                </Link>
+              </li>
             </ul>
           </nav>
         </div>
-        <Divider />
-        <div className="flex flex-wrap justify-between gap-3 py-6">
-          <Text variant="small">
+        <div className="flex flex-wrap items-center justify-between gap-3 pb-6">
+          <Text variant="small" muted>
             © {new Date().getFullYear()} {site.brand}
           </Text>
           <Text variant="small" muted>
-            Selected projects and case studies coming soon
+            Brand identity · Graphic design · Visual storytelling
           </Text>
         </div>
       </Container>

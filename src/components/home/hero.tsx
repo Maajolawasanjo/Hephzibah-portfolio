@@ -1,69 +1,50 @@
-import { EditorialImage } from "@/components/ui/editorial-image";
 import { Container } from "@/components/layout/container";
 import { Button } from "@/components/ui/button";
 import { Heading, Text } from "@/components/ui/typography";
+import { EditorialImage } from "@/components/ui/editorial-image";
 import { site } from "@/config/site";
 
-/** A professional introduction rather than a decorative typography sample. */
+/** V3: one clear introduction, one image, and two meaningful actions. */
 export function Hero() {
   return (
-    <section id="home" aria-labelledby="hero-heading" className="bg-brand-cream text-brand-burgundy">
+    <section id="home" aria-labelledby="hero-heading" className="pt-5 pb-12 md:pt-9 md:pb-18">
       <Container>
-        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-rule py-5">
-          <Text variant="label">Brand identity & visual storytelling</Text>
-          <Text variant="small" muted>{site.location}</Text>
-        </div>
-
-        <div className="grid gap-10 py-[clamp(3.5rem,7vw,6.5rem)] lg:grid-cols-12 lg:items-end lg:gap-14">
-          <div className="lg:col-span-8">
-            <Text variant="label" muted className="motion-hero-intro mb-6">
-              Hephzibah Uzorndu · Designer
-            </Text>
-            <Heading
-              id="hero-heading"
-              level={1}
-              size="display"
-              className="motion-hero-heading max-w-[15ch] !leading-[1.03] !tracking-[-0.047em]"
-            >
-              Identities with purpose. Design with character.
-            </Heading>
-            <Text variant="lead" className="motion-hero-summary mt-7 max-w-[55ch]">
-              {site.tagline} I bring branding, graphic design and visual
-              storytelling together through remote and in-person client work.
-            </Text>
-          </div>
-
-          <aside className="motion-hero-specimen border-t border-rule pt-6 lg:col-span-4 lg:ml-auto lg:max-w-sm" aria-label="Creative practice overview">
-            <EditorialImage asset="branding" sizes="(max-width: 1024px) 90vw, 28vw" className="mb-7" />
-            <Text variant="label" muted className="mb-4">What I bring to the table</Text>
-            <Text className="max-w-[39ch]">
-              Identity design, personal branding, considered layouts and
-              visual content for people and businesses looking to
-              communicate with clarity.
-            </Text>
-            <div className="mt-7 grid grid-cols-2 gap-6 border-t border-rule pt-5">
-              <div>
-                <Text variant="label" muted>Practice</Text>
-                <Text variant="small" className="mt-2">Online and on-site</Text>
-              </div>
-              <div>
-                <Text variant="label" muted>Based in</Text>
-                <Text variant="small" className="mt-2">{site.location}</Text>
+        <div className="theme-inverse relative isolate overflow-hidden rounded-[1.25rem] px-6 py-10 sm:px-10 sm:py-14 lg:px-16 lg:py-18">
+          <div aria-hidden="true" className="pointer-events-none absolute -right-28 -top-32 -z-10 h-96 w-96 rounded-full border-[66px] border-brand-cream/10" />
+          <div aria-hidden="true" className="pointer-events-none absolute -bottom-48 left-1/3 -z-10 h-80 w-80 rounded-full border-[44px] border-brand-cream/7" />
+          <div className="relative z-10 grid gap-9 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,0.65fr)] lg:items-center lg:gap-12">
+            <div>
+              <Text variant="label" className="motion-hero-intro mb-5 !tracking-[0.13em]">
+                {site.name} · Brand identity designer
+              </Text>
+              <Heading id="hero-heading" level={1} size="display" className="motion-hero-heading max-w-[12ch]">
+                Design with purpose. Create with character.
+              </Heading>
+              <Text variant="lead" className="motion-hero-summary mt-6 max-w-[54ch]">
+                I&apos;m Hephzibah, a Lagos-based creative making identities,
+                graphic design and visual stories that help people and businesses stand out.
+              </Text>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Button href="/#experience" size="lg">
+                  Explore my experience <span aria-hidden="true">↗</span>
+                </Button>
+                <Button href="/#selected-work" variant="secondary" size="lg" className="!border-brand-cream !text-brand-cream hover:!bg-brand-cream/10">
+                  View my work <span aria-hidden="true">↗</span>
+                </Button>
               </div>
             </div>
-          </aside>
-        </div>
-
-        <div className="flex flex-wrap gap-4 border-t border-rule py-6">
-          <Button href="/#experience" size="lg">
-            Explore my experience <span aria-hidden="true">↗</span>
-          </Button>
-          <Button href="/#services" variant="text" size="lg">
-            What I create <span aria-hidden="true">↗</span>
-          </Button>
-          <Button href="/#selected-work" variant="text" size="lg">
-            Selected work <span aria-hidden="true">↓</span>
-          </Button>
+            <div className="motion-hero-specimen lg:justify-self-end">
+              <EditorialImage
+                asset="branding"
+                showCaption={false}
+                sizes="(max-width: 1024px) 85vw, 31vw"
+                imageClassName="rounded-xl border-0 bg-transparent"
+              />
+              <Text variant="small" className="mt-3 !text-brand-cream/80">
+                Illustrative brand identity reference
+              </Text>
+            </div>
+          </div>
         </div>
       </Container>
     </section>

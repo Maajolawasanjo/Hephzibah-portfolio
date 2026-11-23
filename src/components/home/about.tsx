@@ -1,65 +1,39 @@
-import { EditorialImage } from "@/components/ui/editorial-image";
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
 import { Heading, Text } from "@/components/ui/typography";
 import { aboutContent } from "@/content/about";
-import { professionalProfile } from "@/content/professional";
 import { site } from "@/config/site";
 
-/** No unlicensed portrait, fake credential or decorative placeholder. */
+/** One biography with a visual counterweight; the full process has its own section. */
 export function About() {
   return (
-    <Section id="about" compact aria-labelledby="about-heading">
+    <Section id="about" compact aria-labelledby="about-heading" className="bg-soft">
       <Container>
-        <div data-reveal="up" className="grid gap-8 border-t border-rule pt-9 lg:grid-cols-12 lg:gap-14">
-          <div className="lg:col-span-4">
-            <Text variant="label" muted>About the designer</Text>
-            <Text className="mt-5 max-w-[30ch] font-medium">
-              {site.name}
-            </Text>
-            <Text variant="small" muted className="mt-1">
-              {site.role} · {site.location}
-            </Text>
-            <EditorialImage asset="photography" sizes="(max-width: 1024px) 80vw, 29vw" className="mt-7 max-w-sm" />
-          </div>
-          <div className="lg:col-span-8">
-            <Heading id="about-heading" level={2} size="lg" className="max-w-[21ch]">
-              Behind every design is a decision.
+        <div className="grid gap-9 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-center lg:gap-16">
+          <div>
+            <Heading id="about-heading" level={2} size="lg">
+              Hi, I&apos;m Hephzibah.
             </Heading>
-            <Text variant="lead" className="mt-6 max-w-[57ch]">
-              {professionalProfile.introduction}
+            <Text variant="lead" className="mt-5 max-w-[53ch]">
+              {aboutContent.intro}
             </Text>
-            <div className="mt-8 grid gap-6 border-t border-rule pt-7 md:grid-cols-2 md:gap-10">
-              {aboutContent.body.slice(0, 2).map((paragraph) => (
-                <Text key={paragraph}>{paragraph}</Text>
-              ))}
-            </div>
-            <Text className="mt-5 max-w-[66ch]">
-              I combine creative exploration with practical client
-              collaboration, using graphic design tools and original visual
-              direction to translate ideas into usable brand communication.
+            <Text className="mt-5 max-w-[65ch]">
+              {aboutContent.body[0]}
+            </Text>
+            <Text className="mt-4 max-w-[65ch]">
+              {aboutContent.body[1]}
             </Text>
           </div>
-        </div>
-
-        <div id="about-principles" className="mt-10 grid gap-7 border-t border-rule pt-7 lg:grid-cols-12">
-          <div className="lg:col-span-4">
-            <Heading level={3} size="md">How I approach the work.</Heading>
-            <Text variant="small" muted className="mt-3">
-              Understanding, intention and consistency.
+          <div className="relative min-h-[260px] overflow-hidden rounded-[1.25rem] bg-brand-burgundy p-8 text-brand-cream sm:p-11 lg:min-h-[370px]">
+            <span aria-hidden="true" className="pointer-events-none absolute -right-16 -top-20 h-64 w-64 rounded-full border-[42px] border-brand-cream/15" />
+            <Text variant="label" className="relative !text-brand-cream/80">A creative perspective</Text>
+            <p className="relative mt-10 max-w-[18ch] font-display text-[clamp(1.8rem,3vw,3rem)] font-semibold leading-[1.16] tracking-[-0.035em]">
+              Understand the person. Find the idea. Make the design memorable.
+            </p>
+            <Text variant="small" className="relative mt-8 !text-brand-cream/80">
+              {site.brand} · {site.location}
             </Text>
           </div>
-          <ol className="grid gap-5 sm:grid-cols-3 lg:col-span-8">
-            {aboutContent.principles.map((principle) => (
-              <li key={principle.index} className="border-t border-rule py-5">
-                <Text variant="label" muted>{principle.index}</Text>
-                <Heading level={3} size="md" className="mt-4">
-                  {principle.heading}
-                </Heading>
-                <Text variant="small" className="mt-3">{principle.copy}</Text>
-              </li>
-            ))}
-          </ol>
         </div>
       </Container>
     </Section>

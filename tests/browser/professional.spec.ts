@@ -16,10 +16,8 @@ test("professional sections show verified experience, learning and tools", async
 
 test("unapproved contact destination cannot collect or submit information", async ({ page }) => {
   await page.goto("/#contact");
-  await expect(page.locator("#contact form")).toHaveCount(1);
-  await expect(page.locator("#contact fieldset")).toHaveAttribute("disabled", "");
-  await expect(page.getByLabel("Your name")).toBeDisabled();
-  await expect(page.getByRole("button", { name: "Prepare my inquiry" })).toBeDisabled();
+  await expect(page.locator("#contact form")).toHaveCount(0);
+  await expect(page.getByText("The public inquiry email is being finalized.")).toBeVisible();
   await expect(page.locator('a[href^="mailto:"]')).toHaveCount(0);
 });
 

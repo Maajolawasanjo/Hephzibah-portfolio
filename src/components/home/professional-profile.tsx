@@ -1,50 +1,34 @@
-import { EditorialImage } from "@/components/ui/editorial-image";
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
 import { Heading, Text } from "@/components/ui/typography";
 import { professionalProfile } from "@/content/professional";
 
+/** All three are main sections. Their content is deliberately concise. */
 export function ProfessionalExperience() {
-  const experience = professionalProfile.clientWork;
+  const work = professionalProfile.clientWork;
   return (
-    <Section id="experience" aria-labelledby="experience-heading">
+    <Section id="experience" compact aria-labelledby="experience-heading">
       <Container>
-        <div className="grid gap-8 border-t border-rule pt-9 lg:grid-cols-12 lg:gap-14">
-          <div className="lg:col-span-4">
-            <Text variant="label" muted>Professional experience</Text>
-            <Text className="mt-5 max-w-[29ch]" muted>
-              Design work shaped through real conversations, online
-              collaborations and in-person client projects.
-            </Text>
-          </div>
-          <div className="lg:col-span-8">
-            <Heading id="experience-heading" level={2} size="lg" className="max-w-[19ch]">
-              Design experience grounded in client work.
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:items-start lg:gap-14">
+          <div>
+            <Heading id="experience-heading" level={2} size="lg">
+              Experience.
             </Heading>
-            <Text variant="lead" className="mt-6 max-w-[59ch]">
-              {experience.description}
+            <Text variant="lead" className="mt-4 max-w-[45ch]">
+              Design work shaped by real clients, personal brands and direct collaboration.
             </Text>
-            <article className="mt-9 grid gap-5 border-t border-rule py-8 sm:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)]">
-              <div>
-                <Heading level={3} size="md" className="max-w-[21ch]">
-                  {experience.title}
-                </Heading>
-                <Text variant="small" muted className="mt-3">
-                  {experience.arrangement}
-                </Text>
-              </div>
-              <div>
-                <Text>
-                  Work with clients on design for their individual and
-                  business identities, with attention to clear communication,
-                  personal expression and consistent visuals.
-                </Text>
-                <Text variant="small" muted className="mt-5">
-                  {experience.note}
-                </Text>
-              </div>
-            </article>
           </div>
+          <article className="rounded-xl bg-soft px-6 py-7 sm:px-8 sm:py-9">
+            <Heading level={3} size="md">
+              {work.title}
+            </Heading>
+            <Text variant="small" className="mt-2 font-medium" muted>
+              {work.arrangement}
+            </Text>
+            <Text className="mt-5 max-w-[65ch]">
+              {work.description}
+            </Text>
+          </article>
         </div>
       </Container>
     </Section>
@@ -53,32 +37,25 @@ export function ProfessionalExperience() {
 
 export function ProfessionalSkills() {
   return (
-    <Section id="skills" compact aria-labelledby="skills-heading">
+    <Section id="skills" compact aria-labelledby="skills-heading" className="bg-soft">
       <Container>
-        <div className="grid gap-8 border-t border-rule pt-9 lg:grid-cols-12 lg:gap-14">
-          <div className="lg:col-span-4">
-            <Text variant="label" muted>Expertise & skills</Text>
-            <Text className="mt-5 max-w-[30ch]" muted>
-              A practical mix of visual problem-solving, design
-              execution and direct client collaboration.
-            </Text>
-            <EditorialImage asset="logo" fit="contain" sizes="(max-width: 1024px) 80vw, 28vw" className="mt-7 max-w-[240px]" />
-          </div>
-          <div className="lg:col-span-8">
-            <Heading id="skills-heading" level={2} size="lg" className="max-w-[20ch]">
-              The skills behind the creative decisions.
-            </Heading>
-            <div className="mt-9 grid gap-x-9 sm:grid-cols-2">
-              {professionalProfile.competencies.map((skill) => (
-                <article key={skill.name} className="border-t border-rule py-6">
-                  <Heading level={3} size="md">
-                    {skill.name}
-                  </Heading>
-                  <Text className="mt-3 max-w-[39ch]" muted>{skill.detail}</Text>
-                </article>
-              ))}
-            </div>
-          </div>
+        <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between md:gap-9">
+          <Heading id="skills-heading" level={2} size="lg">
+            My skills.
+          </Heading>
+          <Text className="max-w-[44ch]">
+            A practical mix of identity design, visual communication and client collaboration.
+          </Text>
+        </div>
+        <div className="mt-9 grid gap-x-10 gap-y-7 sm:grid-cols-2 lg:grid-cols-3">
+          {professionalProfile.competencies.map((skill) => (
+            <article key={skill.name} className="min-w-0">
+              <Heading level={3} size="md">
+                {skill.name}
+              </Heading>
+              <Text className="mt-2 max-w-[40ch]">{skill.detail}</Text>
+            </article>
+          ))}
         </div>
       </Container>
     </Section>
@@ -89,35 +66,24 @@ export function ProfessionalEducation() {
   return (
     <Section id="education" compact aria-labelledby="education-heading">
       <Container>
-        <div className="grid gap-8 border-t border-rule pt-9 lg:grid-cols-12 lg:gap-14">
-          <div className="lg:col-span-4">
-            <Text variant="label" muted>Education & training</Text>
-            <Text className="mt-5 max-w-[28ch]" muted>
-              Formal study and independent professional development
-              remain part of the creative practice.
-            </Text>
-            <div className="mt-7 flex items-center gap-4" aria-label="Design tools used in practice">
-              <EditorialImage asset="photoshop" showCaption={false} sizes="64px" fit="contain" className="w-16" imageClassName="border-0 bg-transparent !p-0" />
-              <EditorialImage asset="illustrator" showCaption={false} sizes="64px" fit="contain" className="w-16" imageClassName="border-0 bg-transparent !p-0" />
-              <EditorialImage asset="pixellab" showCaption={false} sizes="64px" fit="contain" className="w-16" imageClassName="border-0 bg-transparent !p-0" />
-            </div>
-          </div>
-          <div className="lg:col-span-8">
-            <Heading id="education-heading" level={2} size="lg">
-              Learning, applied to practice.
-            </Heading>
-            <div className="mt-8">
-              {professionalProfile.learning.map((item) => (
-                <article key={item.institution} className="grid gap-3 border-t border-rule py-6 sm:grid-cols-[minmax(0,0.75fr)_minmax(0,1.25fr)] sm:gap-8">
-                  <div>
-                    <Heading level={3} size="md">{item.institution}</Heading>
-                    <Text variant="small" muted className="mt-1">{item.status}</Text>
-                  </div>
-                  <Text muted>{item.description}</Text>
-                </article>
-              ))}
-            </div>
-          </div>
+        <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between md:gap-10">
+          <Heading id="education-heading" level={2} size="lg">
+            Education & training.
+          </Heading>
+          <Text className="max-w-[45ch]">
+            Academic learning and design courses that continue to shape the practice.
+          </Text>
+        </div>
+        <div className="mt-9 grid gap-5 md:grid-cols-3">
+          {professionalProfile.learning.map((item) => (
+            <article key={item.institution} className="rounded-xl bg-soft px-6 py-7">
+              <Heading level={3} size="md">{item.institution}</Heading>
+              <Text variant="small" className="mt-2 font-medium" muted>
+                {item.status}
+              </Text>
+              <Text className="mt-4">{item.description}</Text>
+            </article>
+          ))}
         </div>
       </Container>
     </Section>

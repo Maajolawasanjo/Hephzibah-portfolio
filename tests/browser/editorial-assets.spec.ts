@@ -9,33 +9,47 @@ const assets = [
   "pixellab",
 ] as const;
 
-test("every supplied illustration is in the built site and served as WebP", async ({ page, request }) => {
-  await page.goto("/");
+test("all six supplied assets remain available as WebP resources", async ({ request }) => {
   for (const asset of assets) {
-    const media = page.locator('[data-editorial-asset="' + (
-      asset === "brand-identity" ? "branding" :
-      asset === "logo-design" ? "logo" : asset
-    ) + '"]');
-    await expect(media.first()).toHaveCount(1);
-    const image = media.first().locator("img");
-    await expect(image).toHaveAttribute("alt", /\S+/);
     const response = await request.get("/editorial/" + asset + ".webp");
-    expect(response.status(), "asset: " + asset).toBe(200);
+    expect(response.status(), "asset " + asset).toBe(200);
     expect(response.headers()["content-type"]).toContain("image/webp");
   }
 });
 
-test("visuals appear in relevant sections without falsely publishing case studies", async ({ page }) => {
+test("V3 uses contextual imagery without displaying third-party logo work as portfolio proof", async ({ page }) => {
   await page.goto("/");
   await expect(page.locator("#home [data-editorial-asset='branding']")).toHaveCount(1);
-  await expect(page.locator("#selected-work [data-editorial-asset='branding']")).toHaveCount(1);
-  await expect(page.locator("#selected-work [data-editorial-asset='logo']")).toHaveCount(1);
-  await expect(page.locator("#toolkit [data-editorial-asset='photoshop']")).toHaveCount(1);
-  await expect(page.locator("#toolkit [data-editorial-asset='illustrator']")).toHaveCount(1);
-  await expect(page.locator("#toolkit [data-editorial-asset='pixellab']")).toHaveCount(1);
-  await expect(page.locator("#photo-video [data-editorial-asset='photography']")).toHaveCount(1);
-
-  await expect(page.getByText("These are illustrative visual references, not verified client portfolio projects.")).toBeVisible();
-  await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", /noindex/);
+  for (const asset of ["photoshop", "illustrator", "pixellab"]) {
+    const item = page.locator("#toolkit [data-editorial-asset='" + asset + "']");
+    await expect(item).toHaveCount(1);
+    await expect(item.locator("img")).toHaveAttribute("alt", /\S+/);
+  }
+  await expect(page.locator("#selected-work [data-editorial-asset]")).toHaveCount(0);
+  await expect(page.locator('[data-editorial-asset="logo"]')).toHaveCount(0);
   await expect(page.locator('a[href^="/work/"]')).toHaveCount(0);
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", /noindex/);
+});
+
+test("V3 preserves the core design and career sections without duplicate nested process blocks", async ({ page }) => {
+  await page.goto("/");
+  const ids = [
+    "home",
+    "selected-work",
+    "about",
+    "experience",
+    "skills",
+    "toolkit",
+    "services",
+    "education",
+    "process",
+    "mentorship",
+    "contact",
+  ];
+  for (const id of ids) {
+    await expect(page.locator("section#" + id)).toHaveCount(1);
+  }
+  await expect(page.getByRole("heading", { name: "My design process." })).toHaveCount(1);
+  await expect(page.getByRole("heading", { name: "Sharing the craft." })).toHaveCount(1);
+  await expect(page.locator("#about-principles")).toHaveCount(0);
 });

@@ -1,8 +1,8 @@
-import { EditorialImage } from "@/components/ui/editorial-image";
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
 import { Heading, Text } from "@/components/ui/typography";
-import { getApprovedTools, toolkitDisciplines } from "@/content/supporting";
+import { EditorialImage } from "@/components/ui/editorial-image";
+import { getApprovedTools } from "@/content/supporting";
 import type { EditorialMediaKey } from "@/content/editorial-media";
 
 const softwareImages: Record<string, EditorialMediaKey> = {
@@ -13,66 +13,38 @@ const softwareImages: Record<string, EditorialMediaKey> = {
 
 export function Toolkit() {
   const tools = getApprovedTools();
-
+  if (!tools.length) return null;
   return (
     <Section id="toolkit" compact aria-labelledby="toolkit-heading">
       <Container>
-        <div className="grid gap-8 border-t border-rule pt-9 lg:grid-cols-12 lg:gap-14">
-          <div className="lg:col-span-4">
-            <Text variant="label" muted>Software & creative toolkit</Text>
-            <Text className="mt-5 max-w-[29ch]" muted>
-              The tools support the thinking; the work is defined
-              by the brief, the audience and the execution.
-            </Text>
-          </div>
-          <div className="lg:col-span-8">
-            <Heading id="toolkit-heading" level={2} size="lg">
-              From idea to execution.
-            </Heading>
-            <Text variant="lead" className="mt-5 max-w-[52ch]">
-              I work with familiar graphic design software and
-              creative techniques to develop identities, imagery and
-              everyday visual communication.
-            </Text>
-
-            {tools.length > 0 && (
-              <div className="mt-9">
-                <Heading level={3} size="md">Design software I use</Heading>
-                <ul className="mt-5 grid gap-4 sm:grid-cols-3">
-                  {tools.map((tool) => (
-                    <li key={tool.name} className="border-t border-rule pt-4">
-                      {softwareImages[tool.name] && (
-                        <EditorialImage
-                          asset={softwareImages[tool.name]}
-                          sizes="96px"
-                          showCaption={false}
-                          fit="contain"
-                          className="mb-5 w-24"
-                          imageClassName="border-0 bg-transparent !p-0"
-                        />
-                      )}
-                      <Text className="font-semibold">{tool.name}</Text>
-                      <Text variant="small" muted className="mt-2">{tool.category}</Text>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-            <div className="mt-9 border-t border-rule pt-6">
-              <Heading level={3} size="md">Creative disciplines</Heading>
-              <ul className="mt-4 grid gap-5 sm:grid-cols-3">
-                {toolkitDisciplines.map((discipline) => (
-                  <li key={discipline.number} className="border-t border-rule pt-4">
-                    <Text variant="label" muted>{discipline.number}</Text>
-                    <Text className="mt-3 font-semibold">{discipline.name}</Text>
-                    <Text variant="small" className="mt-2">{discipline.detail}</Text>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+        <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between md:gap-9">
+          <Heading id="toolkit-heading" level={2} size="lg">
+            My creative tools.
+          </Heading>
+          <Text className="max-w-[47ch]">
+            The applications I use to bring visual ideas from concept to execution.
+          </Text>
         </div>
+        <ul className="mt-9 grid gap-4 sm:grid-cols-3">
+          {tools.map((tool) => (
+            <li key={tool.name} className="flex min-w-0 items-center gap-5 rounded-xl bg-soft p-5 md:flex-col md:items-start md:gap-4 md:p-7">
+              {softwareImages[tool.name] && (
+                <EditorialImage
+                  asset={softwareImages[tool.name]}
+                  sizes="88px"
+                  showCaption={false}
+                  fit="contain"
+                  className="w-[72px] shrink-0 md:w-[88px]"
+                  imageClassName="!border-0 !bg-transparent !p-0"
+                />
+              )}
+              <div>
+                <h3 className="text-lg font-bold leading-tight">{tool.name}</h3>
+                <Text variant="small" className="mt-1" muted>{tool.category}</Text>
+              </div>
+            </li>
+          ))}
+        </ul>
       </Container>
     </Section>
   );

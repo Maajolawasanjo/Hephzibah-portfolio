@@ -96,11 +96,12 @@ test("reduced motion preserves content and avoids entrance movement", async ({ p
   expect(info.pendingOpacity).toBe(true);
 });
 
-test("inquiry cannot be submitted without an approved public address", async ({ page }) => {
+test("unapproved inquiry is clearly unavailable and no dead form is shown", async ({ page }) => {
   await page.goto("/#contact");
   await expect(page.getByText("The public inquiry email is being finalized.")).toBeVisible();
-  await expect(page.locator('form')).toHaveCount(1);
-  await expect(page.getByRole("button", { name: "Prepare my inquiry" })).toBeDisabled();
+  await expect(page.locator("#contact form")).toHaveCount(0);
+  await expect(page.locator('#contact a[href^="mailto:"]')).toHaveCount(0);
+  await expect(page.getByRole("heading", { name: "Let's work together." })).toBeVisible();
 });
 
 test("root text enlargement retains reasonable page width", async ({ page }) => {

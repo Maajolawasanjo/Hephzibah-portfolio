@@ -150,3 +150,24 @@ See [V2 professional redesign](docs/V2_PROFESSIONAL_REDESIGN.md).
 ## Temporary supplied imagery
 
 Six user-supplied visual resources are now stored in `public/editorial/` and shown contextually across the homepage, services, software toolkit and supporting professional sections. The brand and logo mockups are illustrative references, **not approved Hephie client case studies**. See [temporary asset manifest](docs/TEMPORARY_VISUAL_ASSETS.md). The project publication and indexing approvals remain unchanged.
+
+
+## V3 visual refinement — main sections retained
+
+V3 refines the **internal layouts** of the existing homepage rather than
+removing substantive sections. Selected Work, About, Experience, Skills,
+Software Toolkit, Services, Education, **Design Process**, Mentorship and
+Contact all remain. The conditional Testimonials and More Work sections
+also remain available when genuine approved entries are supplied.
+
+The changes reduce repeated eyebrow/subheading/paragraph combinations,
+consecutive hairlines, bulky multi-column explanations, duplicated
+illustrative images and large empty spaces. Visual sections use varied
+layouts, controlled Satoshi typography and consistent burgundy/cream
+branding. The unapproved third-party logo sample is no longer shown as
+portfolio evidence. Genuine projects remain withheld until authorized.
+
+The contact component shows an honest compact unavailable state when no
+approved recipient exists, instead of a large disabled form. Once a valid
+approved address is configured, the accessible email-composer form
+becomes available. It does not pretend to send messages through a server.

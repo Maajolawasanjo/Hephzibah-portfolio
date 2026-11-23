@@ -10,7 +10,7 @@ import { Services } from "@/components/home/services";
 import { Testimonials } from "@/components/home/testimonials";
 import { Toolkit } from "@/components/home/toolkit";
 
-/** V2: creative portfolio plus evidence-based professional profile. */
+/** V3: retain every substantive main section; remove noisy internal subdivisions. */
 export default function HomePage() {
   return (
     <>
