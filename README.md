@@ -145,3 +145,8 @@ The font uses Fontshare's official Satoshi stylesheet, without copying or
 redistributing font binaries. Manual review must confirm loading and
 commercial-use compliance with the current ITF Free Font License.
 See [V2 professional redesign](docs/V2_PROFESSIONAL_REDESIGN.md).
+
+
+## Temporary supplied imagery
+
+Six user-supplied visual resources are now stored in `public/editorial/` and shown contextually across the homepage, services, software toolkit and supporting professional sections. The brand and logo mockups are illustrative references, **not approved Hephie client case studies**. See [temporary asset manifest](docs/TEMPORARY_VISUAL_ASSETS.md). The project publication and indexing approvals remain unchanged.

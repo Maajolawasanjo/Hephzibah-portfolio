@@ -2,7 +2,7 @@ import { lstat, readdir } from "node:fs/promises";
 import { join, resolve } from "node:path";
 
 const root = resolve("public");
-const folders = ["projects", "about"];
+const folders = ["projects", "about", "editorial"];
 const supported = /\.(avif|webp|png|jpe?g)$/i;
 const maxFileSize = 3 * 1024 * 1024;
 const errors = [];

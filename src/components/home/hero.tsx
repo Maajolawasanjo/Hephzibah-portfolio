@@ -1,3 +1,4 @@
+import { EditorialImage } from "@/components/ui/editorial-image";
 import { Container } from "@/components/layout/container";
 import { Button } from "@/components/ui/button";
 import { Heading, Text } from "@/components/ui/typography";
@@ -33,6 +34,7 @@ export function Hero() {
           </div>
 
           <aside className="motion-hero-specimen border-t border-rule pt-6 lg:col-span-4 lg:ml-auto lg:max-w-sm" aria-label="Creative practice overview">
+            <EditorialImage asset="branding" sizes="(max-width: 1024px) 90vw, 28vw" className="mb-7" />
             <Text variant="label" muted className="mb-4">What I bring to the table</Text>
             <Text className="max-w-[39ch]">
               Identity design, personal branding, considered layouts and

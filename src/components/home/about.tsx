@@ -1,3 +1,4 @@
+import { EditorialImage } from "@/components/ui/editorial-image";
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
 import { Heading, Text } from "@/components/ui/typography";
@@ -19,6 +20,7 @@ export function About() {
             <Text variant="small" muted className="mt-1">
               {site.role} · {site.location}
             </Text>
+            <EditorialImage asset="photography" sizes="(max-width: 1024px) 80vw, 29vw" className="mt-7 max-w-sm" />
           </div>
           <div className="lg:col-span-8">
             <Heading id="about-heading" level={2} size="lg" className="max-w-[21ch]">

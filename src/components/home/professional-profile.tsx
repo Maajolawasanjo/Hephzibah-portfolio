@@ -1,3 +1,4 @@
+import { EditorialImage } from "@/components/ui/editorial-image";
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
 import { Heading, Text } from "@/components/ui/typography";
@@ -61,6 +62,7 @@ export function ProfessionalSkills() {
               A practical mix of visual problem-solving, design
               execution and direct client collaboration.
             </Text>
+            <EditorialImage asset="logo" fit="contain" sizes="(max-width: 1024px) 80vw, 28vw" className="mt-7 max-w-[240px]" />
           </div>
           <div className="lg:col-span-8">
             <Heading id="skills-heading" level={2} size="lg" className="max-w-[20ch]">
@@ -94,6 +96,11 @@ export function ProfessionalEducation() {
               Formal study and independent professional development
               remain part of the creative practice.
             </Text>
+            <div className="mt-7 flex items-center gap-4" aria-label="Design tools used in practice">
+              <EditorialImage asset="photoshop" showCaption={false} sizes="64px" fit="contain" className="w-16" imageClassName="border-0 bg-transparent !p-0" />
+              <EditorialImage asset="illustrator" showCaption={false} sizes="64px" fit="contain" className="w-16" imageClassName="border-0 bg-transparent !p-0" />
+              <EditorialImage asset="pixellab" showCaption={false} sizes="64px" fit="contain" className="w-16" imageClassName="border-0 bg-transparent !p-0" />
+            </div>
           </div>
           <div className="lg:col-span-8">
             <Heading id="education-heading" level={2} size="lg">

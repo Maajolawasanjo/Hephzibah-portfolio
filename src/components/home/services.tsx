@@ -1,8 +1,17 @@
+import { EditorialImage } from "@/components/ui/editorial-image";
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
 import { Button } from "@/components/ui/button";
 import { Heading, Text } from "@/components/ui/typography";
 import { serviceDetails, serviceValue } from "@/content/services";
+import type { EditorialMediaKey } from "@/content/editorial-media";
+
+const serviceImages: Record<string, EditorialMediaKey> = {
+  "logo-design": "logo",
+  "brand-identity": "branding",
+  "social-media-branding": "branding",
+  "photo-video": "photography",
+};
 
 /**
  * Phase 09: service explanations and value proposition.
@@ -53,7 +62,14 @@ export function Services() {
                 </Text>
               </div>
 
-              <div className="min-w-0 lg:col-span-6">
+              <div className="min-w-0 lg:col-span-3">
+                <EditorialImage
+                  asset={serviceImages[service.id]}
+                  sizes="(max-width: 1024px) 80vw, 24vw"
+                  fit={service.id === "logo-design" ? "contain" : "cover"}
+                />
+              </div>
+              <div className="min-w-0 lg:col-span-4">
                 <Heading
                   id={service.id + "-heading"}
                   level={3}
@@ -70,7 +86,7 @@ export function Services() {
                 </Text>
               </div>
 
-              <div className="lg:col-span-5 lg:pl-8">
+              <div className="lg:col-span-4 lg:pl-2">
                 <Text variant="label" muted className="mb-5">
                   Scope may include
                 </Text>

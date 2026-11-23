@@ -1,7 +1,15 @@
+import { EditorialImage } from "@/components/ui/editorial-image";
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
 import { Heading, Text } from "@/components/ui/typography";
 import { getApprovedTools, toolkitDisciplines } from "@/content/supporting";
+import type { EditorialMediaKey } from "@/content/editorial-media";
+
+const softwareImages: Record<string, EditorialMediaKey> = {
+  "Adobe Photoshop": "photoshop",
+  "Adobe Illustrator": "illustrator",
+  PixelLab: "pixellab",
+};
 
 export function Toolkit() {
   const tools = getApprovedTools();
@@ -33,6 +41,16 @@ export function Toolkit() {
                 <ul className="mt-5 grid gap-4 sm:grid-cols-3">
                   {tools.map((tool) => (
                     <li key={tool.name} className="border-t border-rule pt-4">
+                      {softwareImages[tool.name] && (
+                        <EditorialImage
+                          asset={softwareImages[tool.name]}
+                          sizes="96px"
+                          showCaption={false}
+                          fit="contain"
+                          className="mb-5 w-24"
+                          imageClassName="border-0 bg-transparent !p-0"
+                        />
+                      )}
                       <Text className="font-semibold">{tool.name}</Text>
                       <Text variant="small" muted className="mt-2">{tool.category}</Text>
                     </li>

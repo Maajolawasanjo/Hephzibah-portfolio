@@ -1,3 +1,4 @@
+import { EditorialImage } from "@/components/ui/editorial-image";
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
 import { Heading, Text } from "@/components/ui/typography";
@@ -15,6 +16,7 @@ export function Process() {
             </Heading>
           </div>
           <div className="lg:col-span-5">
+            <EditorialImage asset="photography" sizes="(max-width: 1024px) 90vw, 31vw" className="mb-6" />
             <Text variant="lead">
               Every project begins with listening, grows through
               thoughtful design and improves through review.

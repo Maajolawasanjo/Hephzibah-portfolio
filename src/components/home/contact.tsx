@@ -1,3 +1,4 @@
+import { EditorialImage } from "@/components/ui/editorial-image";
 import { ContactForm } from "@/components/home/contact-form";
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
@@ -81,6 +82,7 @@ export function Contact() {
                 </Text>
               </div>
             )}
+            <EditorialImage asset="branding" sizes="(max-width: 1024px) 80vw, 28vw" className="mt-6 max-w-sm" />
             <Text variant="small" muted className="mt-7 border-t border-rule pt-4">
               {site.brand} · {site.location}
             </Text>
