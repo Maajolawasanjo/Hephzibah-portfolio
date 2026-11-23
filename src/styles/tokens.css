@@ -4,7 +4,8 @@
  * This stylesheet is the source of truth for styling variables.
  */
 :root {
-  color-scheme: light;
+  /* Preserve the authored light palette even when browser dark mode is enabled. */
+  color-scheme: only light;
 
   /* Brand */
   --brand-burgundy: #66001f;
