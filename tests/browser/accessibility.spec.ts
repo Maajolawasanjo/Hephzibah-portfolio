@@ -110,9 +110,30 @@ test("root text enlargement retains reasonable page width", async ({ page }) => 
   await page.evaluate(() => {
     document.documentElement.style.fontSize = "32px";
   });
-  const sizes = await page.evaluate(() => ({
-    document: document.documentElement.scrollWidth,
-    viewport: document.documentElement.clientWidth,
-  }));
-  expect(sizes.document).toBeLessThanOrEqual(sizes.viewport + 1);
+  const sizes = await page.evaluate(() => {
+    const viewport = document.documentElement.clientWidth;
+    const offenders = Array.from(document.querySelectorAll<HTMLElement>("body *"))
+      .map((element) => ({ element, bounds: element.getBoundingClientRect() }))
+      .filter(({ bounds }) => bounds.width > 0 && bounds.right > viewport + 1)
+      .slice(-24)
+      .map(({ element, bounds }) => ({
+        tag: element.tagName.toLowerCase(),
+        id: element.id,
+        className: typeof element.className === "string" ? element.className.slice(0, 120) : "",
+        text: element.textContent?.trim().slice(0, 70),
+        left: Math.round(bounds.left),
+        right: Math.round(bounds.right),
+        width: Math.round(bounds.width),
+      }));
+    return {
+      document: document.documentElement.scrollWidth,
+      viewport,
+      offenders,
+    };
+  });
+  expect(
+    sizes.document,
+    "200% text enlargement should not cause horizontal scrolling; overflowing elements: " +
+      JSON.stringify(sizes.offenders)
+  ).toBeLessThanOrEqual(sizes.viewport + 1);
 });
