@@ -25,7 +25,7 @@ export function Toolkit() {
             The applications I use to bring visual ideas from concept to execution.
           </Text>
         </div>
-        <ul className="mt-9 grid gap-4 sm:grid-cols-3">
+        <ul className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {tools.map((tool) => (
             <li key={tool.name} className="flex min-w-0 items-center gap-5 rounded-xl bg-soft p-5 md:flex-col md:items-start md:gap-4 md:p-7">
               {softwareImages[tool.name] && (
@@ -38,8 +38,8 @@ export function Toolkit() {
                   imageClassName="!border-0 !bg-transparent !p-0"
                 />
               )}
-              <div>
-                <h3 className="text-lg font-bold leading-tight">{tool.name}</h3>
+              <div className="min-w-0">
+                <h3 className="break-words text-lg font-bold leading-tight">{tool.name}</h3>
                 <Text variant="small" className="mt-1" muted>{tool.category}</Text>
               </div>
             </li>
