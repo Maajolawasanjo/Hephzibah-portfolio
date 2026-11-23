@@ -7,12 +7,12 @@ import { Text } from "@/components/ui/typography";
 import { site } from "@/config/site";
 import { buildInquiryMailto, isValidContactEmail } from "@/lib/contact";
 
-export function ContactForm({ recipient }: { recipient: string }) {
+export function ContactForm({ recipient }: { recipient: string | null }) {
   const [composerOpened, setComposerOpened] = useState(false);
 
   function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (!isValidContactEmail(recipient)) return;
+    if (!recipient || !isValidContactEmail(recipient)) return;
 
     const values = new FormData(event.currentTarget);
     const name = String(values.get("name") ?? "").trim().slice(0, 100);
@@ -41,7 +41,9 @@ export function ContactForm({ recipient }: { recipient: string }) {
   const labelClass = "mb-2 block text-base font-medium";
 
   return (
-    <form onSubmit={onSubmit} className="space-y-6">
+    <form onSubmit={onSubmit}>
+      <fieldset disabled={!recipient} aria-describedby={!recipient ? "contact-status" : undefined} className="space-y-6">
+        <legend className="sr-only">Professional enquiry details</legend>
       <div className="grid gap-6 sm:grid-cols-2">
         <div>
           <label htmlFor="inquiry-name" className={labelClass}>
@@ -122,10 +124,12 @@ export function ContactForm({ recipient }: { recipient: string }) {
             submit your information.
           </Text>
         </div>
-        <Button type="submit" size="lg">
+        <Button type="submit" size="lg" disabled={!recipient}>
           Prepare my inquiry <span aria-hidden="true">↗</span>
         </Button>
       </div>
+
+      </fieldset>
 
       {composerOpened && (
         <p role="status" className="text-sm leading-relaxed">

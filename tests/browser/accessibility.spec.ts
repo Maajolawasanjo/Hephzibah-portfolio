@@ -13,7 +13,7 @@ test("homepage provides navigable landmarks and valid section destinations", asy
   await expect(page.locator("html")).toHaveAttribute("lang", "en");
 
   const links = page.locator('nav[aria-label="Primary navigation"] a');
-  expect(await links.count()).toBe(4);
+  expect(await links.count()).toBe(6);
 
   for (const link of await links.all()) {
     const href = await link.getAttribute("href");
@@ -63,13 +63,13 @@ test("mobile disclosure supports natural Tab, Escape, and focus exit", async ({ 
   await expect(nav).toBeHidden();
 
   await open.click();
-  const lastLink = nav.getByRole("link", { name: "Explore work" });
+  const lastLink = nav.getByRole("link", { name: "View experience" });
   await lastLink.focus();
   await page.keyboard.press("Tab");
 
   // Disclosure menus are not modal dialogs and must never trap focus.
   await expect(nav).toBeHidden();
-  await expect(page.getByRole("link", { name: "What I create" })).toBeFocused();
+  await expect(page.getByRole("link", { name: "Explore my experience" })).toBeFocused();
 });
 
 test("menu is hidden at desktop width and interactive nav is visible", async ({ page }) => {
@@ -99,8 +99,8 @@ test("reduced motion preserves content and avoids entrance movement", async ({ p
 test("inquiry cannot be submitted without an approved public address", async ({ page }) => {
   await page.goto("/#contact");
   await expect(page.getByText("The public inquiry email is being finalized.")).toBeVisible();
-  await expect(page.locator('form')).toHaveCount(0);
-  await expect(page.getByRole("button", { name: "Prepare my inquiry" })).toHaveCount(0);
+  await expect(page.locator('form')).toHaveCount(1);
+  await expect(page.getByRole("button", { name: "Prepare my inquiry" })).toBeDisabled();
 });
 
 test("root text enlargement retains reasonable page width", async ({ page }) => {

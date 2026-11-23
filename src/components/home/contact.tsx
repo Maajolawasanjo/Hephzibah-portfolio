@@ -6,100 +6,90 @@ import { getPublicContactEmail } from "@/lib/contact";
 import { site } from "@/config/site";
 
 /**
- * Phase 11: an intentional editorial conversion section. Email and inquiry
- * controls activate only after the owner approves the public destination.
+ * The form is visible for design review, but all fields and submission
+ * remain disabled until the owner confirms a real public recipient.
  */
 export function Contact() {
   const email = getPublicContactEmail();
 
   return (
-    <Section
-      id="contact"
-      aria-labelledby="contact-heading"
-      className="bg-brand-cream text-brand-burgundy"
-    >
+    <Section id="contact" aria-labelledby="contact-heading">
       <Container>
-        <div data-reveal="up" className="grid gap-10 border-t border-rule pt-10 lg:grid-cols-12 lg:gap-16">
+        <div className="grid gap-7 border-t border-rule pt-9 lg:grid-cols-12 lg:gap-14">
           <div className="lg:col-span-4">
-            <Text variant="label" muted className="mb-6">
-              10 / Contact
-            </Text>
-            <Text variant="small" className="max-w-[28ch]">
-              Have an idea, a new business, or a brand that needs a
-              clearer voice?
+            <Text variant="label" muted>Work together</Text>
+            <Text className="mt-5 max-w-[30ch]">
+              Whether you are building a brand or looking to hire
+              a visual designer, start with a conversation.
             </Text>
           </div>
-          <div className="min-w-0 lg:col-span-8">
-            <Heading
-              level={2}
-              size="xl"
-              id="contact-heading"
-              className="max-w-[14ch] break-words"
-            >
-              Let’s make something memorable.
+          <div className="lg:col-span-8">
+            <Heading level={2} size="lg" id="contact-heading" className="max-w-[18ch]">
+              Let’s build something worth remembering.
             </Heading>
-            <Text variant="lead" className="mt-8 max-w-[54ch]">
-              Tell me what you are building and where you want your
-              brand to go. A good collaboration begins with a conversation.
+            <Text variant="lead" className="mt-5 max-w-[55ch]">
+              Share the opportunity, project brief or creative challenge.
+              A focused conversation is the best starting point for work
+              that feels considered and authentic.
             </Text>
           </div>
         </div>
 
-        <div className="mt-16 grid gap-10 border-t border-rule pt-10 lg:mt-20 lg:grid-cols-12 lg:gap-16">
-          <div className="lg:col-span-4">
-            <Text variant="label" muted className="mb-5">
-              Start a conversation
+        <div className="mt-9 grid gap-5 border-y border-rule py-7 sm:grid-cols-2">
+          <div>
+            <Text variant="label" muted>For employers & teams</Text>
+            <Heading level={3} size="md" className="mt-3">Hire a designer</Heading>
+            <Text className="mt-3 max-w-[44ch]">
+              Opportunities involving brand identity, design
+              execution and visual storytelling.
             </Text>
+          </div>
+          <div>
+            <Text variant="label" muted>For businesses & individuals</Text>
+            <Heading level={3} size="md" className="mt-3">Start a creative project</Heading>
+            <Text className="mt-3 max-w-[44ch]">
+              Logo design, personal branding, visual identity
+              and content for your business or professional presence.
+            </Text>
+          </div>
+        </div>
+
+        <div className="mt-10 grid gap-8 lg:grid-cols-12 lg:gap-14">
+          <div className="lg:col-span-4">
+            <Text variant="label" muted>Get in touch</Text>
             {email ? (
               <>
                 <a
                   href={"mailto:" + email}
-                  className="block break-all text-lg font-medium underline underline-offset-8 hover:opacity-80"
+                  className="mt-4 block break-all text-lg font-semibold underline underline-offset-8"
                 >
                   {email}
                 </a>
-                <Text variant="small" muted className="mt-5 max-w-[36ch]">
-                  Prefer to write directly? Use the email above.
-                  Otherwise, prepare your project message using the form.
+                <Text variant="small" muted className="mt-4">
+                  The enquiry form prepares a message in your email
+                  application. You review and send it there.
                 </Text>
               </>
             ) : (
-              <>
-                <Text variant="lead" className="max-w-[31ch]">
+              <div id="contact-status" className="mt-4 max-w-[40ch]">
+                <Text className="font-semibold">
                   The public inquiry email is being finalized.
                 </Text>
-                <Text variant="small" muted className="mt-5 max-w-[37ch]">
-                  Contact details will appear here once confirmed for public
-                  use. No inquiry messages are being collected yet.
+                <Text variant="small" muted className="mt-3">
+                  The form is shown for preview but cannot collect or
+                  send messages until an approved inbox is connected.
                 </Text>
-              </>
-            )}
-            <div className="mt-10 border-t border-rule pt-5">
-              <Text variant="small" muted>
-                {site.brand} · {site.location}
-              </Text>
-            </div>
-          </div>
-
-          <div className="lg:col-span-8">
-            {email ? (
-              <ContactForm recipient={email} />
-            ) : (
-              <div className="flex min-h-64 flex-col justify-between border border-rule bg-soft p-7 sm:p-10">
-                <Text variant="label" muted>
-                  Inquiries / Pending approval
-                </Text>
-                <div>
-                  <Heading level={3} size="md">
-                    Connection matters.
-                  </Heading>
-                  <Text className="mt-5 max-w-[55ch]">
-                    The inquiry form will become available here when the
-                    designer confirms a public email address.
-                  </Text>
-                </div>
               </div>
             )}
+            <Text variant="small" muted className="mt-7 border-t border-rule pt-4">
+              {site.brand} · {site.location}
+            </Text>
+          </div>
+          <div className="lg:col-span-8">
+            <Heading level={3} size="md" className="mb-5">
+              Tell me about your enquiry
+            </Heading>
+            <ContactForm recipient={email} />
           </div>
         </div>
       </Container>

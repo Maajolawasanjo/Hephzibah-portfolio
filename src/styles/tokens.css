@@ -19,24 +19,24 @@
   --color-action: var(--brand-burgundy);
   --color-action-text: var(--brand-cream);
 
-  /* Typography. Do not embed Alro without licensed webfont files. */
-  --font-display-stack: "Alro", var(--font-dm-sans), Arial, sans-serif;
-  --font-body-stack: var(--font-dm-sans), Arial, sans-serif;
-  --type-display: clamp(3.25rem, 8vw, 8.5rem);
-  --type-heading-xl: clamp(2.75rem, 6.2vw, 6.25rem);
-  --type-heading-lg: clamp(2.125rem, 4.4vw, 4.5rem);
-  --type-heading-md: clamp(1.625rem, 2.8vw, 2.5rem);
-  --type-lead: clamp(1.125rem, 1.6vw, 1.375rem);
-  --type-body: 1rem;
-  --type-small: 0.875rem;
+  /* Satoshi is served through Fontshare’s own API, no redistribution. */
+  --font-display-stack: "Satoshi", Arial, sans-serif;
+  --font-body-stack: "Satoshi", Arial, sans-serif;
+  --type-display: clamp(3.1rem, 6.8vw, 6.8rem);
+  --type-heading-xl: clamp(2.6rem, 4.9vw, 5rem);
+  --type-heading-lg: clamp(2.15rem, 3.55vw, 3.75rem);
+  --type-heading-md: clamp(1.5rem, 2.15vw, 2.25rem);
+  --type-lead: clamp(1.125rem, 1.5vw, 1.3125rem);
+  --type-body: 1.0625rem;
+  --type-small: 0.9375rem;
   --type-label: 0.75rem;
-  --leading-display: 0.94;
-  --leading-heading: 1.06;
-  --leading-body: 1.65;
-  --tracking-display: -0.062em;
-  --tracking-heading: -0.04em;
-  --tracking-label: 0.16em;
-  --measure-body: 65ch;
+  --leading-display: 1.01;
+  --leading-heading: 1.12;
+  --leading-body: 1.68;
+  --tracking-display: -0.047em;
+  --tracking-heading: -0.032em;
+  --tracking-label: 0.11em;
+  --measure-body: 67ch;
 
   /* Consistent 4px baseline / 8px rhythm where practical */
   --space-1: 0.25rem;
@@ -48,10 +48,10 @@
   --space-12: 3rem;
   --space-16: 4rem;
   --space-24: 6rem;
-  --layout-content-max: 80rem;
+  --layout-content-max: 76rem;
   --layout-reading-max: 42rem;
   --layout-gutter: clamp(1.25rem, 4vw, 4rem);
-  --layout-section-space: clamp(4.5rem, 9vw, 9rem);
+  --layout-section-space: clamp(3.5rem, 6vw, 6rem);
   --layout-grid-gap: clamp(1rem, 2.4vw, 3rem);
 
   /* Minimal borders / shape */

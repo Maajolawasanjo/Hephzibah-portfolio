@@ -11,12 +11,12 @@ import { serviceDetails, serviceValue } from "@/content/services";
  */
 export function Services() {
   return (
-    <Section id="services" aria-labelledby="services-heading">
+    <Section id="services" compact aria-labelledby="services-heading">
       <Container>
         <div data-reveal="up" className="grid gap-8 border-t border-rule pt-10 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-4">
             <Text variant="label" muted className="mb-6">
-              03 / Services
+              Services & design capabilities
             </Text>
             <Text variant="small" className="max-w-[28ch]">
               Brand identity & visual storytelling
@@ -26,26 +26,26 @@ export function Services() {
             <Heading
               id="services-heading"
               level={2}
-              size="xl"
-              className="max-w-[15ch]"
+              size="lg"
+              className="max-w-[20ch]"
             >
-              More than a good first impression.
+              Designed to communicate, not just decorate.
             </Heading>
             <Text variant="lead" className="mt-7 max-w-[55ch]">
-              From the first visual idea to the places your brand shows up,
-              thoughtful design helps tell a clearer, more recognizable story.
+              From the first idea to a complete visual system, each service connects
+              creative thinking with practical communication and the needs of the audience.
             </Text>
           </div>
         </div>
 
-        <div className="mt-14 lg:mt-20">
+        <div className="mt-9 lg:mt-12">
           {serviceDetails.map((service) => (
             <article
               key={service.id}
               data-reveal="up"
               id={service.id}
               aria-labelledby={service.id + "-heading"}
-              className="grid gap-8 border-t border-rule py-10 sm:py-12 lg:grid-cols-12 lg:gap-12 lg:py-16"
+              className="grid gap-8 border-t border-rule py-10 sm:py-12 lg:grid-cols-12 lg:gap-12 lg:py-10"
             >
               <div className="lg:col-span-1">
                 <Text variant="label" muted>
@@ -57,8 +57,8 @@ export function Services() {
                 <Heading
                   id={service.id + "-heading"}
                   level={3}
-                  size="lg"
-                  className="max-w-[16ch] break-words"
+                  size="md"
+                  className="max-w-[21ch] break-words"
                 >
                   {service.title}
                 </Heading>
@@ -72,7 +72,7 @@ export function Services() {
 
               <div className="lg:col-span-5 lg:pl-8">
                 <Text variant="label" muted className="mb-5">
-                  Potential areas of work
+                  Scope may include
                 </Text>
                 <ul>
                   {service.possibleDeliverables.map((deliverable, index) => (

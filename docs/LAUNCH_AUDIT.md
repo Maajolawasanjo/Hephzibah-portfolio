@@ -190,3 +190,20 @@ instead of merely matching a nonempty TypeScript array declaration.
 The new content validator checks approved project image paths and real
 files. This removes a potential false-positive launch check when content
 is entered without the corresponding assets. See docs/OWNER_HANDOFF.md.
+
+
+## V2 professional portfolio revision
+
+The original visual audit found oversized headings, excessive empty space,
+decorative 'Aa.', 'Work.' and other placeholders, and no CV-like professional
+record. V2 adds experience, skills and education sections, expands the toolkit
+with approved PixelLab, Adobe Photoshop and Adobe Illustrator, simplifies the
+hero/work cards and replaces the contact placeholder with a visible but
+non-submittable form pending a real approved public inbox.
+
+The typography strategy has changed from unavailable Alro/DM Sans to
+**Satoshi via Fontshare's official hosted stylesheet**. No Satoshi font file
+is committed or redistributed. The release preflight now checks the font
+configuration rather than requiring Alro files. Actual font rendering and
+licensing remain part of final manual QA. Pending content, owner approval,
+custom domain, public inbox and real device tests still block launch.

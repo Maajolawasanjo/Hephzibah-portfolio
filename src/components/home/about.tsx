@@ -1,117 +1,63 @@
-import Image from "next/image";
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
 import { Heading, Text } from "@/components/ui/typography";
 import { aboutContent } from "@/content/about";
+import { professionalProfile } from "@/content/professional";
 import { site } from "@/config/site";
 
-/**
- * Phase 08 About section. Real portrait content is optional: without a
- * permitted photo, use intentional typography rather than a false headshot.
- */
+/** No unlicensed portrait, fake credential or decorative placeholder. */
 export function About() {
   return (
-    <Section id="about" aria-labelledby="about-heading" className="bg-brand-cream text-brand-burgundy">
+    <Section id="about" compact aria-labelledby="about-heading">
       <Container>
-        <div data-reveal="up" className="grid gap-8 border-t border-rule pt-10 lg:grid-cols-12 lg:items-start">
+        <div data-reveal="up" className="grid gap-8 border-t border-rule pt-9 lg:grid-cols-12 lg:gap-14">
           <div className="lg:col-span-4">
-            <Text variant="label" muted className="mb-5">
-              {aboutContent.eyebrow}
-            </Text>
-            <Text variant="small" className="max-w-[30ch]">
+            <Text variant="label" muted>About the designer</Text>
+            <Text className="mt-5 max-w-[30ch] font-medium">
               {site.name}
-              <span className="block text-muted">{site.role}</span>
-              <span className="block text-muted">{site.location}</span>
+            </Text>
+            <Text variant="small" muted className="mt-1">
+              {site.role} · {site.location}
             </Text>
           </div>
-          <div className="min-w-0 lg:col-span-8">
-            <Heading
-              id="about-heading"
-              level={2}
-              size="xl"
-              className="max-w-[14ch] break-words"
-            >
-              {aboutContent.heading}
+          <div className="lg:col-span-8">
+            <Heading id="about-heading" level={2} size="lg" className="max-w-[21ch]">
+              Behind every design is a decision.
             </Heading>
-          </div>
-        </div>
-
-        <div className="mt-14 grid gap-10 md:grid-cols-12 md:gap-8 lg:mt-20">
-          <div className="min-w-0 md:col-span-5 lg:col-span-5">
-            {aboutContent.portrait ? (
-              <div className="relative aspect-[4/5] overflow-hidden bg-soft">
-                <Image
-                  src={aboutContent.portrait.src}
-                  alt={aboutContent.portrait.alt}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 40vw"
-                  className="object-cover"
-                />
-              </div>
-            ) : (
-              <div
-                aria-hidden="true"
-                className="relative flex min-h-[19rem] flex-col justify-between overflow-hidden bg-brand-burgundy p-7 text-brand-cream sm:min-h-[26rem] sm:p-10 md:aspect-[4/5] md:min-h-0"
-              >
-                <span className="type-label">A creative perspective</span>
-                <span className="decorative-type block max-w-full font-display font-bold">
-                  Think.
-                  <span className="block">Create.</span>
-                </span>
-                <span className="type-label">Hephie Creatives · Lagos</span>
-              </div>
-            )}
-          </div>
-
-          <div className="min-w-0 md:col-span-7 lg:col-span-6 lg:col-start-7">
-            <Text variant="lead" className="max-w-[42ch] font-medium">
-              {aboutContent.intro}
+            <Text variant="lead" className="mt-6 max-w-[57ch]">
+              {professionalProfile.introduction}
             </Text>
-            <div className="mt-8 space-y-6 border-t border-rule pt-8">
-              {aboutContent.body.map((paragraph) => (
-                <Text key={paragraph} className="max-w-[60ch]">
-                  {paragraph}
-                </Text>
+            <div className="mt-8 grid gap-6 border-t border-rule pt-7 md:grid-cols-2 md:gap-10">
+              {aboutContent.body.slice(0, 2).map((paragraph) => (
+                <Text key={paragraph}>{paragraph}</Text>
               ))}
             </div>
-            <a
-              href="#about-principles"
-              className="mt-8 inline-flex min-h-11 items-center gap-3 rounded-[var(--radius-control)] text-sm font-medium underline underline-offset-8 hover:opacity-80"
-            >
-              My approach <span aria-hidden="true">↓</span>
-            </a>
+            <Text className="mt-5 max-w-[66ch]">
+              I combine creative exploration with practical client
+              collaboration, using graphic design tools and original visual
+              direction to translate ideas into usable brand communication.
+            </Text>
           </div>
         </div>
 
-        <div id="about-principles" className="mt-16 border-t border-rule pt-8 lg:mt-24">
-          <div className="grid gap-8 lg:grid-cols-12 lg:gap-12">
-            <div className="lg:col-span-4">
-              <Heading level={3} size="md">
-                How I approach the work.
-              </Heading>
-              <Text variant="small" muted className="mt-4">
-                The thinking behind the creative choices.
-              </Text>
-            </div>
-            <ol className="grid gap-0 sm:grid-cols-3 sm:gap-6 lg:col-span-8">
-              {aboutContent.principles.map((principle) => (
-                <li
-                  key={principle.index}
-                  className="border-t border-rule py-6 sm:pt-4"
-                >
-                  <Text variant="label" muted className="mb-7">
-                    {principle.index}
-                  </Text>
-                  <h4 className="font-display text-[clamp(1.4rem,2vw,1.85rem)] font-semibold leading-tight tracking-[-0.035em]">
-                    {principle.heading}
-                  </h4>
-                  <Text variant="small" className="mt-4 max-w-[36ch]">
-                    {principle.copy}
-                  </Text>
-                </li>
-              ))}
-            </ol>
+        <div id="about-principles" className="mt-10 grid gap-7 border-t border-rule pt-7 lg:grid-cols-12">
+          <div className="lg:col-span-4">
+            <Heading level={3} size="md">How I approach the work.</Heading>
+            <Text variant="small" muted className="mt-3">
+              Understanding, intention and consistency.
+            </Text>
           </div>
+          <ol className="grid gap-5 sm:grid-cols-3 lg:col-span-8">
+            {aboutContent.principles.map((principle) => (
+              <li key={principle.index} className="border-t border-rule py-5">
+                <Text variant="label" muted>{principle.index}</Text>
+                <Heading level={3} size="md" className="mt-4">
+                  {principle.heading}
+                </Heading>
+                <Text variant="small" className="mt-3">{principle.copy}</Text>
+              </li>
+            ))}
+          </ol>
         </div>
       </Container>
     </Section>

@@ -3,102 +3,65 @@ import { Button } from "@/components/ui/button";
 import { Heading, Text } from "@/components/ui/typography";
 import { site } from "@/config/site";
 
-/**
- * Phase 05 homepage hero. Authored as text-first editorial art direction:
- * no stock portraits, unapproved logo, fabricated client work, or fake metrics.
- */
+/** A professional introduction rather than a decorative typography sample. */
 export function Hero() {
   return (
-    <section
-      id="home"
-      aria-labelledby="hero-heading"
-      className="relative isolate overflow-hidden bg-brand-cream text-brand-burgundy"
-    >
+    <section id="home" aria-labelledby="hero-heading" className="bg-brand-cream text-brand-burgundy">
       <Container>
-        <div className="flex flex-wrap items-center justify-between gap-x-8 gap-y-2 border-b border-rule py-5">
-          <Text variant="label" className="text-xs">
-            Independent creative practice
-          </Text>
-          <Text variant="small" muted>
-            Based in {site.location}
-          </Text>
+        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-rule py-5">
+          <Text variant="label">Brand identity & visual storytelling</Text>
+          <Text variant="small" muted>{site.location}</Text>
         </div>
 
-        <div className="grid min-h-[min(46rem,88svh)] items-center gap-12 py-[clamp(4rem,7vw,8rem)] lg:grid-cols-12 lg:gap-10">
-          <div className="min-w-0 lg:col-span-8 xl:col-span-9">
-            <Text variant="label" muted className="motion-hero-intro mb-6 sm:mb-9">
-              Hello, I’m {site.name}
+        <div className="grid gap-10 py-[clamp(3.5rem,7vw,6.5rem)] lg:grid-cols-12 lg:items-end lg:gap-14">
+          <div className="lg:col-span-8">
+            <Text variant="label" muted className="motion-hero-intro mb-6">
+              Hephzibah Uzorndu · Designer
             </Text>
-
             <Heading
+              id="hero-heading"
               level={1}
               size="display"
-              id="hero-heading"
-              className="motion-hero-heading max-w-[10.5ch] break-words text-[clamp(2.5rem,7.6vw,8.5rem)] leading-[0.98] tracking-[-0.062em]"
+              className="motion-hero-heading max-w-[15ch] !leading-[1.03] !tracking-[-0.047em]"
             >
-              Design to
-              <span className="block">stand out.</span>
-              <span className="block">Stay seen.</span>
+              Identities with purpose. Design with character.
             </Heading>
+            <Text variant="lead" className="motion-hero-summary mt-7 max-w-[55ch]">
+              {site.tagline} I bring branding, graphic design and visual
+              storytelling together through remote and in-person client work.
+            </Text>
+          </div>
 
-            <div className="motion-hero-summary mt-9 grid max-w-[48rem] gap-7 border-t border-rule pt-7 sm:mt-12 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end sm:gap-10 sm:pt-9">
+          <aside className="motion-hero-specimen border-t border-rule pt-6 lg:col-span-4 lg:ml-auto lg:max-w-sm" aria-label="Creative practice overview">
+            <Text variant="label" muted className="mb-4">What I bring to the table</Text>
+            <Text className="max-w-[39ch]">
+              Identity design, personal branding, considered layouts and
+              visual content for people and businesses looking to
+              communicate with clarity.
+            </Text>
+            <div className="mt-7 grid grid-cols-2 gap-6 border-t border-rule pt-5">
               <div>
-                <Text variant="lead" className="max-w-[36ch]">
-                  {site.tagline}
-                </Text>
-                <Text variant="small" muted className="mt-4">
-                  {site.role}
-                </Text>
+                <Text variant="label" muted>Practice</Text>
+                <Text variant="small" className="mt-2">Online and on-site</Text>
               </div>
-              <div className="flex flex-wrap items-center gap-3 sm:flex-col sm:items-stretch">
-                <Button href="/#services" size="lg" className="whitespace-nowrap">
-                  What I create <span aria-hidden="true">↗</span>
-                </Button>
-                <Button
-                  href="/#selected-work"
-                  size="sm"
-                  variant="text"
-                  className="whitespace-nowrap"
-                >
-                  Selected work <span aria-hidden="true">↓</span>
-                </Button>
+              <div>
+                <Text variant="label" muted>Based in</Text>
+                <Text variant="small" className="mt-2">{site.location}</Text>
               </div>
             </div>
-          </div>
-
-          <div className="motion-hero-specimen relative min-w-0 lg:col-span-4 xl:col-span-3">
-            <div
-              aria-hidden="true"
-              className="relative flex min-h-[18rem] flex-col justify-between overflow-hidden bg-brand-burgundy p-6 text-brand-cream sm:min-h-[22rem] sm:p-8 lg:aspect-[3/5] lg:min-h-0"
-            >
-              <div className="flex items-start justify-between gap-3">
-                <span className="text-xs font-semibold uppercase tracking-[0.18em]">
-                  Design / 001
-                </span>
-                <span className="text-sm">✳</span>
-              </div>
-              <div className="relative -ml-2 select-none">
-                <span className="decorative-type block max-w-full font-display font-bold">
-                  Aa.
-                </span>
-              </div>
-              <span className="max-w-[17ch] text-xs font-semibold uppercase leading-relaxed tracking-[0.17em]">
-                Distinctive identities. Thoughtful stories.
-              </span>
-            </div>
-          </div>
+          </aside>
         </div>
 
-        <div className="flex flex-wrap items-center justify-between gap-x-8 gap-y-3 border-t border-rule py-5">
-          <Text variant="label" muted>
-            Independent designer · Lagos
-          </Text>
-          <a
-            href="#selected-work"
-            className="inline-flex min-h-10 items-center gap-3 rounded-[var(--radius-control)] text-sm font-medium underline-offset-4 hover:underline"
-          >
-            Explore below <span aria-hidden="true">↓</span>
-          </a>
+        <div className="flex flex-wrap gap-4 border-t border-rule py-6">
+          <Button href="/#experience" size="lg">
+            Explore my experience <span aria-hidden="true">↗</span>
+          </Button>
+          <Button href="/#services" variant="text" size="lg">
+            What I create <span aria-hidden="true">↗</span>
+          </Button>
+          <Button href="/#selected-work" variant="text" size="lg">
+            Selected work <span aria-hidden="true">↓</span>
+          </Button>
         </div>
       </Container>
     </section>

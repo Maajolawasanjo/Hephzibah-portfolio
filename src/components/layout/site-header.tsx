@@ -102,8 +102,8 @@ export function SiteHeader({ contactReady }: { contactReady: boolean }) {
           </nav>
 
           <div className="hidden lg:block">
-            <Button href={contactReady ? "/#contact" : "/#selected-work"} size="sm">
-              {contactReady ? "Start a project" : "Explore work"} <span aria-hidden="true">↗</span>
+            <Button href={contactReady ? "/#contact" : "/#experience"} size="sm">
+              {contactReady ? "Start a project" : "View experience"} <span aria-hidden="true">↗</span>
             </Button>
           </div>
 
@@ -150,12 +150,12 @@ export function SiteHeader({ contactReady }: { contactReady: boolean }) {
             </ul>
             <div className="mt-4 border-t border-rule pt-5">
               <Button
-                href={contactReady ? "/#contact" : "/#selected-work"}
+                href={contactReady ? "/#contact" : "/#experience"}
                 variant="primary"
                 className="w-full"
                 onClick={() => setIsOpen(false)}
               >
-                {contactReady ? "Start a project" : "Explore work"} <span aria-hidden="true">↗</span>
+                {contactReady ? "Start a project" : "View experience"} <span aria-hidden="true">↗</span>
               </Button>
             </div>
         </nav>

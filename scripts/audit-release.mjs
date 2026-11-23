@@ -1,4 +1,4 @@
-import { existsSync, readdirSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { loadTypeScriptContent } from "./lib/load-portfolio-content.mjs";
 import { spawnSync } from "node:child_process";
 import { join, resolve } from "node:path";
@@ -94,10 +94,10 @@ required(
   "Add permitted, optimized original covers and project galleries."
 );
 required(
-  "Licensed Alro webfont assets",
-  hasFiles("public/fonts", [".woff2", ".woff"]) ||
-    hasFiles("src/assets/fonts", [".woff2", ".woff"]),
-  "Obtain and embed licensed Alro files; confirm actual font usage separately."
+  "Satoshi typography source configured",
+  readFileSync(resolve(cwd, "src/app/globals.css"), "utf8").includes("api.fontshare.com/v2/css?f[]=satoshi@") &&
+    readFileSync(resolve(cwd, "src/styles/tokens.css"), "utf8").includes('"Satoshi"'),
+  "Use the official Fontshare Satoshi CSS source, verify actual loading on devices, and honor the ITF font license."
 );
 required(
   "Confirmed public contact",

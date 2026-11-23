@@ -127,3 +127,21 @@ returned HTTP 403 on the owner's repository because it has not been
 installed/authorized for that account. No transfer has occurred.
 See [canonical repository handoff](docs/CANONICAL_REPOSITORY_HANDOFF.md)
 for the precise unblock and history-preserving transfer steps.
+
+
+## Portfolio V2 — professional profile redesign
+
+This redesign addresses the user's visual audit: Satoshi for all typography,
+more balanced heading scales, reduced blank space and repeated decorative
+placeholders, a compact selected-work pending state, and new experience,
+skills and education sections. Verified user-provided background includes
+remote and in-person personal-branding clients; PixelLab, Photoshop and
+Illustrator; coursework at TS Academy and Apex Academy; and current studies
+at NUTM. No employers, dates, certifications, degrees or numerical outcomes
+are invented. The contact form is visually present but safely disabled until
+an approved inbox exists; no messages are submitted or stored.
+
+The font uses Fontshare's official Satoshi stylesheet, without copying or
+redistributing font binaries. Manual review must confirm loading and
+commercial-use compliance with the current ITF Free Font License.
+See [V2 professional redesign](docs/V2_PROFESSIONAL_REDESIGN.md).

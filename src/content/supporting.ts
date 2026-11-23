@@ -54,7 +54,11 @@ export type ApprovedTool = {
 };
 
 /** Only publish named software after Hephzibah confirms actual proficiency. */
-export const namedTools: readonly ApprovedTool[] = [];
+export const namedTools: readonly ApprovedTool[] = [
+  { name: "Adobe Photoshop", category: "Image editing & composition", approved: true },
+  { name: "Adobe Illustrator", category: "Vector design & identity work", approved: true },
+  { name: "PixelLab", category: "Graphics & visual content", approved: true },
+];
 
 export function getApprovedTools(): ApprovedTool[] {
   const seen = new Set<string>();

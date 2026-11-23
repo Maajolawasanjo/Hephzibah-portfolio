@@ -107,3 +107,15 @@ Open it locally with Hephzibah, verify the story and imagery, and record
 the necessary approvals securely. It is **not a public case study**
 or evidence of publication rights merely because the preview renders.
 See docs/PROJECT_INTAKE.md.
+
+
+## V2: verified professional background and additions needed
+
+The owner/user reports that Hephzibah works with PixelLab, Adobe Photoshop
+and Adobe Illustrator; previously took courses at TS Academy and Apex Academy;
+is currently studying at NUTM; and has delivered remote and face-to-face
+personal-branding work for clients. These facts now inform the professional
+profile. Before adding more detailed CV-style claims, please confirm her
+actual employer/role names, work periods, job scope, degree programme,
+course names, certificate titles and dates, along with permitted client
+case-study images. None of these currently unverified details should be guessed.
