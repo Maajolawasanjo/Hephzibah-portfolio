@@ -6,8 +6,8 @@ test("professional sections show verified experience, learning and tools", async
     await expect(page.locator("#" + id)).toHaveCount(1);
   }
   await expect(page.getByText("Independent branding & client projects")).toBeVisible();
-  await expect(page.getByText("TS Academy")).toBeVisible();
-  await expect(page.getByText("Apex Academy")).toBeVisible();
+  await expect(page.getByRole("heading", { name: "TS Academy" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Apex Academy" })).toBeVisible();
   await expect(page.getByText("NUTM", { exact: true })).toBeVisible();
   await expect(page.getByText("Adobe Photoshop")).toBeVisible();
   await expect(page.getByText("Adobe Illustrator")).toBeVisible();
@@ -17,7 +17,8 @@ test("professional sections show verified experience, learning and tools", async
 test("unapproved contact destination cannot collect or submit information", async ({ page }) => {
   await page.goto("/#contact");
   await expect(page.locator("#contact form")).toHaveCount(1);
-  await expect(page.locator("#contact fieldset")).toBeDisabled();
+  await expect(page.locator("#contact fieldset")).toHaveAttribute("disabled", "");
+  await expect(page.getByLabel("Your name")).toBeDisabled();
   await expect(page.getByRole("button", { name: "Prepare my inquiry" })).toBeDisabled();
   await expect(page.locator('a[href^="mailto:"]')).toHaveCount(0);
 });
