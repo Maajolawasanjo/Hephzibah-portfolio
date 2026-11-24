@@ -5,10 +5,7 @@ import { Heading, Text } from "@/components/ui/typography";
 import { Button } from "@/components/ui/button";
 import { getPublishedCaseStudy, getSelectedProjects } from "@/content/projects";
 
-/**
- * Selected Work is retained as a main section, but deliberately never
- * passes third-party illustrative mockups off as client portfolio pieces.
- */
+/** Keep published work authentic while presenting the section editorially. */
 export function SelectedWork() {
   const projects = getSelectedProjects();
   return (
@@ -25,7 +22,7 @@ export function SelectedWork() {
         </div>
 
         {projects.length ? (
-          <div className="mt-9 grid gap-6 md:grid-cols-2">
+          <div className="mt-10 grid gap-x-7 gap-y-12 md:grid-cols-2">
             {projects.map((project, index) => (
               <ProjectCard
                 key={project.slug}
@@ -41,14 +38,19 @@ export function SelectedWork() {
             ))}
           </div>
         ) : (
-          <div className="mt-8 flex flex-col gap-5 rounded-xl bg-soft px-6 py-7 md:flex-row md:items-center md:justify-between md:gap-10">
-            <Text className="max-w-[60ch]">
-              Original client projects are being prepared for publication.
-              Until the approved artwork is ready, explore the experience
-              and creative skills behind the practice.
-            </Text>
-            <Button href="/#experience" variant="secondary" className="shrink-0">
-              See my experience <span aria-hidden="true">↗</span>
+          <div className="mt-10 grid gap-6 border-y border-rule py-10 md:grid-cols-[minmax(0,1fr)_auto] md:items-end md:gap-14 lg:py-14">
+            <div>
+              <Text variant="label" muted>Portfolio in progress</Text>
+              <p className="mt-4 max-w-[22ch] font-display text-[clamp(1.65rem,3vw,3rem)] font-semibold leading-[1.12] tracking-[-0.04em]">
+                The work deserves to be seen at its best.
+              </p>
+              <Text className="mt-5 max-w-[52ch]">
+                Original client projects are being prepared for publication.
+                In the meantime, discover the experience and creative thinking behind the practice.
+              </Text>
+            </div>
+            <Button href="/#experience" variant="secondary" className="justify-self-start !rounded-full">
+              Explore my experience <span aria-hidden="true">↗</span>
             </Button>
           </div>
         )}
