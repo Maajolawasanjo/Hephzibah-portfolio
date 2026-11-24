@@ -3,15 +3,12 @@ import { Section } from "@/components/layout/section";
 import { Heading, Text } from "@/components/ui/typography";
 import { serviceDetails } from "@/content/services";
 
-/**
- * No repeated sub-sections for scope, audience or visual references.
- * Each service is a single focused offer with a concise optional list.
- */
+/** Services read like an editorial index rather than a grid of cards. */
 export function Services() {
   return (
     <Section id="services" compact aria-labelledby="services-heading" className="bg-soft">
       <Container>
-        <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between md:gap-10">
+        <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between md:gap-10">
           <Heading id="services-heading" level={2} size="lg">
             What I create.
           </Heading>
@@ -20,27 +17,28 @@ export function Services() {
             that feels clear, distinctive and consistent.
           </Text>
         </div>
-        <div className="mt-9 grid gap-5 md:grid-cols-2">
+        <div className="mt-10 border-t border-rule">
           {serviceDetails.map((service) => (
             <article
               key={service.id}
               id={service.id}
               aria-labelledby={service.id + "-heading"}
-              className="flex min-w-0 flex-col rounded-xl bg-brand-cream p-6 sm:p-8"
+              className="grid min-w-0 gap-4 border-b border-rule py-8 sm:py-10 lg:grid-cols-[4rem_minmax(0,0.95fr)_minmax(0,1.05fr)] lg:gap-9"
             >
-              <span className="text-sm font-semibold opacity-60">{service.number}</span>
-              <Heading id={service.id + "-heading"} level={3} size="md" className="mt-4">
+              <span className="pt-1 text-sm font-semibold opacity-60">{service.number}</span>
+              <Heading id={service.id + "-heading"} level={3} size="md" className="max-w-[18ch]">
                 {service.title}
               </Heading>
-              <Text className="mt-3 max-w-[50ch]">{service.summary}</Text>
-              <ul className="mt-5 flex flex-col gap-2">
-                {service.possibleDeliverables.map((item) => (
-                  <li key={item} className="flex gap-2.5 text-sm leading-relaxed">
-                    <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-burgundy" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+              <div className="min-w-0">
+                <Text className="max-w-[52ch]">{service.summary}</Text>
+                <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-2">
+                  {service.possibleDeliverables.map((item) => (
+                    <li key={item} className="text-sm leading-relaxed text-muted">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </article>
           ))}
         </div>
