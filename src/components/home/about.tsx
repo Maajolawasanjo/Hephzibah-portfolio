@@ -1,38 +1,62 @@
+import Link from "next/link";
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
 import { Heading, Text } from "@/components/ui/typography";
 import { aboutContent } from "@/content/about";
 import { site } from "@/config/site";
 
-/** One biography with a visual counterweight; the full process has its own section. */
+/**
+ * V5 About — an open editorial introduction, not a collection of cards.
+ * Keep all approved biography paragraphs. A real portrait can be added
+ * when one is available; no unapproved likeness is implied here.
+ */
 export function About() {
   return (
-    <Section id="about" compact aria-labelledby="about-heading" className="bg-soft">
+    <Section id="about" aria-labelledby="about-heading" className="bg-soft">
       <Container>
-        <div className="grid gap-9 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-center lg:gap-16">
-          <div>
-            <Heading id="about-heading" level={2} size="lg">
-              Hi, I&apos;m Hephzibah.
+        <div className="grid min-w-0 gap-8 lg:grid-cols-12 lg:items-end lg:gap-12">
+          <div className="min-w-0 lg:col-span-8">
+            <Text variant="label" muted className="mb-7 flex items-center gap-4">
+              <span>{aboutContent.eyebrow}</span>
+              <span aria-hidden="true" className="h-px w-10 bg-rule" />
+            </Text>
+            <Heading
+              id="about-heading"
+              level={2}
+              size="xl"
+              className="max-w-[17ch]"
+            >
+              {aboutContent.heading}
             </Heading>
-            <Text variant="lead" className="mt-5 max-w-[53ch]">
+          </div>
+          <div className="min-w-0 lg:col-span-4 lg:pb-2">
+            <Text variant="lead" className="max-w-[42ch]">
               {aboutContent.intro}
             </Text>
-            <Text className="mt-5 max-w-[65ch]">
-              {aboutContent.body[0]}
-            </Text>
-            <Text className="mt-4 max-w-[65ch]">
-              {aboutContent.body[1]}
+          </div>
+        </div>
+
+        <div className="mt-12 grid min-w-0 gap-9 border-t border-rule pt-9 sm:mt-16 sm:pt-12 lg:mt-20 lg:grid-cols-12 lg:gap-12">
+          <div className="min-w-0 lg:col-span-4">
+            <p className="font-display text-[clamp(1.5rem,2.5vw,2.5rem)] font-medium leading-[1.15] tracking-[-0.04em]">
+              {site.brand}
+            </p>
+            <Text variant="small" muted className="mt-3">
+              {site.role} · {site.location}
             </Text>
           </div>
-          <div className="relative min-h-[260px] overflow-hidden rounded-[1.25rem] bg-brand-burgundy p-8 text-brand-cream sm:p-11 lg:min-h-[370px]">
-            <span aria-hidden="true" className="pointer-events-none absolute -right-16 -top-20 h-64 w-64 rounded-full border-[42px] border-brand-cream/15" />
-            <Text variant="label" className="relative !text-brand-cream/80">A creative perspective</Text>
-            <p className="relative mt-10 max-w-[18ch] font-display text-[clamp(1.8rem,3vw,3rem)] font-semibold leading-[1.16] tracking-[-0.035em]">
-              Understand the person. Find the idea. Make the design memorable.
-            </p>
-            <Text variant="small" className="relative mt-8 !text-brand-cream/80">
-              {site.brand} · {site.location}
-            </Text>
+          <div className="min-w-0 lg:col-span-8">
+            <div className="grid gap-5 lg:max-w-[65ch] sm:gap-6">
+              {aboutContent.body.map((paragraph) => (
+                <Text key={paragraph}>{paragraph}</Text>
+              ))}
+            </div>
+            <Link
+              href="/#process"
+              className="mt-9 inline-flex min-h-11 items-center gap-3 border-b border-current pb-1 text-sm font-semibold transition-opacity hover:opacity-70 focus-visible:outline-offset-4 motion-reduce:transition-none"
+            >
+              Explore my design process <span aria-hidden="true">↗</span>
+            </Link>
           </div>
         </div>
       </Container>
