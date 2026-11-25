@@ -3,32 +3,39 @@ import { Section } from "@/components/layout/section";
 import { Heading, Text } from "@/components/ui/typography";
 import { professionalProfile } from "@/content/professional";
 
-/** All three are main sections. Their content is deliberately concise. */
+/** Separate main sections retain their original professional content. */
 export function ProfessionalExperience() {
   const work = professionalProfile.clientWork;
   return (
-    <Section id="experience" compact aria-labelledby="experience-heading">
+    <Section id="experience" aria-labelledby="experience-heading">
       <Container>
-        <div className="grid gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:items-start lg:gap-14">
-          <div>
-            <Heading id="experience-heading" level={2} size="lg">
+        <div className="grid min-w-0 gap-10 lg:grid-cols-12 lg:items-start lg:gap-16">
+          <div className="min-w-0 lg:col-span-5">
+            <Text variant="label" muted className="mb-7 flex items-center gap-4">
+              <span>Professional practice</span>
+              <span aria-hidden="true" className="h-px w-10 bg-rule" />
+            </Text>
+            <Heading id="experience-heading" level={2} size="lg" className="max-w-[12ch]">
               Experience.
             </Heading>
-            <Text variant="lead" className="mt-4 max-w-[45ch]">
+            <Text variant="lead" className="mt-6 max-w-[34ch]">
               Design work shaped by real clients, personal brands and direct collaboration.
             </Text>
           </div>
-          <article className="rounded-xl bg-soft px-6 py-7 sm:px-8 sm:py-9">
-            <Heading level={3} size="md">
-              {work.title}
-            </Heading>
-            <Text variant="small" className="mt-2 font-medium" muted>
-              {work.arrangement}
-            </Text>
-            <Text className="mt-5 max-w-[65ch]">
-              {work.description}
-            </Text>
-          </article>
+          <div className="min-w-0 lg:col-span-7 lg:pt-2">
+            <article className="border-t border-rule pt-7 sm:pt-9">
+              <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-2">
+                <Text variant="label" muted>Independent creative practice</Text>
+                <Text variant="small" muted>{work.arrangement}</Text>
+              </div>
+              <Heading level={3} size="md" className="mt-8 max-w-[28ch]">
+                {work.title}
+              </Heading>
+              <Text className="mt-6 max-w-[62ch]">
+                {work.description}
+              </Text>
+            </article>
+          </div>
         </div>
       </Container>
     </Section>
