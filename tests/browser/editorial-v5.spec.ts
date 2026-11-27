@@ -13,22 +13,33 @@ test("V5 hero is full bleed, typographically dominant and links to meaningful se
   await expect(hero.getByRole("link", { name: /Get to know me/ })).toHaveAttribute(
     "href", "/#about"
   );
-  await expect(hero.locator(".hephie-hero-photo")).toHaveCount(1);
+  await expect(hero.locator(".hephie-hero-photo")).toHaveCount(2);
   await expect(hero.locator("[data-editorial-asset]")).toHaveCount(0);
 
   const style = await hero.evaluate((node) => {
     const photo = node.querySelector<HTMLElement>(".hephie-hero-photo")!;
+    const heading = node.querySelector<HTMLElement>("h1")!;
     const rect = node.getBoundingClientRect();
+    const photoRect = photo.getBoundingClientRect();
+    const headingRect = heading.getBoundingClientRect();
+    const computed = getComputedStyle(photo);
     return {
       left: rect.left,
       right: rect.right,
       viewport: document.documentElement.clientWidth,
-      background: getComputedStyle(photo).backgroundImage,
+      background: computed.backgroundImage,
+      opacity: computed.opacity,
+      filter: computed.filter,
+      headingRight: headingRect.right,
+      imageLeft: photoRect.left,
     };
   });
   expect(style.left).toBeGreaterThanOrEqual(-1);
   expect(style.right).toBeLessThanOrEqual(style.viewport + 1);
   expect(style.background).toContain("brand-identity.webp");
+  expect(style.opacity).toBe("1");
+  expect(style.filter).toBe("none");
+  expect(style.headingRight).toBeLessThanOrEqual(style.imageLeft + 1);
 });
 
 test("V5 About and Process remain complete and use unboxed editorial layouts", async ({ page }) => {

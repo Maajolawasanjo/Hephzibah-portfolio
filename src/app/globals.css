@@ -285,32 +285,31 @@
 }
 
 
-/* V5 screenshot-led art direction: full-bleed atmosphere, not an inset card.
-   The existing illustration is a clearly labelled reference, never client work. */
+/* Hero composition: readable burgundy copy field with a separate, full-strength
+   illustrative image. No filters, gradients or light imagery behind text. */
 .hephie-hero {
   background: var(--brand-burgundy);
 }
 .hephie-hero-photo {
+  background-color: #172139;
   background-image: url("/editorial/brand-identity.webp");
-  background-position: right center;
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   opacity: 1;
   filter: none;
 }
-.hephie-hero h1,
-.hephie-hero .motion-hero-summary {
-  text-shadow: 0 2px 14px rgba(24, 0, 9, 0.48);
-}
 .hephie-hero-inner {
-  min-height: clamp(39rem, calc(100svh - 6rem), 57rem);
+  min-height: clamp(42rem, calc(100svh - 6rem), 58rem);
 }
 .hephie-hero-highlight {
-  color: color-mix(in srgb, var(--brand-cream) 74%, var(--brand-burgundy));
+  color: color-mix(in srgb, var(--brand-cream) 78%, var(--brand-burgundy));
 }
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
+  .hephie-hero-inner {
+    min-height: auto;
+  }
   .hephie-hero-photo {
-    opacity: 1;
-    background-position: 64% center;
+    background-position: center;
   }
 }

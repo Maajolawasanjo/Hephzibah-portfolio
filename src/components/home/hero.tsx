@@ -5,9 +5,9 @@ import { Heading, Text } from "@/components/ui/typography";
 import { site } from "@/config/site";
 
 /**
- * Screenshot-led V5 hero: one continuous, image-led editorial composition.
- * The full-strength background image is an illustrative reference, not a verified client project.
- * The actual published project gallery remains approval-gated separately.
+ * Clear editorial hero: the approved brand palette keeps the copy legible
+ * while the illustrative artwork remains visible, at full opacity, in its
+ * own composition. No gradient, blur, or text laid over busy imagery.
  */
 export function Hero() {
   return (
@@ -16,15 +16,19 @@ export function Hero() {
       aria-labelledby="hero-heading"
       className="theme-inverse hephie-hero relative isolate overflow-hidden"
     >
-      <div className="hephie-hero-photo pointer-events-none absolute inset-0" aria-hidden="true" />
+      <div
+        className="hephie-hero-photo absolute inset-y-0 right-0 hidden w-[43%] lg:block"
+        aria-hidden="true"
+      />
+
       <Container className="relative z-10">
-        <div className="hephie-hero-inner flex min-w-0 flex-col justify-between pb-8 pt-14 sm:pb-10 sm:pt-24 lg:pt-28">
+        <div className="hephie-hero-inner flex min-w-0 flex-col justify-between gap-12 pb-8 pt-14 sm:pb-10 sm:pt-20 lg:w-[56%] lg:gap-14 lg:pb-12 lg:pt-24">
           <div className="min-w-0">
             <Text
               variant="label"
-              className="motion-hero-intro mb-9 flex items-center gap-3 !text-brand-cream/85"
+              className="motion-hero-intro mb-10 flex items-center gap-3 !text-brand-cream/85"
             >
-              <span aria-hidden="true" className="h-px w-9 shrink-0 bg-brand-cream/70" />
+              <span aria-hidden="true" className="h-px w-9 shrink-0 bg-brand-cream/75" />
               {site.name} · Brand identity designer
             </Text>
 
@@ -32,29 +36,29 @@ export function Hero() {
               id="hero-heading"
               level={1}
               size="display"
-              className="motion-hero-heading max-w-[17ch] !text-[clamp(3.25rem,7.05vw,7.25rem)] !font-normal lg:max-w-none"
+              className="motion-hero-heading max-w-[13ch] !text-[clamp(3.1rem,5.55vw,6.5rem)] !font-normal !leading-[0.99] !tracking-[-0.06em] sm:max-w-[13ch]"
             >
-              <span className="block lg:whitespace-nowrap">Design with purpose.</span>
-              <span className="hephie-hero-highlight block font-light lg:whitespace-nowrap">
+              Design with purpose.
+              <span className="hephie-hero-highlight mt-2 block font-light">
                 Create with character.
               </span>
             </Heading>
 
             <Text
               variant="lead"
-              className="motion-hero-summary mt-9 max-w-[49ch] !text-brand-cream/90 sm:mt-11"
+              className="motion-hero-summary mt-9 max-w-[43ch] !text-brand-cream/90 sm:mt-10"
             >
               I&apos;m Hephzibah, a Lagos-based creative making identities,
               graphic design and visual stories that help people and businesses stand out.
             </Text>
 
-            <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-5 sm:mt-12">
+            <div className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-5">
               <Button
                 href="/#selected-work"
                 size="lg"
                 className="!min-h-14 !rounded-[2px] !px-7 !text-sm"
               >
-                Explore my work <span aria-hidden="true" className="ml-5">↗</span>
+                Explore my work <span aria-hidden="true" className="ml-4">↗</span>
               </Button>
               <Link
                 href="/#about"
@@ -65,24 +69,24 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="mt-16 flex flex-wrap items-end justify-between gap-5 border-t border-brand-cream/30 pt-5 sm:mt-24">
+          <div className="flex min-w-0 flex-wrap items-center justify-between gap-x-8 gap-y-4 border-t border-brand-cream/30 pt-5">
             <Text variant="small" className="!text-brand-cream/80">
               {site.location} · Visual identities &amp; storytelling
             </Text>
-            <div className="flex flex-wrap items-end gap-x-6 gap-y-3">
-              <Text variant="small" className="!text-brand-cream/70">
-                Creative direction · {site.name}
-              </Text>
-              <a
-                href="#selected-work"
-                className="inline-flex min-h-11 items-center gap-3 text-sm font-medium text-brand-cream hover:underline underline-offset-4"
-              >
-                Discover <span aria-hidden="true">↓</span>
-              </a>
-            </div>
+            <Link
+              href="/#about"
+              className="inline-flex min-h-11 items-center gap-3 text-sm font-medium text-brand-cream underline-offset-4 hover:underline"
+            >
+              Discover <span aria-hidden="true">↓</span>
+            </Link>
           </div>
         </div>
       </Container>
+
+      <div
+        className="hephie-hero-photo relative aspect-[3/2] w-full lg:hidden"
+        aria-hidden="true"
+      />
     </section>
   );
 }
