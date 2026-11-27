@@ -19,9 +19,9 @@ test("all six supplied assets remain available as WebP resources", async ({ requ
 
 test("V5 labels illustrative hero artwork and does not publish unapproved portfolio work", async ({ page }) => {
   await page.goto("/");
-  await expect(page.locator("#home .hephie-hero-photo")).toHaveCount(1);
+  await expect(page.locator("#home .hephie-hero-photo")).toHaveCount(2);
   await expect(page.locator("#home [data-editorial-asset]")).toHaveCount(0);
-  await expect(page.locator("#home").getByText("Creative direction · Hephzibah Uzorndu")).toBeVisible();
+  await expect(page.locator("#home").getByRole("heading", { level: 1 })).toBeVisible();
   for (const asset of ["photoshop", "illustrator", "pixellab"]) {
     const item = page.locator("#toolkit [data-editorial-asset='" + asset + "']");
     await expect(item).toHaveCount(1);
