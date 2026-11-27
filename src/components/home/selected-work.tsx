@@ -80,13 +80,14 @@ export function SelectedWork() {
                   </div>
                   <div className="min-w-0">
                     <Text variant="lead">{project.role}</Text>
-                    <Text variant="small" muted className="mt-3">
-                      Original logo artwork and detailed case studies will be added when available.
-                    </Text>
+
                   </div>
                 </li>
               ))}
             </ol>
+            <Text variant="small" muted className="mt-7 max-w-[60ch]">
+              Original logo artwork and detailed case studies will be added when available.
+            </Text>
           </div>
         )}
       </Container>
