@@ -46,33 +46,30 @@ export const professionalProfile = {
 
 
 /**
- * Editorial practice highlights. These are descriptive creative disciplines,
- * NOT claims of employment at named companies or dated appointments.
- * Replace with verified client/employer histories when supplied.
+ * Real client logo projects supplied by the portfolio owner.
+ * These are client commissions, not claims of salaried employment.
+ * No project dates, outcomes, additional deliverables or images are inferred.
  */
 export const experienceHighlights = [
   {
     number: "01",
-    title: "Brand Identity & Graphic Design",
-    arrangement: "Independent creative practice",
-    summary:
-      "Translating brand stories into logo directions, cohesive visual identities and practical design assets that give businesses a clear and recognizable presence.",
-    focus: ["Identity concepts", "Logo & layout design", "Brand applications"],
+    title: "PROMIXRS",
+    industry: "E-commerce",
+    role: "Logo design",
+    summary: "Designed the logo for PROMIXRS, an e-commerce business.",
   },
   {
     number: "02",
-    title: "Digital & Social Content Design",
-    arrangement: "Project-based client collaborations",
-    summary:
-      "Building consistent visual content across digital touchpoints, from promotional graphics and social media campaigns to branded communications for different audiences.",
-    focus: ["Social media creative", "Digital campaign assets", "Visual consistency"],
+    title: "SYNERY",
+    industry: "Technology",
+    role: "Logo design",
+    summary: "Designed the logo for SYNERY, a technology company.",
   },
   {
     number: "03",
-    title: "Visual Storytelling & Mentorship",
-    arrangement: "Photography, video & one-on-one teaching",
-    summary:
-      "Connecting photography and video with the wider identity of a brand, while sharing practical design approaches with aspiring creatives through individual guidance.",
-    focus: ["Image-led storytelling", "Creative thinking", "Design mentorship"],
+    title: "SHELLY",
+    industry: "Clothing & fashion",
+    role: "Logo design",
+    summary: "Designed the logo for SHELLY, a clothing brand.",
   },
 ] as const;
