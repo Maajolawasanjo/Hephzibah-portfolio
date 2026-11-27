@@ -97,7 +97,7 @@ export function Contact() {
           </div>
         )}
 
-        <div className="mt-8 grid min-w-0 gap-x-16 gap-y-12 border-t border-rule pt-9 sm:grid-cols-2 lg:mt-12 lg:pt-12">
+        <div className="mt-8 grid min-w-0 gap-x-16 gap-y-12 border-t border-rule pt-9 lg:mt-12 lg:grid-cols-2 lg:pt-12">
           <div className="min-w-0">
             <Text variant="label" muted>Direct contact</Text>
             <div className="mt-6 border-t border-rule">
@@ -122,13 +122,13 @@ export function Contact() {
             <div className="mt-6 border-t border-rule">
               <div className="border-b border-rule py-5">
                 <Text variant="small" muted>LinkedIn</Text>
-                <a href={site.contact.linkedin} target="_blank" rel="noopener noreferrer" aria-label="Hephzibah Uzorndu on LinkedIn (opens in a new tab)" className="mt-2 inline-flex min-h-10 items-center gap-3 text-base font-medium underline-offset-4 hover:underline">
+                <a href={site.contact.linkedin} target="_blank" rel="noopener noreferrer" aria-label="Hephzibah Uzorndu on LinkedIn (opens in a new tab)" className="mt-2 inline-flex min-h-10 max-w-full flex-wrap items-center gap-3 break-words text-base font-medium underline-offset-4 hover:underline">
                   Hephzibah Uzorndu <span aria-hidden="true">↗</span>
                 </a>
               </div>
               <div className="border-b border-rule py-5">
                 <Text variant="small" muted>Instagram</Text>
-                <a href={site.contact.instagram} target="_blank" rel="noopener noreferrer" aria-label="Hephie Creatives on Instagram (opens in a new tab)" className="mt-2 inline-flex min-h-10 items-center gap-3 text-base font-medium underline-offset-4 hover:underline">
+                <a href={site.contact.instagram} target="_blank" rel="noopener noreferrer" aria-label="Hephie Creatives on Instagram (opens in a new tab)" className="mt-2 inline-flex min-h-10 max-w-full flex-wrap items-center gap-3 break-words text-base font-medium underline-offset-4 hover:underline">
                   @hephie_creatives <span aria-hidden="true">↗</span>
                 </a>
               </div>
