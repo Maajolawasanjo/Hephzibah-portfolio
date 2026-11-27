@@ -1,6 +1,7 @@
 /**
  * Confirmed public positioning and approved visual identity.
- * Phone and social profiles have been provided by the portfolio owner.\n * Public email is separately approved through the Vercel environment.
+ * Phone and social profiles have been provided by the portfolio owner.
+ * Public email is separately approved through the Vercel environment.
  */
 export const site = {
   brand: "Hephie Creatives",
