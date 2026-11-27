@@ -33,6 +33,17 @@ export function SiteFooter() {
               ))}
 
             </ul>
+            <div className="mt-9 border-t border-brand-cream/25 pt-6">
+              <Text variant="label" className="mb-3 !text-brand-cream/70">Connect</Text>
+              <div className="flex flex-wrap gap-x-6 gap-y-2 lg:flex-col lg:gap-y-0">
+                <a href={site.contact.linkedin} target="_blank" rel="noopener noreferrer" aria-label="Hephzibah Uzorndu on LinkedIn (opens in a new tab)" className="inline-flex min-h-10 items-center text-sm font-medium text-brand-cream/90 underline-offset-4 hover:underline">
+                  LinkedIn ↗
+                </a>
+                <a href={site.contact.instagram} target="_blank" rel="noopener noreferrer" aria-label="Hephie Creatives on Instagram (opens in a new tab)" className="inline-flex min-h-10 items-center text-sm font-medium text-brand-cream/90 underline-offset-4 hover:underline">
+                  Instagram ↗
+                </a>
+              </div>
+            </div>
           </nav>
         </div>
         <div className="flex flex-wrap items-center justify-between gap-x-8 gap-y-3 border-t border-brand-cream/25 py-6">
