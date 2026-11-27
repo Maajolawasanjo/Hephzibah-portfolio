@@ -20,16 +20,18 @@ test("About preserves the full approved biography and connects to Design Process
   await expect(page.locator("#process")).toHaveCount(1);
 });
 
-test("Experience presents distinct practice areas without inventing employers or dates", async ({ page }) => {
+test("Experience lists verified client logo commissions, without invented jobs or dates", async ({ page }) => {
   await page.goto("/");
   const experience = page.locator("#experience");
 
   await expect(experience.getByRole("heading", { level: 2, name: "Experience." })).toBeVisible();
-  await expect(experience.getByRole("heading", { level: 3, name: "Brand Identity & Graphic Design" })).toBeVisible();
-  await expect(experience.getByRole("heading", { level: 3, name: "Digital & Social Content Design" })).toBeVisible();
-  await expect(experience.getByRole("heading", { level: 3, name: "Visual Storytelling & Mentorship" })).toBeVisible();
+  for (const name of ["PROMIXRS", "SYNERY", "SHELLY"]) {
+    await expect(experience.getByRole("heading", { level: 3, name })).toBeVisible();
+  }
+  await expect(experience.getByText("e-commerce business", { exact: false })).toBeVisible();
+  await expect(experience.getByText("technology company", { exact: false })).toBeVisible();
+  await expect(experience.getByText("clothing brand", { exact: false })).toBeVisible();
   await expect(experience.locator("article")).toHaveCount(3);
-  await expect(experience.getByText("Specific client names", { exact: false })).toBeVisible();
 });
 
 for (const width of [320, 375, 768, 1024, 1440]) {
