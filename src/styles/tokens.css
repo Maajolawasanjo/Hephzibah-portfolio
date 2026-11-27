@@ -32,11 +32,11 @@
   --type-body: clamp(1rem, 1.02vw, 1.125rem);
   --type-small: 0.9375rem;
   --type-label: 0.75rem;
-  --leading-display: 0.99;
-  --leading-heading: 1.06;
+  --leading-display: 0.94;
+  --leading-heading: 1.02;
   --leading-body: 1.65;
-  --tracking-display: -0.055em;
-  --tracking-heading: -0.048em;
+  --tracking-display: -0.062em;
+  --tracking-heading: -0.058em;
   --tracking-label: 0.14em;
   --measure-body: 64ch;
 
@@ -57,8 +57,8 @@
   --layout-reading-max: 44rem;
   --layout-gutter: clamp(1.0625rem, 2.6vw, 3rem);
   /* Large visual chapters and quieter supporting sections have distinct rhythms. */
-  --layout-section-space: clamp(4.5rem, 8.5vw, 9rem);
-  --layout-section-space-support: clamp(4rem, 6.5vw, 6.5rem);
+  --layout-section-space: clamp(6rem, 9vw, 9.375rem);
+  --layout-section-space-support: clamp(4.75rem, 6.5vw, 6.5rem);
   --layout-grid-gap: clamp(1.25rem, 3vw, 3.5rem);
 
   /* Minimal borders / shape */
