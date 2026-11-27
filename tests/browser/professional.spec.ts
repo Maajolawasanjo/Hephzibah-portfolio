@@ -5,7 +5,7 @@ test("professional sections show verified experience, learning and tools", async
   for (const id of ["experience", "skills", "education", "toolkit", "services"]) {
     await expect(page.locator("#" + id)).toHaveCount(1);
   }
-  await expect(page.getByText("Independent branding & client projects")).toBeVisible();
+  await expect(page.getByText("Brand Identity & Graphic Design")).toBeVisible();
   await expect(page.getByRole("heading", { name: "TS Academy" })).toBeVisible();
   await expect(page.getByRole("heading", { name: "Apex Academy" })).toBeVisible();
   await expect(page.getByText("NUTM", { exact: true })).toBeVisible();
@@ -17,7 +17,7 @@ test("professional sections show verified experience, learning and tools", async
 test("unapproved contact destination cannot collect or submit information", async ({ page }) => {
   await page.goto("/#contact");
   await expect(page.locator("#contact form")).toHaveCount(0);
-  await expect(page.getByText("The public inquiry email is being finalized.")).toBeVisible();
+  await expect(page.getByText("Have a vision in mind? Give it a distinctive identity.")).toBeVisible();
   await expect(page.locator('a[href^="mailto:"]')).toHaveCount(0);
 });
 
