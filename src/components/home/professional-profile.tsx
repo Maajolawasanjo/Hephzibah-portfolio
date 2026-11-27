@@ -17,8 +17,8 @@ export function ProfessionalExperience() {
           </div>
           <div className="min-w-0 lg:col-span-5">
             <Text variant="lead" className="max-w-[42ch]">
-              Selected logo design commissions for clients in commerce,
-              technology and fashion.
+              Real client logo commissions across e-commerce, technology and
+              clothing, each bringing a different context to my identity design work.
             </Text>
           </div>
         </div>
@@ -50,10 +50,6 @@ export function ProfessionalExperience() {
           ))}
         </div>
 
-        <Text variant="small" muted className="mt-7 max-w-[72ch]">
-          Client project details are shown as provided. Finished logo artwork and
-          case studies can be added when the original files are available.
-        </Text>
       </Container>
     </Section>
   );
