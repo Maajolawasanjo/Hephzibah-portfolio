@@ -6,7 +6,7 @@ import { site } from "@/config/site";
 
 /**
  * Screenshot-led V5 hero: one continuous, image-led editorial composition.
- * The atmospheric sample image is illustrative, not Hephizbah's client work.
+ * The full-strength background image is an illustrative reference, not a verified client project.
  * The actual published project gallery remains approval-gated separately.
  */
 export function Hero() {
@@ -71,7 +71,7 @@ export function Hero() {
             </Text>
             <div className="flex flex-wrap items-end gap-x-6 gap-y-3">
               <Text variant="small" className="!text-brand-cream/70">
-                Illustrative visual reference
+                Creative direction · {site.name}
               </Text>
               <a
                 href="#selected-work"

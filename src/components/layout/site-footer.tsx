@@ -31,11 +31,7 @@ export function SiteFooter() {
                   </Link>
                 </li>
               ))}
-              <li>
-                <Link href="/#process" className="inline-flex min-h-10 items-center text-sm font-medium text-brand-cream/90 hover:underline underline-offset-4">
-                  Process
-                </Link>
-              </li>
+
             </ul>
           </nav>
         </div>

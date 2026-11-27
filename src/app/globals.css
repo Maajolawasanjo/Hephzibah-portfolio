@@ -291,24 +291,26 @@
   background: var(--brand-burgundy);
 }
 .hephie-hero-photo {
-  background-image:
-    linear-gradient(90deg, #440015 0%, rgba(76,0,23,.94) 28%, rgba(76,0,23,.76) 49%, rgba(76,0,23,.3) 100%),
-    linear-gradient(0deg, rgba(38,0,12,.92) 0%, transparent 45%),
-    url("/editorial/brand-identity.webp");
-  background-position: center, center, right center;
+  background-image: url("/editorial/brand-identity.webp");
+  background-position: right center;
   background-size: cover;
   background-repeat: no-repeat;
-  opacity: .85;
+  opacity: 1;
+  filter: none;
+}
+.hephie-hero h1,
+.hephie-hero .motion-hero-summary {
+  text-shadow: 0 2px 14px rgba(24, 0, 9, 0.48);
 }
 .hephie-hero-inner {
-  min-height: clamp(42rem, calc(100svh - 6rem), 62rem);
+  min-height: clamp(39rem, calc(100svh - 6rem), 57rem);
 }
 .hephie-hero-highlight {
   color: color-mix(in srgb, var(--brand-cream) 74%, var(--brand-burgundy));
 }
 @media (max-width: 767px) {
   .hephie-hero-photo {
-    opacity: .45;
-    background-position: center, center, 65% center;
+    opacity: 1;
+    background-position: 64% center;
   }
 }

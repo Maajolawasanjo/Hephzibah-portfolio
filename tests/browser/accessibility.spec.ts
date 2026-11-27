@@ -56,14 +56,14 @@ test("mobile disclosure supports natural Tab, Escape, and focus exit", async ({ 
     "aria-expanded",
     "true"
   );
-  await expect(nav.getByRole("link", { name: "Work", exact: true })).toBeFocused();
+  await expect(nav.getByRole("link", { name: "About", exact: true })).toBeFocused();
 
   await page.keyboard.press("Escape");
   await expect(open).toBeFocused();
   await expect(nav).toBeHidden();
 
   await open.click();
-  const lastLink = nav.getByRole("link", { name: "View experience" });
+  const lastLink = nav.getByRole("link", { name: "Explore work" });
   await lastLink.focus();
   await page.keyboard.press("Tab");
 
@@ -98,10 +98,11 @@ test("reduced motion preserves content and avoids entrance movement", async ({ p
 
 test("unapproved inquiry is clearly unavailable and no dead form is shown", async ({ page }) => {
   await page.goto("/#contact");
-  await expect(page.getByText("The public inquiry email is being finalized.")).toBeVisible();
+  await expect(page.getByText("Have a vision in mind? Give it a distinctive identity.")).toBeVisible();
   await expect(page.locator("#contact form")).toHaveCount(0);
   await expect(page.locator('#contact a[href^="mailto:"]')).toHaveCount(0);
   await expect(page.getByRole("heading", { name: "Let's work together." })).toBeVisible();
+  await expect(page.locator("#contact").getByRole("link", { name: "Explore services" })).toHaveAttribute("href", "/#services");
 });
 
 test("root text enlargement retains reasonable page width", async ({ page }) => {

@@ -43,3 +43,36 @@ export const professionalProfile = {
     },
   ],
 } as const;
+
+
+/**
+ * Editorial practice highlights. These are descriptive creative disciplines,
+ * NOT claims of employment at named companies or dated appointments.
+ * Replace with verified client/employer histories when supplied.
+ */
+export const experienceHighlights = [
+  {
+    number: "01",
+    title: "Brand Identity & Graphic Design",
+    arrangement: "Independent creative practice",
+    summary:
+      "Translating brand stories into logo directions, cohesive visual identities and practical design assets that give businesses a clear and recognizable presence.",
+    focus: ["Identity concepts", "Logo & layout design", "Brand applications"],
+  },
+  {
+    number: "02",
+    title: "Digital & Social Content Design",
+    arrangement: "Project-based client collaborations",
+    summary:
+      "Building consistent visual content across digital touchpoints, from promotional graphics and social media campaigns to branded communications for different audiences.",
+    focus: ["Social media creative", "Digital campaign assets", "Visual consistency"],
+  },
+  {
+    number: "03",
+    title: "Visual Storytelling & Mentorship",
+    arrangement: "Photography, video & one-on-one teaching",
+    summary:
+      "Connecting photography and video with the wider identity of a brand, while sharing practical design approaches with aspiring creatives through individual guidance.",
+    focus: ["Image-led storytelling", "Creative thinking", "Design mentorship"],
+  },
+] as const;

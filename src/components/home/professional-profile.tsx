@@ -1,42 +1,63 @@
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
 import { Heading, Text } from "@/components/ui/typography";
-import { professionalProfile } from "@/content/professional";
+import { experienceHighlights, professionalProfile } from "@/content/professional";
 
 /** Separate main sections retain their original professional content. */
 export function ProfessionalExperience() {
-  const work = professionalProfile.clientWork;
   return (
-    <Section id="experience" aria-labelledby="experience-heading">
+    <Section id="experience" compact aria-labelledby="experience-heading">
       <Container>
-        <div className="grid min-w-0 gap-10 lg:grid-cols-12 lg:items-start lg:gap-16">
-          <div className="min-w-0 lg:col-span-5">
-            <Text variant="label" muted className="mb-7 flex items-center gap-4">
-              <span>Professional practice</span>
-              <span aria-hidden="true" className="h-px w-10 bg-rule" />
-            </Text>
-            <Heading id="experience-heading" level={2} size="lg" className="max-w-[12ch]">
+        <div className="grid min-w-0 gap-8 lg:grid-cols-12 lg:items-end lg:gap-12">
+          <div className="min-w-0 lg:col-span-7">
+            <Text variant="label" muted className="mb-7">Creative experience</Text>
+            <Heading id="experience-heading" level={2} size="lg">
               Experience.
             </Heading>
-            <Text variant="lead" className="mt-6 max-w-[34ch]">
-              Design work shaped by real clients, personal brands and direct collaboration.
+          </div>
+          <div className="min-w-0 lg:col-span-5">
+            <Text variant="lead" className="max-w-[42ch]">
+              A practice shaped by branding, digital communication and
+              visual storytelling, with every brief approached thoughtfully.
             </Text>
           </div>
-          <div className="min-w-0 lg:col-span-7 lg:pt-2">
-            <article className="border-t border-rule pt-7 sm:pt-9">
-              <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-2">
-                <Text variant="label" muted>Independent creative practice</Text>
-                <Text variant="small" muted>{work.arrangement}</Text>
-              </div>
-              <Heading level={3} size="md" className="mt-8 max-w-[28ch]">
-                {work.title}
-              </Heading>
-              <Text className="mt-6 max-w-[62ch]">
-                {work.description}
-              </Text>
-            </article>
-          </div>
         </div>
+
+        <div className="mt-12 border-t border-rule sm:mt-16">
+          {experienceHighlights.map((experience) => (
+            <article
+              key={experience.number}
+              className="grid min-w-0 gap-4 border-b border-rule py-8 sm:py-10 lg:grid-cols-[3.5rem_minmax(0,0.95fr)_minmax(0,1.05fr)] lg:gap-12"
+            >
+              <Text variant="label" muted className="pt-1">
+                {experience.number}
+              </Text>
+              <div className="min-w-0">
+                <Heading level={3} size="md" className="max-w-[22ch] !font-normal">
+                  {experience.title}
+                </Heading>
+                <Text variant="small" muted className="mt-3">
+                  {experience.arrangement}
+                </Text>
+              </div>
+              <div className="min-w-0">
+                <Text className="max-w-[54ch]">{experience.summary}</Text>
+                <ul className="mt-5 flex flex-wrap gap-x-4 gap-y-2">
+                  {experience.focus.map((item) => (
+                    <li key={item} className="text-sm text-muted">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <Text variant="small" muted className="mt-7 max-w-[72ch]">
+          These are areas of creative practice. Specific client names,
+          employment dates and case studies will be added when confirmed.
+        </Text>
       </Container>
     </Section>
   );
