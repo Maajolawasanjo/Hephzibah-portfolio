@@ -24,8 +24,8 @@ export function SiteHeader({ contactReady }: { contactReady: boolean }) {
   const toggleRef = useRef<HTMLButtonElement>(null);
   const menuRef = useRef<HTMLElement>(null);
   const inverse = isHome && heroIsVisible;
-  const contactHref = contactReady ? "/#contact" : "/#experience";
-  const contactLabel = contactReady ? "Start a project" : "View experience";
+  const contactHref = contactReady ? "/#contact" : "/#selected-work";
+  const contactLabel = contactReady ? "Start a project" : "Explore work";
 
   useEffect(() => {
     if (!isHome) return;

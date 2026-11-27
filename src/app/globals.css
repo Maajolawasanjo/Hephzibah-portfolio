@@ -288,27 +288,25 @@
 /* V5 screenshot-led art direction: full-bleed atmosphere, not an inset card.
    The existing illustration is a clearly labelled reference, never client work. */
 .hephie-hero {
-  background: var(--brand-burgundy);
+  background: linear-gradient(110deg, #590019 0%, var(--brand-burgundy) 56%, #4b0018 100%);
 }
 .hephie-hero-photo {
-  background-image:
-    linear-gradient(90deg, #440015 0%, rgba(76,0,23,.94) 28%, rgba(76,0,23,.76) 49%, rgba(76,0,23,.3) 100%),
-    linear-gradient(0deg, rgba(38,0,12,.92) 0%, transparent 45%),
-    url("/editorial/brand-identity.webp");
+  background-image: url("/editorial/brand-identity.webp");
   background-position: center, center, right center;
   background-size: cover;
   background-repeat: no-repeat;
-  opacity: .85;
+  opacity: .12;
+  filter: saturate(.3) blur(3px);
 }
 .hephie-hero-inner {
-  min-height: clamp(42rem, calc(100svh - 6rem), 62rem);
+  min-height: clamp(39rem, calc(100svh - 6rem), 57rem);
 }
 .hephie-hero-highlight {
   color: color-mix(in srgb, var(--brand-cream) 74%, var(--brand-burgundy));
 }
 @media (max-width: 767px) {
   .hephie-hero-photo {
-    opacity: .45;
+    opacity: .07;
     background-position: center, center, 65% center;
   }
 }
