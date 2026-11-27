@@ -5,7 +5,9 @@ test("professional sections show verified experience, learning and tools", async
   for (const id of ["experience", "skills", "education", "toolkit", "services"]) {
     await expect(page.locator("#" + id)).toHaveCount(1);
   }
-  await expect(page.getByText("Brand Identity & Graphic Design")).toBeVisible();
+  await expect(page.locator("#experience").getByRole("heading", { name: "PROMIXRS" })).toBeVisible();
+  await expect(page.locator("#experience").getByRole("heading", { name: "SYNERY" })).toBeVisible();
+  await expect(page.locator("#experience").getByRole("heading", { name: "SHELLY" })).toBeVisible();
   await expect(page.getByRole("heading", { name: "TS Academy" })).toBeVisible();
   await expect(page.getByRole("heading", { name: "Apex Academy" })).toBeVisible();
   await expect(page.getByText("NUTM", { exact: true })).toBeVisible();
