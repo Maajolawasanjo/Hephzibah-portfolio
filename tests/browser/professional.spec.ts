@@ -17,7 +17,7 @@ test("professional sections show verified experience, learning and tools", async
 test("unapproved contact destination cannot collect or submit information", async ({ page }) => {
   await page.goto("/#contact");
   await expect(page.locator("#contact form")).toHaveCount(0);
-  await expect(page.getByText("Have a vision in mind? Give it a distinctive identity.")).toBeVisible();
+  await expect(page.locator("#contact").getByRole("heading", { level: 2, name: /Let's make your next idea/ })).toBeVisible();
   await expect(page.locator('a[href^="mailto:"]')).toHaveCount(0);
 });
 

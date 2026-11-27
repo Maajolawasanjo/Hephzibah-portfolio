@@ -98,11 +98,11 @@ test("reduced motion preserves content and avoids entrance movement", async ({ p
 
 test("unapproved inquiry is clearly unavailable and no dead form is shown", async ({ page }) => {
   await page.goto("/#contact");
-  await expect(page.getByText("Have a vision in mind? Give it a distinctive identity.")).toBeVisible();
+  await expect(page.locator("#contact").getByRole("heading", { level: 2, name: /Let's make your next idea/ })).toBeVisible();
+  await expect(page.locator("#contact [aria-hidden='true'] .rounded-full")).toHaveCount(3);
   await expect(page.locator("#contact form")).toHaveCount(0);
   await expect(page.locator('#contact a[href^="mailto:"]')).toHaveCount(0);
-  await expect(page.getByRole("heading", { name: "Let's work together." })).toBeVisible();
-  await expect(page.locator("#contact").getByRole("link", { name: "Explore services" })).toHaveAttribute("href", "/#services");
+  await expect(page.locator("#contact").getByRole("link", { name: "Discover my approach" })).toHaveAttribute("href", "/#process");
 });
 
 test("root text enlargement retains reasonable page width", async ({ page }) => {
