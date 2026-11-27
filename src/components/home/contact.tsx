@@ -7,85 +7,114 @@ import { getPublicContactEmail } from "@/lib/contact";
 import { site } from "@/config/site";
 
 /**
- * Editorial close with an intentional, useful layout.
- * A form or email CTA is displayed only when an actual public recipient exists.
+ * A single editorial invitation, not a second collection of service cards.
+ * The seal is decorative. Only an explicitly approved email is public.
  */
 export function Contact() {
   const email = getPublicContactEmail();
 
   return (
-    <Section id="contact" aria-labelledby="contact-heading" className="bg-brand-cream">
+    <Section
+      id="contact"
+      aria-labelledby="contact-heading"
+      className="bg-brand-cream"
+    >
       <Container>
-        <Text variant="label" muted className="mb-9">Contact the studio</Text>
-
-        <div className="grid min-w-0 gap-8 lg:grid-cols-12 lg:items-end lg:gap-12">
-          <div className="min-w-0 lg:col-span-8">
-            <Heading id="contact-heading" level={2} size="xl" className="max-w-[15ch] !font-normal !leading-[1.02]">
-              Let&apos;s work <span className="font-light opacity-70">together.</span>
-            </Heading>
-          </div>
-          <div className="min-w-0 lg:col-span-4">
-            <Text variant="lead" className="max-w-[40ch]">
-              A new identity, a fresh idea or a visual story worth telling?
-              Here&apos;s where thoughtful collaboration begins.
-            </Text>
-          </div>
+        <div className="flex flex-wrap items-center justify-between gap-4 border-t border-rule pt-6">
+          <Text variant="label" muted>
+            Let&apos;s collaborate
+          </Text>
+          <Text variant="small" muted>
+            Hephie Creatives · Lagos, Nigeria
+          </Text>
         </div>
 
-        <div className="mt-12 grid min-w-0 gap-12 border-t border-rule pt-10 sm:mt-16 sm:pt-12 lg:grid-cols-[minmax(0,1.12fr)_minmax(0,0.88fr)] lg:gap-24">
+        <div className="grid min-w-0 items-center gap-14 pb-16 pt-14 sm:gap-16 sm:pb-20 sm:pt-20 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,0.65fr)] lg:gap-14 lg:pb-24 lg:pt-24">
           <div className="min-w-0">
+            <Heading
+              id="contact-heading"
+              level={2}
+              size="xl"
+              className="max-w-[16ch] !text-[clamp(3rem,6.5vw,6.9rem)] !font-normal !leading-[1.02] !tracking-[-0.06em]"
+            >
+              Let&apos;s make your next idea
+              <span className="block font-light text-brand-burgundy/65">
+                impossible to ignore.
+              </span>
+            </Heading>
+
+            <Text variant="lead" className="mt-9 max-w-[49ch] sm:mt-11">
+              Building something new or ready for a fresh direction? I create
+              identities and visual stories that leave a lasting impression.
+            </Text>
+
             {email ? (
-              <div>
-                <Text variant="label" muted className="mb-5">Project enquiries</Text>
-                <Text className="mb-8 max-w-[57ch]">
-                  Tell me about your idea. This form prepares an email draft for your review and sending.
-                </Text>
-                <ContactForm recipient={email} />
-              </div>
+              <a
+                href={"mailto:" + email + "?subject=" + encodeURIComponent("Let's work together — Hephie Creatives")}
+                className="mt-9 inline-flex min-h-12 items-center gap-6 border-b border-brand-burgundy pb-2 text-base font-medium transition-opacity hover:opacity-75 motion-reduce:transition-none"
+              >
+                Start a conversation <span aria-hidden="true">↗</span>
+              </a>
             ) : (
-              <div id="contact-status">
-                <Text variant="label" muted className="mb-5">Creative collaboration</Text>
-                <p className="max-w-[20ch] font-display text-[clamp(2rem,3.6vw,3.5rem)] font-normal leading-[1.09] tracking-[-0.05em]">
-                  Have a vision in mind? Give it a distinctive identity.
-                </p>
-                <Text className="mt-6 max-w-[55ch]">
-                  Explore the services and creative directions behind Hephie Creatives,
-                  from visual identity and campaign design to photography and storytelling.
-                </Text>
-                <div className="mt-8 flex flex-wrap gap-x-8 gap-y-4">
-                  <Link href="/#services" className="inline-flex min-h-11 items-center gap-3 border-b border-current pb-1 text-sm font-semibold hover:opacity-75">
-                    Explore services <span aria-hidden="true">↗</span>
-                  </Link>
-                  <Link href="/#selected-work" className="inline-flex min-h-11 items-center gap-3 border-b border-current pb-1 text-sm font-semibold hover:opacity-75">
-                    View creative work <span aria-hidden="true">↗</span>
-                  </Link>
-                </div>
-              </div>
+              <Link
+                href="/#process"
+                className="mt-9 inline-flex min-h-12 items-center gap-6 border-b border-brand-burgundy pb-2 text-base font-medium transition-opacity hover:opacity-75 motion-reduce:transition-none"
+              >
+                Discover my approach <span aria-hidden="true">↗</span>
+              </Link>
             )}
           </div>
 
-          <div className="min-w-0">
-            <Text variant="label" muted className="mb-6">Studio details</Text>
-            <div className="border-t border-rule">
-              <div className="border-b border-rule py-6">
-                <Text variant="label" muted>Based in</Text>
-                <Text className="mt-2">{site.location}</Text>
-              </div>
-              <div className="border-b border-rule py-6">
-                <Text variant="label" muted>Creative discipline</Text>
-                <Text className="mt-2">{site.role}</Text>
-              </div>
-              {email ? (
-                <div className="border-b border-rule py-6">
-                  <Text variant="label" muted>Email</Text>
-                  <a href={"mailto:" + email} className="mt-2 inline-block break-all text-base font-medium underline underline-offset-4">{email}</a>
-                </div>
-              ) : (
-                <Text variant="small" muted className="mt-6 max-w-[40ch]">
-                  Direct enquiry details will be added when the public contact address is confirmed.
-                </Text>
-              )}
+          <div
+            aria-hidden="true"
+            className="relative mx-auto flex aspect-square w-full max-w-[19rem] items-center justify-center sm:max-w-[23rem] lg:max-w-[26rem]"
+          >
+            <div className="absolute inset-0 rounded-full border border-brand-burgundy/25" />
+            <div className="absolute inset-[10%] rounded-full border border-brand-burgundy/15" />
+            <div className="absolute inset-[21%] rounded-full border border-brand-burgundy/20" />
+            <span className="font-display text-[clamp(6rem,11vw,11rem)] font-light leading-none tracking-[-0.09em]">
+              H.
+            </span>
+            <span className="absolute bottom-[14%] text-[0.62rem] font-semibold uppercase tracking-[0.19em]">
+              Hephie Creatives
+            </span>
+          </div>
+        </div>
+
+        {email && (
+          <div className="grid min-w-0 gap-8 border-t border-rule py-12 lg:grid-cols-[minmax(0,0.58fr)_minmax(0,1.42fr)] lg:gap-16">
+            <div>
+              <Text variant="label" muted>Project enquiries</Text>
+              <p className="mt-5 max-w-[22ch] font-display text-[clamp(1.65rem,2.7vw,2.75rem)] font-normal leading-[1.14] tracking-[-0.04em]">
+                Tell me what you&apos;re dreaming up.
+              </p>
+              <Text variant="small" muted className="mt-4 max-w-[43ch]">
+                This opens a prepared email in your own email application for
+                you to review and send.
+              </Text>
             </div>
+            <ContactForm recipient={email} />
+          </div>
+        )}
+
+        <div className="grid min-w-0 gap-8 border-t border-rule pt-8 sm:grid-cols-2 sm:gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:pt-10">
+          <div>
+            <Text variant="label" muted>Based in</Text>
+            <Text className="mt-3">{site.location}</Text>
+          </div>
+          <div>
+            <Text variant="label" muted>Creative practice</Text>
+            <Text className="mt-3 max-w-[35ch]">
+              {site.role}
+            </Text>
+            {email && (
+              <a
+                href={"mailto:" + email}
+                className="mt-4 inline-flex break-all text-sm font-medium underline underline-offset-4"
+              >
+                {email}
+              </a>
+            )}
           </div>
         </div>
       </Container>
