@@ -56,20 +56,20 @@ export const experienceHighlights = [
     title: "PROMIXRS",
     industry: "E-commerce",
     role: "Logo design",
-    summary: "I designed the logo for PROMIXRS, an e-commerce business. The logo serves as a central visual identifier for the brand. In online retail, a recognisable mark helps connect a business’s storefront, promotional materials and customer-facing communications, making this a meaningful project within my digital brand identity experience.",
+    summary: "I designed the logo for PROMIXRS, an e-commerce business. The logo serves as a central visual identifier for the brand. In online retail, a recognisable mark helps connect a business’s storefront, promotional materials and customer-facing communications, giving this project a distinct place within my e-commerce branding experience.",
   },
   {
     number: "02",
     title: "SYNERGY",
     industry: "Technology",
     role: "Logo design",
-    summary: "I created the logo for SYNERGY, a technology company. This project brought my logo design work into the technology sector, where a clear visual signature can help a business present itself across websites, presentations and other professional touchpoints. My contribution was specifically the company’s logo.",
+    summary: "I created the logo for SYNERGY, a technology company. This project brought my logo design work into the technology sector, where a clear visual signature can help a business present itself across websites, presentations and other professional touchpoints. It is an example of my identity design work for a technology-focused business.",
   },
   {
     number: "03",
     title: "SHELLY",
     industry: "Clothing & fashion",
     role: "Logo design",
-    summary: "I designed the logo for SHELLY, a clothing brand. Fashion and clothing businesses use their visual identity to express personality and build recognition, from online promotion to labels and packaging. The project represents my logo design experience in a fashion-focused brand context; no additional deliverables are implied.",
+    summary: "I designed the logo for SHELLY, a clothing brand. Fashion and clothing businesses use their visual identity to express personality and build recognition, from online promotion to labels and packaging. The project adds a fashion-focused commission to my experience creating logos for different types of businesses.",
   },
 ] as const;
