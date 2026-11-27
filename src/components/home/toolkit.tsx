@@ -11,36 +11,50 @@ const softwareImages: Record<string, EditorialMediaKey> = {
   PixelLab: "pixellab",
 };
 
+/** A quiet, ruled software index rather than three large UI cards. */
 export function Toolkit() {
   const tools = getApprovedTools();
   if (!tools.length) return null;
+
   return (
-    <Section id="toolkit" compact aria-labelledby="toolkit-heading">
+    <Section id="toolkit" compact aria-labelledby="toolkit-heading" className="bg-brand-cream">
       <Container>
-        <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between md:gap-9">
-          <Heading id="toolkit-heading" level={2} size="lg">
-            My creative tools.
-          </Heading>
-          <Text className="max-w-[47ch]">
+        <div className="grid min-w-0 gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.65fr)] lg:items-end lg:gap-16">
+          <div className="min-w-0">
+            <Text variant="label" muted className="mb-7">Tools of the craft</Text>
+            <Heading id="toolkit-heading" level={2} size="lg">
+              My creative tools.
+            </Heading>
+          </div>
+          <Text variant="lead" className="max-w-[42ch]">
             The applications I use to bring visual ideas from concept to execution.
           </Text>
         </div>
-        <ul className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {tools.map((tool) => (
-            <li key={tool.name} className="flex min-w-0 items-center gap-5 rounded-xl bg-soft p-5 md:flex-col md:items-start md:gap-4 md:p-7">
+
+        <ul className="mt-12 grid min-w-0 gap-x-10 sm:mt-16 lg:grid-cols-3">
+          {tools.map((tool, index) => (
+            <li
+              key={tool.name}
+              className="flex min-w-0 items-center gap-5 border-t border-rule py-7 sm:py-9"
+            >
               {softwareImages[tool.name] && (
                 <EditorialImage
                   asset={softwareImages[tool.name]}
-                  sizes="88px"
+                  sizes="72px"
                   showCaption={false}
                   fit="contain"
-                  className="w-[72px] shrink-0 md:w-[88px]"
+                  className="w-[64px] shrink-0 sm:w-[72px]"
                   imageClassName="!border-0 !bg-transparent !p-0"
                 />
               )}
               <div className="min-w-0">
-                <h3 className="break-words text-lg font-bold leading-tight">{tool.name}</h3>
-                <Text variant="small" className="mt-1" muted>{tool.category}</Text>
+                <Text variant="label" muted className="mb-2">
+                  {String(index + 1).padStart(2, "0")}
+                </Text>
+                <h3 className="break-words font-display text-[clamp(1.15rem,1.65vw,1.5rem)] font-medium leading-tight tracking-[-0.03em]">
+                  {tool.name}
+                </h3>
+                <Text variant="small" muted className="mt-2">{tool.category}</Text>
               </div>
             </li>
           ))}
