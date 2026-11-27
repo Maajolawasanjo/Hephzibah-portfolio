@@ -25,7 +25,7 @@ test("Experience lists verified client logo commissions, without invented jobs o
   const experience = page.locator("#experience");
 
   await expect(experience.getByRole("heading", { level: 2, name: "Experience." })).toBeVisible();
-  for (const name of ["PROMIXRS", "SYNERY", "SHELLY"]) {
+  for (const name of ["PROMIXRS", "SYNERGY", "SHELLY"]) {
     await expect(experience.getByRole("heading", { level: 3, name })).toBeVisible();
   }
   await expect(experience.getByText("e-commerce business", { exact: false })).toBeVisible();

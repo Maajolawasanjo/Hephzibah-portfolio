@@ -6,7 +6,7 @@ test("professional sections show verified experience, learning and tools", async
     await expect(page.locator("#" + id)).toHaveCount(1);
   }
   await expect(page.locator("#experience").getByRole("heading", { name: "PROMIXRS" })).toBeVisible();
-  await expect(page.locator("#experience").getByRole("heading", { name: "SYNERY" })).toBeVisible();
+  await expect(page.locator("#experience").getByRole("heading", { name: "SYNERGY" })).toBeVisible();
   await expect(page.locator("#experience").getByRole("heading", { name: "SHELLY" })).toBeVisible();
   await expect(page.getByRole("heading", { name: "TS Academy" })).toBeVisible();
   await expect(page.getByRole("heading", { name: "Apex Academy" })).toBeVisible();

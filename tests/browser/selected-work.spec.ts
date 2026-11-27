@@ -5,7 +5,7 @@ test("selected work is present without publishing illustrative work as a client 
   const section = page.locator("#selected-work");
 
   await expect(section.getByRole("heading", { name: "Selected work." })).toBeVisible();
-  for (const name of ["PROMIXRS", "SYNERY", "SHELLY"]) {
+  for (const name of ["PROMIXRS", "SYNERGY", "SHELLY"]) {
     await expect(section.getByRole("heading", { level: 3, name })).toBeVisible();
   }
 
