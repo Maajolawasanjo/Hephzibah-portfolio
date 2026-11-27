@@ -6,7 +6,7 @@ import { site } from "@/config/site";
 
 /**
  * Screenshot-led V5 hero: one continuous, image-led editorial composition.
- * The barely visible background image is atmospheric decoration, not a client project.
+ * The full-strength background image is an illustrative reference, not a verified client project.
  * The actual published project gallery remains approval-gated separately.
  */
 export function Hero() {
