@@ -20,24 +20,36 @@ test("About preserves the full approved biography and connects to Design Process
   await expect(page.locator("#process")).toHaveCount(1);
 });
 
-test("Experience lists verified client logo commissions, without invented jobs or dates", async ({ page }) => {
+test("Experience matches the chosen three-card composition and omits dates", async ({ page }) => {
   await page.goto("/");
   const experience = page.locator("#experience");
 
-  await expect(experience.getByRole("heading", { level: 2, name: "Experience." })).toBeVisible();
-  for (const name of ["PROMIXRS", "SYNERGY", "SHELLY"]) {
-    await expect(experience.getByRole("heading", { level: 3, name })).toBeVisible();
-  }
-  await expect(experience.getByText("e-commerce business", { exact: false })).toBeVisible();
-  await expect(experience.getByText("technology company", { exact: false })).toBeVisible();
-  await expect(experience.getByText("clothing brand", { exact: false })).toBeVisible();
+  await expect(
+    experience.getByRole("heading", { level: 2, name: "Creative Experience" })
+  ).toBeVisible();
+
   await expect(experience.locator("article")).toHaveCount(3);
-  await expect(experience.locator("article ul > li")).toHaveCount(3);
-  await expect(experience.getByRole("heading", { level: 3, name: "Beyond logo design." })).toBeVisible();
-  await expect(experience.getByRole("list", { name: "Additional creative experience" }).locator("li")).toHaveCount(5);
-  await expect(experience.getByText("personal branding and visual designs", { exact: false })).toBeVisible();
-  await expect(experience.getByText("photography and video", { exact: false })).toBeVisible();
-  await expect(experience.getByText("collaborated directly with clients", { exact: false })).toBeVisible();
+  for (const [name, industry] of [
+    ["PROMIXRS", "E-commerce Brand"],
+    ["SYNERGY", "Technology Company"],
+    ["SHELLY", "Clothing Brand"],
+  ]) {
+    const card = experience.locator("article").filter({
+      has: experience.getByRole("heading", { level: 3, name }),
+    });
+    await expect(card).toHaveCount(1);
+    await expect(card.getByText(industry, { exact: true })).toBeVisible();
+    await expect(card.getByText("Brand Identity Design")).toBeVisible();
+    await expect(card.getByText("Key contributions")).toBeVisible();
+    await expect(card.getByRole("list", { name: name + " key contributions" }).locator("li"))
+      .toHaveCount(5);
+    await expect(card.getByRole("list", { name: name + " creative tools and disciplines" }).locator("li"))
+      .toHaveCount(3);
+    await expect(card.locator("svg[aria-hidden='true']")).toHaveCount(1);
+  }
+
+  await expect(experience.getByText("Beyond logo design.")).toHaveCount(0);
+  await expect(experience.getByText(/\\b(?:19|20)\\d{2}\\b/)).toHaveCount(0);
 });
 
 for (const width of [320, 375, 768, 1024, 1440]) {
