@@ -46,9 +46,9 @@ export const professionalProfile = {
 
 
 /**
- * Real client logo projects supplied by the portfolio owner.
- * These are client commissions, not claims of salaried employment.
- * No project dates, outcomes, additional deliverables or images are inferred.
+ * Client-specific deliverables confirmed by the portfolio owner.
+ * Additional client-specific services must be confirmed before associating
+ * them with PROMIXRS, SYNERGY, or SHELLY.
  */
 export const experienceHighlights = [
   {
@@ -56,20 +56,38 @@ export const experienceHighlights = [
     title: "PROMIXRS",
     industry: "E-commerce",
     role: "Logo design",
-    summary: "I designed the logo for PROMIXRS, an e-commerce business. The logo serves as a central visual identifier for the brand. In online retail, a recognisable mark helps connect a business’s storefront, promotional materials and customer-facing communications, giving this project a distinct place within my e-commerce branding experience.",
+    bullets: [
+      "Designed the logo for PROMIXRS, an e-commerce business.",
+    ],
   },
   {
     number: "02",
     title: "SYNERGY",
     industry: "Technology",
     role: "Logo design",
-    summary: "I created the logo for SYNERGY, a technology company. This project brought my logo design work into the technology sector, where a clear visual signature can help a business present itself across websites, presentations and other professional touchpoints. It is an example of my identity design work for a technology-focused business.",
+    bullets: [
+      "Designed the logo for SYNERGY, a technology company.",
+    ],
   },
   {
     number: "03",
     title: "SHELLY",
     industry: "Clothing & fashion",
     role: "Logo design",
-    summary: "I designed the logo for SHELLY, a clothing brand. Fashion and clothing businesses use their visual identity to express personality and build recognition, from online promotion to labels and packaging. The project adds a fashion-focused commission to my experience creating logos for different types of businesses.",
+    bullets: [
+      "Designed the logo for SHELLY, a clothing brand.",
+    ],
   },
+] as const;
+
+/**
+ * Broader experience previously supplied for the designer. These practice
+ * areas are not attributed to individual client commissions without evidence.
+ */
+export const additionalCreativeExperience = [
+  "Developed personal branding and visual designs tailored to different client needs.",
+  "Created graphic design work using typography, layout and image-led communication.",
+  "Worked on social media branding and visual content for digital communication.",
+  "Brought photography and video into visual storytelling and brand expression.",
+  "Collaborated directly with clients remotely and in person to understand their briefs and develop creative solutions.",
 ] as const;

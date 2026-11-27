@@ -32,10 +32,12 @@ test("Experience lists verified client logo commissions, without invented jobs o
   await expect(experience.getByText("technology company", { exact: false })).toBeVisible();
   await expect(experience.getByText("clothing brand", { exact: false })).toBeVisible();
   await expect(experience.locator("article")).toHaveCount(3);
-  await expect(experience.getByText("central visual identifier", { exact: false })).toBeVisible();
-  await expect(experience.getByText("technology sector", { exact: false })).toBeVisible();
-  await expect(experience.getByText("Fashion and clothing businesses", { exact: false })).toBeVisible();
-  await expect(experience.getByText("Client project details are shown", { exact: false })).toHaveCount(0);
+  await expect(experience.locator("article ul > li")).toHaveCount(3);
+  await expect(experience.getByRole("heading", { level: 3, name: "Beyond logo design." })).toBeVisible();
+  await expect(experience.getByRole("list", { name: "Additional creative experience" }).locator("li")).toHaveCount(5);
+  await expect(experience.getByText("personal branding and visual designs", { exact: false })).toBeVisible();
+  await expect(experience.getByText("photography and video", { exact: false })).toBeVisible();
+  await expect(experience.getByText("collaborated directly with clients", { exact: false })).toBeVisible();
 });
 
 for (const width of [320, 375, 768, 1024, 1440]) {
