@@ -21,7 +21,7 @@ test("V5 labels illustrative hero artwork and does not publish unapproved portfo
   await page.goto("/");
   await expect(page.locator("#home .hephie-hero-photo")).toHaveCount(1);
   await expect(page.locator("#home [data-editorial-asset]")).toHaveCount(0);
-  await expect(page.locator("#home").getByText("Illustrative visual reference")).toBeVisible();
+  await expect(page.locator("#home").getByText("Creative direction · Hephzibah Uzorndu")).toBeVisible();
   for (const asset of ["photoshop", "illustrator", "pixellab"]) {
     const item = page.locator("#toolkit [data-editorial-asset='" + asset + "']");
     await expect(item).toHaveCount(1);
