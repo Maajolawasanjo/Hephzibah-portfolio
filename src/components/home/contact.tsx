@@ -97,24 +97,42 @@ export function Contact() {
           </div>
         )}
 
-        <div className="grid min-w-0 gap-8 border-t border-rule pt-8 sm:grid-cols-2 sm:gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:pt-10">
-          <div>
-            <Text variant="label" muted>Based in</Text>
-            <Text className="mt-3">{site.location}</Text>
+        <div className="mt-8 grid min-w-0 gap-x-16 gap-y-12 border-t border-rule pt-9 sm:grid-cols-2 lg:mt-12 lg:pt-12">
+          <div className="min-w-0">
+            <Text variant="label" muted>Direct contact</Text>
+            <div className="mt-6 border-t border-rule">
+              {email && (
+                <div className="border-b border-rule py-5">
+                  <Text variant="small" muted>Email</Text>
+                  <a href={"mailto:" + email} className="mt-2 inline-flex min-h-10 max-w-full items-center break-all text-base font-medium underline-offset-4 hover:underline">
+                    {email}
+                  </a>
+                </div>
+              )}
+              <div className="border-b border-rule py-5">
+                <Text variant="small" muted>Telephone</Text>
+                <a href={site.contact.phoneHref} className="mt-2 inline-flex min-h-10 items-center text-base font-medium underline-offset-4 hover:underline">
+                  {site.contact.phone}
+                </a>
+              </div>
+            </div>
           </div>
-          <div>
-            <Text variant="label" muted>Creative practice</Text>
-            <Text className="mt-3 max-w-[35ch]">
-              {site.role}
-            </Text>
-            {email && (
-              <a
-                href={"mailto:" + email}
-                className="mt-4 inline-flex break-all text-sm font-medium underline underline-offset-4"
-              >
-                {email}
-              </a>
-            )}
+          <div className="min-w-0">
+            <Text variant="label" muted>Connect online</Text>
+            <div className="mt-6 border-t border-rule">
+              <div className="border-b border-rule py-5">
+                <Text variant="small" muted>LinkedIn</Text>
+                <a href={site.contact.linkedin} target="_blank" rel="noopener noreferrer" aria-label="Hephzibah Uzorndu on LinkedIn (opens in a new tab)" className="mt-2 inline-flex min-h-10 items-center gap-3 text-base font-medium underline-offset-4 hover:underline">
+                  Hephzibah Uzorndu <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+              <div className="border-b border-rule py-5">
+                <Text variant="small" muted>Instagram</Text>
+                <a href={site.contact.instagram} target="_blank" rel="noopener noreferrer" aria-label="Hephie Creatives on Instagram (opens in a new tab)" className="mt-2 inline-flex min-h-10 items-center gap-3 text-base font-medium underline-offset-4 hover:underline">
+                  @hephie_creatives <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </Container>
