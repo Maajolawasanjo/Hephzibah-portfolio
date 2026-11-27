@@ -35,7 +35,7 @@ test("Experience matches the chosen three-card composition and omits dates", asy
     ["SHELLY", "Clothing Brand"],
   ]) {
     const card = experience.locator("article").filter({
-      has: experience.getByRole("heading", { level: 3, name }),
+      has: page.getByRole("heading", { level: 3, name }),
     });
     await expect(card).toHaveCount(1);
     await expect(card.getByText(industry, { exact: true })).toBeVisible();
@@ -49,7 +49,7 @@ test("Experience matches the chosen three-card composition and omits dates", asy
   }
 
   await expect(experience.getByText("Beyond logo design.")).toHaveCount(0);
-  await expect(experience.getByText(/\\b(?:19|20)\\d{2}\\b/)).toHaveCount(0);
+  await expect(experience.getByText(/(?:19|20)[0-9]{2}/)).toHaveCount(0);
 });
 
 for (const width of [320, 375, 768, 1024, 1440]) {
