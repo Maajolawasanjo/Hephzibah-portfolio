@@ -69,7 +69,7 @@ test("mobile disclosure supports natural Tab, Escape, and focus exit", async ({ 
 
   // Disclosure menus are not modal dialogs and must never trap focus.
   await expect(nav).toBeHidden();
-  await expect(page.getByRole("link", { name: "Explore my experience" })).toBeFocused();
+  await expect(page.getByRole("link", { name: "Explore my work" })).toBeFocused();
 });
 
 test("menu is hidden at desktop width and interactive nav is visible", async ({ page }) => {

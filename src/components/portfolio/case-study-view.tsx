@@ -22,7 +22,7 @@ function ImageFeature({
         ratio={image.ratio ?? "landscape"}
         fit="contain"
         sizes="(max-width: 768px) 100vw, 90vw"
-        className="border border-rule"
+        className="border border-rule bg-soft"
       />
       {image.caption && (
         <figcaption className="mt-3 text-sm leading-relaxed text-muted">
@@ -51,7 +51,7 @@ export function CaseStudyView({
             Back to selected work
           </Link>
 
-          <div className="grid gap-10 border-t border-rule pt-8 lg:grid-cols-12 lg:gap-12">
+          <div className="grid gap-10 border-t border-rule pt-12 lg:grid-cols-12 lg:gap-16">
             <div className="min-w-0 lg:col-span-8">
               <Text variant="label" muted className="mb-7">
                 Selected work / {project.category}
@@ -60,7 +60,7 @@ export function CaseStudyView({
                 id="case-study-title"
                 level={1}
                 size="display"
-                className="break-words"
+                className="max-w-[13ch] break-words"
               >
                 {project.title}
               </Heading>
@@ -87,7 +87,7 @@ export function CaseStudyView({
             </dl>
           </div>
 
-          <div className="mt-12 lg:mt-20">
+          <div className="mt-16 lg:mt-24">
             <MediaFrame
               image={project.cover}
               ratio={project.ratio ?? "wide"}
@@ -165,7 +165,7 @@ export function CaseStudyView({
 
       <Section compact aria-labelledby="gallery-heading">
         <Container>
-          <div className="mb-10 grid gap-6 border-t border-rule pt-10 lg:grid-cols-12">
+          <div className="mb-12 grid gap-8 border-t border-rule pt-10 lg:grid-cols-12">
             <div className="lg:col-span-6">
               <Text variant="label" muted className="mb-5">
                 03 / Visual story
@@ -182,12 +182,14 @@ export function CaseStudyView({
             </div>
           </div>
 
-          <div className="space-y-10 lg:space-y-16">
+          <div className="grid gap-8 md:grid-cols-12 lg:gap-14">
             {study.gallery.map((image, index) => (
-              <ImageFeature
+              <div
                 key={image.src + "-" + index}
-                image={image}
-              />
+                className={index % 3 === 0 ? "min-w-0 md:col-span-12" : "min-w-0 md:col-span-6"}
+              >
+                <ImageFeature image={image} />
+              </div>
             ))}
           </div>
         </Container>

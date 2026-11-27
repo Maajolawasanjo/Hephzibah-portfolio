@@ -17,7 +17,7 @@ export function Section({
     <section
       className={cn(
         "layout-section",
-        compact && "!py-[clamp(2.5rem,5vw,5rem)]",
+        compact && "layout-section--support",
         tone === "inverse" && "theme-inverse",
         className
       )}

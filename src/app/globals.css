@@ -53,7 +53,7 @@
   .type-display {
     font-family: var(--font-display-stack);
     font-size: var(--type-display);
-    font-weight: 700;
+    font-weight: 400;
     line-height: var(--leading-display);
     letter-spacing: var(--tracking-display);
     text-wrap: balance;
@@ -62,7 +62,7 @@
   .type-heading-xl {
     font-family: var(--font-display-stack);
     font-size: var(--type-heading-xl);
-    font-weight: 700;
+    font-weight: 400;
     line-height: var(--leading-heading);
     letter-spacing: var(--tracking-heading);
   }
@@ -70,7 +70,7 @@
   .type-heading-lg {
     font-family: var(--font-display-stack);
     font-size: var(--type-heading-lg);
-    font-weight: 700;
+    font-weight: 400;
     line-height: var(--leading-heading);
     letter-spacing: var(--tracking-heading);
   }
@@ -78,14 +78,14 @@
   .type-heading-md {
     font-family: var(--font-display-stack);
     font-size: var(--type-heading-md);
-    font-weight: 700;
+    font-weight: 500;
     line-height: 1.15;
     letter-spacing: -0.025em;
   }
 
   .type-lead {
     font-size: var(--type-lead);
-    line-height: 1.5;
+    line-height: 1.6;
     max-width: var(--measure-body);
   }
 
@@ -116,6 +116,17 @@
 
   .layout-section {
     padding-block: var(--layout-section-space);
+  }
+
+  .layout-section--support {
+    padding-block: var(--layout-section-space-support);
+  }
+
+  /* Responsive 12-column composition primitive for future V5 sections. */
+  .editorial-grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: var(--layout-grid-gap);
   }
 
   .editorial-rule {
@@ -271,4 +282,33 @@
   line-height: 0.95;
   letter-spacing: -0.07em;
   overflow-wrap: anywhere;
+}
+
+
+/* V5 screenshot-led art direction: full-bleed atmosphere, not an inset card.
+   The existing illustration is a clearly labelled reference, never client work. */
+.hephie-hero {
+  background: var(--brand-burgundy);
+}
+.hephie-hero-photo {
+  background-image:
+    linear-gradient(90deg, #440015 0%, rgba(76,0,23,.94) 28%, rgba(76,0,23,.76) 49%, rgba(76,0,23,.3) 100%),
+    linear-gradient(0deg, rgba(38,0,12,.92) 0%, transparent 45%),
+    url("/editorial/brand-identity.webp");
+  background-position: center, center, right center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: .85;
+}
+.hephie-hero-inner {
+  min-height: clamp(42rem, calc(100svh - 6rem), 62rem);
+}
+.hephie-hero-highlight {
+  color: color-mix(in srgb, var(--brand-cream) 74%, var(--brand-burgundy));
+}
+@media (max-width: 767px) {
+  .hephie-hero-photo {
+    opacity: .45;
+    background-position: center, center, 65% center;
+  }
 }
