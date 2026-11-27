@@ -9,8 +9,8 @@ export const site = {
   role: "Brand Identity Designer & Visual Storyteller",
   location: "Lagos, Nigeria",
   contact: {
-    phone: "+234 8161429116",
-    phoneHref: "tel:+2348161429116",
+    whatsappNumber: "+234 8161429116",
+    whatsappHref: "https://wa.me/2348161429116",
     linkedin: "https://www.linkedin.com/in/hephzibah-uzorndu-333364439/",
     instagram: "https://www.instagram.com/hephie_creatives/",
   },

@@ -110,9 +110,15 @@ export function Contact() {
                 </div>
               )}
               <div className="border-b border-rule py-5">
-                <Text variant="small" muted>Telephone</Text>
-                <a href={site.contact.phoneHref} className="mt-2 inline-flex min-h-10 items-center text-base font-medium underline-offset-4 hover:underline">
-                  {site.contact.phone}
+                <Text variant="small" muted>WhatsApp</Text>
+                <a
+                  href={site.contact.whatsappHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Chat with Hephie Creatives on WhatsApp (opens in a new tab)"
+                  className="mt-2 inline-flex min-h-10 max-w-full flex-wrap items-center gap-3 text-base font-medium underline-offset-4 hover:underline"
+                >
+                  {site.contact.whatsappNumber} <span aria-hidden="true">↗</span>
                 </a>
               </div>
             </div>
