@@ -1,7 +1,7 @@
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
 import { Heading, Text } from "@/components/ui/typography";
-import { experienceHighlights, professionalProfile } from "@/content/professional";
+import { additionalCreativeExperience, experienceHighlights, professionalProfile } from "@/content/professional";
 
 /** Separate main sections retain their original professional content. */
 export function ProfessionalExperience() {
@@ -17,8 +17,7 @@ export function ProfessionalExperience() {
           </div>
           <div className="min-w-0 lg:col-span-5">
             <Text variant="lead" className="max-w-[42ch]">
-              Real client logo commissions across e-commerce, technology and
-              clothing, each bringing a different context to my identity design work.
+              Selected client projects and the wider creative work I do beyond logo design.
             </Text>
           </div>
         </div>
@@ -41,15 +40,36 @@ export function ProfessionalExperience() {
                 </Text>
               </div>
               <div className="min-w-0">
-                <Text className="max-w-[54ch]">{experience.summary}</Text>
-                <Text variant="small" muted className="mt-4">
-                  Project type · {experience.role}
-                </Text>
+                <Text variant="label" muted className="mb-4">Logo design</Text>
+                <ul className="list-disc space-y-3 pl-5 marker:text-brand-burgundy">
+                  {experience.bullets.map((bullet) => (
+                    <li key={bullet} className="max-w-[54ch] text-base leading-relaxed">
+                      {bullet}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </article>
           ))}
         </div>
 
+        <div className="grid min-w-0 gap-8 pt-12 sm:pt-16 lg:grid-cols-[minmax(0,0.45fr)_minmax(0,1fr)] lg:gap-14">
+          <div>
+            <Heading level={3} size="md" className="max-w-[17ch] !font-normal">
+              Beyond logo design.
+            </Heading>
+          </div>
+          <ul
+            aria-label="Additional creative experience"
+            className="grid min-w-0 list-disc gap-x-12 gap-y-5 border-t border-rule py-7 pl-5 marker:text-brand-burgundy sm:grid-cols-2"
+          >
+            {additionalCreativeExperience.map((item) => (
+              <li key={item} className="min-w-0 max-w-[45ch] text-base leading-relaxed">
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
       </Container>
     </Section>
   );
