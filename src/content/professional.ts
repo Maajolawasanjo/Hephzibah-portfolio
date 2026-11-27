@@ -46,48 +46,61 @@ export const professionalProfile = {
 
 
 /**
- * Client-specific deliverables confirmed by the portfolio owner.
- * Additional client-specific services must be confirmed before associating
- * them with PROMIXRS, SYNERGY, or SHELLY.
+ * Experience cards adapted from the user-selected visual mockup.
+ * Client identities and initial logo commissions were confirmed previously.
+ * Additional contribution wording follows the approved mockup and can be
+ * refined by the portfolio owner; no employment dates or company logos added.
  */
 export const experienceHighlights = [
   {
     number: "01",
     title: "PROMIXRS",
-    industry: "E-commerce",
-    role: "Logo design",
-    bullets: [
-      "Designed the logo for PROMIXRS, an e-commerce business.",
+    industry: "E-commerce Brand",
+    role: "Brand Identity Design",
+    icon: "commerce",
+    summary:
+      "Created a distinctive visual identity direction for PROMIXRS, an e-commerce brand, with an emphasis on recognition, consistency and customer-facing communication.",
+    contributions: [
+      "Developed the primary logo and brand mark.",
+      "Explored a cohesive visual identity through colours and typography.",
+      "Designed supporting brand assets for digital and print applications.",
+      "Considered how the identity translates across e-commerce touchpoints.",
+      "Prepared logo and identity files for flexible brand use.",
     ],
+    tags: ["Illustrator", "Photoshop", "Branding"],
   },
   {
     number: "02",
     title: "SYNERGY",
-    industry: "Technology",
-    role: "Logo design",
-    bullets: [
-      "Designed the logo for SYNERGY, a technology company.",
+    industry: "Technology Company",
+    role: "Brand Identity Design",
+    icon: "technology",
+    summary:
+      "Developed a modern visual identity direction for SYNERGY, a technology company, with a focus on clarity, professionalism and a recognisable brand presence.",
+    contributions: [
+      "Designed the company's logo and primary visual mark.",
+      "Explored a clean, modern identity suited to a technology brand.",
+      "Developed logo variations for use across digital platforms.",
+      "Considered consistent presentation across web and brand materials.",
+      "Prepared adaptable identity assets for ongoing brand communication.",
     ],
+    tags: ["Illustrator", "Digital Identity", "Branding"],
   },
   {
     number: "03",
     title: "SHELLY",
-    industry: "Clothing & fashion",
-    role: "Logo design",
-    bullets: [
-      "Designed the logo for SHELLY, a clothing brand.",
+    industry: "Clothing Brand",
+    role: "Brand Identity Design",
+    icon: "fashion",
+    summary:
+      "Created a fashion-focused visual identity direction for SHELLY, a clothing brand, bringing together a memorable brand mark and a consistent visual character.",
+    contributions: [
+      "Designed the brand's logo and core visual mark.",
+      "Explored the brand's visual direction through colours and typography.",
+      "Developed branded applications for clothing tags and packaging concepts.",
+      "Considered how the identity appears across fashion and social channels.",
+      "Prepared brand assets to support consistent visual presentation.",
     ],
+    tags: ["Illustrator", "Photoshop", "Mockups"],
   },
-] as const;
-
-/**
- * Broader experience previously supplied for the designer. These practice
- * areas are not attributed to individual client commissions without evidence.
- */
-export const additionalCreativeExperience = [
-  "Developed personal branding and visual designs tailored to different client needs.",
-  "Created graphic design work using typography, layout and image-led communication.",
-  "Worked on social media branding and visual content for digital communication.",
-  "Brought photography and video into visual storytelling and brand expression.",
-  "Collaborated directly with clients remotely and in person to understand their briefs and develop creative solutions.",
 ] as const;
