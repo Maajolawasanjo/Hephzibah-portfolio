@@ -60,10 +60,10 @@ export const experienceHighlights = [
   },
   {
     number: "02",
-    title: "SYNERY",
+    title: "SYNERGY",
     industry: "Technology",
     role: "Logo design",
-    summary: "Designed the logo for SYNERY, a technology company.",
+    summary: "Designed the logo for SYNERGY, a technology company.",
   },
   {
     number: "03",
