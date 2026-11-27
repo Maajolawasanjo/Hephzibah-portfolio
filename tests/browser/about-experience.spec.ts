@@ -32,6 +32,10 @@ test("Experience lists verified client logo commissions, without invented jobs o
   await expect(experience.getByText("technology company", { exact: false })).toBeVisible();
   await expect(experience.getByText("clothing brand", { exact: false })).toBeVisible();
   await expect(experience.locator("article")).toHaveCount(3);
+  await expect(experience.getByText("central visual identifier", { exact: false })).toBeVisible();
+  await expect(experience.getByText("technology sector", { exact: false })).toBeVisible();
+  await expect(experience.getByText("Fashion and clothing businesses", { exact: false })).toBeVisible();
+  await expect(experience.getByText("Client project details are shown", { exact: false })).toHaveCount(0);
 });
 
 for (const width of [320, 375, 768, 1024, 1440]) {
