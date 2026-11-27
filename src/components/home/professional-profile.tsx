@@ -17,8 +17,8 @@ export function ProfessionalExperience() {
           </div>
           <div className="min-w-0 lg:col-span-5">
             <Text variant="lead" className="max-w-[42ch]">
-              A practice shaped by branding, digital communication and
-              visual storytelling, with every brief approached thoughtfully.
+              Selected logo design commissions for clients in commerce,
+              technology and fashion.
             </Text>
           </div>
         </div>
@@ -37,26 +37,22 @@ export function ProfessionalExperience() {
                   {experience.title}
                 </Heading>
                 <Text variant="small" muted className="mt-3">
-                  {experience.arrangement}
+                  {experience.industry}
                 </Text>
               </div>
               <div className="min-w-0">
                 <Text className="max-w-[54ch]">{experience.summary}</Text>
-                <ul className="mt-5 flex flex-wrap gap-x-4 gap-y-2">
-                  {experience.focus.map((item) => (
-                    <li key={item} className="text-sm text-muted">
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+                <Text variant="small" muted className="mt-4">
+                  Project type · {experience.role}
+                </Text>
               </div>
             </article>
           ))}
         </div>
 
         <Text variant="small" muted className="mt-7 max-w-[72ch]">
-          These are areas of creative practice. Specific client names,
-          employment dates and case studies will be added when confirmed.
+          Client project details are shown as provided. Finished logo artwork and
+          case studies can be added when the original files are available.
         </Text>
       </Container>
     </Section>
