@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
 import { ProjectCard } from "@/components/portfolio/project-card";
@@ -85,12 +86,12 @@ export function SelectedWork() {
                 >
                   Explore my experience <span aria-hidden="true">↗</span>
                 </Button>
-                <a
+                <Link
                   href="/#process"
                   className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-brand-cream underline-offset-4 hover:underline"
                 >
                   My design process <span aria-hidden="true">↗</span>
-                </a>
+                </Link>
               </div>
             </div>
             <div className="flex min-w-0 flex-col justify-center bg-soft px-6 py-9 sm:px-10 sm:py-12 lg:px-14">
